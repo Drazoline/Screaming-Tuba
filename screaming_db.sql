@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2017 at 03:19 PM
+-- Generation Time: Feb 06, 2017 at 03:27 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -89,16 +89,17 @@ CREATE TABLE IF NOT EXISTS `folder_file` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `folder_group`
+-- Table structure for table `folder_owner`
 --
 
-CREATE TABLE IF NOT EXISTS `folder_group` (
+CREATE TABLE IF NOT EXISTS `folder_owner` (
   `id_folder_group` int(11) NOT NULL,
   `id_folder` int(11) NOT NULL,
-  `id_group` int(11) NOT NULL,
+  `id_owner` int(11) NOT NULL,
+  `type_owner` varchar(2) NOT NULL,
   PRIMARY KEY (`id_folder_group`),
   UNIQUE KEY `id_folder` (`id_folder`),
-  KEY `id_group` (`id_group`)
+  KEY `id_group` (`id_owner`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -231,11 +232,10 @@ ALTER TABLE `folder_file`
   ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`);
 
 --
--- Constraints for table `folder_group`
+-- Constraints for table `folder_owner`
 --
-ALTER TABLE `folder_group`
-  ADD CONSTRAINT `folder_group_ibfk_2` FOREIGN KEY (`id_group`) REFERENCES `group` (`id_group`),
-  ADD CONSTRAINT `folder_group_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`);
+ALTER TABLE `folder_owner`
+  ADD CONSTRAINT `folder_owner_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`);
 
 --
 -- Constraints for table `group`
