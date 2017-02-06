@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2017 at 05:05 PM
+-- Generation Time: Feb 06, 2017 at 03:14 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -54,6 +54,38 @@ CREATE TABLE IF NOT EXISTS `file` (
   `visibility` enum('PUBLIC','PRIVATE','GROUP') NOT NULL DEFAULT 'PRIVATE',
   PRIMARY KEY (`id_file`),
   KEY `id_user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `folder`
+--
+
+CREATE TABLE IF NOT EXISTS `folder` (
+  `id_folder` int(11) NOT NULL,
+  `id_file` int(11) NOT NULL,
+  `title` varchar(20) NOT NULL,
+  `timestamp` date NOT NULL,
+  PRIMARY KEY (`id_folder`),
+  KEY `id_file` (`id_file`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `folder_file`
+--
+
+CREATE TABLE IF NOT EXISTS `folder_file` (
+  `id_folder_file` int(11) NOT NULL,
+  `id_folder` int(11) NOT NULL,
+  `id_file` int(11) NOT NULL,
+  `timestamp` date NOT NULL,
+  `title` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_folder_file`),
+  KEY `id_folder` (`id_folder`,`id_file`),
+  KEY `id_file` (`id_file`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -169,8 +201,8 @@ CREATE TABLE IF NOT EXISTS `user_file_like` (
 -- Constraints for table `comment`
 --
 ALTER TABLE `comment`
-  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
-  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`);
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`),
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `file`
@@ -179,18 +211,25 @@ ALTER TABLE `file`
   ADD CONSTRAINT `file_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
+-- Constraints for table `folder_file`
+--
+ALTER TABLE `folder_file`
+  ADD CONSTRAINT `folder_file_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`),
+  ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`);
+
+--
 -- Constraints for table `group`
 --
 ALTER TABLE `group`
-  ADD CONSTRAINT `group_ibfk_2` FOREIGN KEY (`id_owner`) REFERENCES `user` (`id_user`),
-  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`);
+  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`),
+  ADD CONSTRAINT `group_ibfk_2` FOREIGN KEY (`id_owner`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `group_user`
 --
 ALTER TABLE `group_user`
-  ADD CONSTRAINT `group_user_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
-  ADD CONSTRAINT `group_user_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `group` (`id_group`);
+  ADD CONSTRAINT `group_user_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `group` (`id_group`),
+  ADD CONSTRAINT `group_user_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `perm_group_user`
@@ -202,15 +241,15 @@ ALTER TABLE `perm_group_user`
 -- Constraints for table `subscription`
 --
 ALTER TABLE `subscription`
-  ADD CONSTRAINT `subscription_ibfk_2` FOREIGN KEY (`id_target`) REFERENCES `user` (`id_user`),
-  ADD CONSTRAINT `subscription_ibfk_1` FOREIGN KEY (`id_owner`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `subscription_ibfk_1` FOREIGN KEY (`id_owner`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `subscription_ibfk_2` FOREIGN KEY (`id_target`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `user_file_like`
 --
 ALTER TABLE `user_file_like`
-  ADD CONSTRAINT `user_file_like_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`),
-  ADD CONSTRAINT `user_file_like_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `user_file_like_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `user_file_like_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
