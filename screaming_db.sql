@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2017 at 03:27 PM
+-- Generation Time: Feb 06, 2017 at 03:32 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -255,6 +255,7 @@ ALTER TABLE `group_user`
 -- Constraints for table `perm_group_user`
 --
 ALTER TABLE `perm_group_user`
+  ADD CONSTRAINT `perm_group_user_ibfk_2` FOREIGN KEY (`id_group_user`) REFERENCES `group_user` (`id_group_user`),
   ADD CONSTRAINT `perm_group_user_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permission` (`id_permission`);
 
 --
