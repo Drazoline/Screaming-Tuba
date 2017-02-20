@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2017 at 03:32 PM
+-- Generation Time: Feb 20, 2017 at 04:57 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -95,11 +95,12 @@ CREATE TABLE IF NOT EXISTS `folder_file` (
 CREATE TABLE IF NOT EXISTS `folder_owner` (
   `id_folder_group` int(11) NOT NULL,
   `id_folder` int(11) NOT NULL,
-  `id_owner` int(11) NOT NULL,
-  `type_owner` varchar(2) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_group` int(2) NOT NULL,
   PRIMARY KEY (`id_folder_group`),
   UNIQUE KEY `id_folder` (`id_folder`),
-  KEY `id_group` (`id_owner`)
+  KEY `id_group` (`id_user`),
+  KEY `id_group_2` (`id_group`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -228,14 +229,16 @@ ALTER TABLE `file`
 -- Constraints for table `folder_file`
 --
 ALTER TABLE `folder_file`
-  ADD CONSTRAINT `folder_file_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`),
-  ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`);
+  ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`),
+  ADD CONSTRAINT `folder_file_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`);
 
 --
 -- Constraints for table `folder_owner`
 --
 ALTER TABLE `folder_owner`
-  ADD CONSTRAINT `folder_owner_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`);
+  ADD CONSTRAINT `folder_owner_ibfk_2` FOREIGN KEY (`id_group`) REFERENCES `group` (`id_group`),
+  ADD CONSTRAINT `folder_owner_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`),
+  ADD CONSTRAINT `id_user_fk` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `group`
@@ -255,8 +258,8 @@ ALTER TABLE `group_user`
 -- Constraints for table `perm_group_user`
 --
 ALTER TABLE `perm_group_user`
-  ADD CONSTRAINT `perm_group_user_ibfk_2` FOREIGN KEY (`id_group_user`) REFERENCES `group_user` (`id_group_user`),
-  ADD CONSTRAINT `perm_group_user_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permission` (`id_permission`);
+  ADD CONSTRAINT `perm_group_user_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permission` (`id_permission`),
+  ADD CONSTRAINT `perm_group_user_ibfk_2` FOREIGN KEY (`id_group_user`) REFERENCES `group_user` (`id_group_user`);
 
 --
 -- Constraints for table `subscription`
