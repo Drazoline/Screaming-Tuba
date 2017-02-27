@@ -7,15 +7,18 @@
             <div class="post-­‐box">
                 <div class="post-­‐content">
                     <div class="caption">
-                        <h4><a href="javascript:void(0);"><?php echo $user­>name;?></a>
+                        <h4>
+                            <?php echo $user->name; ?>
                         </h4>
-                        <p><?php echo $user-­‐>email;?></p>
+                        <p>
+                                <?php echo $user->email; ?>
+                        </p>
                     </div>
                 </div>
             </div>
             <?php
         endforeach;
     else: ?>
-        <p class="no-­‐record">No post(s) found......</p>
+        <p class="no-­‐record">No user(s) found......</p>
         <?php endif; ?>
 </div>
