@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `group_users`
+-- Table structure for table `permissions`
 --
 
 CREATE TABLE IF NOT EXISTS `group_users` (
@@ -227,7 +227,7 @@ ALTER TABLE `groups`
   ADD CONSTRAINT `group_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `group_users`
+-- Constraints for table `permissions`
 --
 ALTER TABLE `group_users`
   ADD CONSTRAINT `group_user_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`),
