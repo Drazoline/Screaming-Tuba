@@ -23,10 +23,10 @@ USE screaming_db;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Table structure for table `comments`
 --
 
-CREATE TABLE IF NOT EXISTS `comment` (
+CREATE TABLE IF NOT EXISTS `comments` (
   `id_comment` int(11) NOT NULL,
   `text` varchar(30) NOT NULL,
   `timestamp` date NOT NULL,
@@ -42,10 +42,10 @@ CREATE TABLE IF NOT EXISTS `comment` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `file`
+-- Table structure for table `files`
 --
 
-CREATE TABLE IF NOT EXISTS `file` (
+CREATE TABLE IF NOT EXISTS `files` (
   `id_file` int(11) NOT NULL,
   `data` longblob NOT NULL,
   `times_played` int(11) NOT NULL,
@@ -59,10 +59,10 @@ CREATE TABLE IF NOT EXISTS `file` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `folder`
+-- Table structure for table `folders`
 --
 
-CREATE TABLE IF NOT EXISTS `folder` (
+CREATE TABLE IF NOT EXISTS `folders` (
   `id_folder` int(11) NOT NULL,
   `title` varchar(20) NOT NULL,
   `timestamp` date NOT NULL,
@@ -72,10 +72,10 @@ CREATE TABLE IF NOT EXISTS `folder` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `folder_file`
+-- Table structure for table `folder_files`
 --
 
-CREATE TABLE IF NOT EXISTS `folder_file` (
+CREATE TABLE IF NOT EXISTS `folder_files` (
   `id_folder_file` int(11) NOT NULL,
   `id_folder` int(11) NOT NULL,
   `id_file` int(11) NOT NULL,
@@ -89,10 +89,10 @@ CREATE TABLE IF NOT EXISTS `folder_file` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `folder_owner`
+-- Table structure for table `folder_owners`
 --
 
-CREATE TABLE IF NOT EXISTS `folder_owner` (
+CREATE TABLE IF NOT EXISTS `folder_owners` (
   `id_folder_group` int(11) NOT NULL,
   `id_folder` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -106,10 +106,10 @@ CREATE TABLE IF NOT EXISTS `folder_owner` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `group`
+-- Table structure for table `groups`
 --
 
-CREATE TABLE IF NOT EXISTS `group` (
+CREATE TABLE IF NOT EXISTS `groups` (
   `id_group` int(11) NOT NULL,
   `id_file` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -122,10 +122,10 @@ CREATE TABLE IF NOT EXISTS `group` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `group_user`
+-- Table structure for table `group_users`
 --
 
-CREATE TABLE IF NOT EXISTS `group_user` (
+CREATE TABLE IF NOT EXISTS `group_users` (
   `id_group_user` int(11) NOT NULL,
   `id_group` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -137,10 +137,10 @@ CREATE TABLE IF NOT EXISTS `group_user` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permission`
+-- Table structure for table `permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `permission` (
+CREATE TABLE IF NOT EXISTS `permissions` (
   `id_permission` int(11) NOT NULL,
   `nom` varchar(20) NOT NULL,
   PRIMARY KEY (`id_permission`)
@@ -149,10 +149,10 @@ CREATE TABLE IF NOT EXISTS `permission` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perm_group_user`
+-- Table structure for table `perm_group_users`
 --
 
-CREATE TABLE IF NOT EXISTS `perm_group_user` (
+CREATE TABLE IF NOT EXISTS `perm_group_users` (
   `id_perm_group_user` int(11) NOT NULL,
   `id_perm` int(11) NOT NULL,
   `id_group_user` int(11) NOT NULL,
@@ -164,10 +164,10 @@ CREATE TABLE IF NOT EXISTS `perm_group_user` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subscription`
+-- Table structure for table `subscriptions`
 --
 
-CREATE TABLE IF NOT EXISTS `subscription` (
+CREATE TABLE IF NOT EXISTS `subscriptions` (
   `id_subscription` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
   `id_target` int(11) NOT NULL,
@@ -179,10 +179,10 @@ CREATE TABLE IF NOT EXISTS `subscription` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id_user` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `password` varchar(30) NOT NULL,
@@ -190,16 +190,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_image` blob,
   `subscription` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_user`),
-  KEY `subscription` (`subscription`)
+  KEY `subscriptions` (`subscription`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_file_like`
+-- Table structure for table `user_file_likes`
 --
 
-CREATE TABLE IF NOT EXISTS `user_file_like` (
+CREATE TABLE IF NOT EXISTS `user_file_likes` (
   `id_like` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_file` int(11) NOT NULL,
@@ -213,67 +213,67 @@ CREATE TABLE IF NOT EXISTS `user_file_like` (
 --
 
 --
--- Constraints for table `comment`
+-- Constraints for table `comments`
 --
-ALTER TABLE `comment`
-  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`),
-  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`),
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `file`
+-- Constraints for table `files`
 --
-ALTER TABLE `file`
-  ADD CONSTRAINT `file_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+ALTER TABLE `files`
+  ADD CONSTRAINT `file_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `folder_file`
+-- Constraints for table `folder_files`
 --
-ALTER TABLE `folder_file`
-  ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`),
-  ADD CONSTRAINT `folder_file_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`);
+ALTER TABLE `folder_files`
+  ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folders` (`id_folder`),
+  ADD CONSTRAINT `folder_file_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`);
 
 --
--- Constraints for table `folder_owner`
+-- Constraints for table `folder_owners`
 --
-ALTER TABLE `folder_owner`
-  ADD CONSTRAINT `folder_owner_ibfk_2` FOREIGN KEY (`id_group`) REFERENCES `group` (`id_group`),
-  ADD CONSTRAINT `folder_owner_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folder` (`id_folder`),
-  ADD CONSTRAINT `id_user_fk` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+ALTER TABLE `folder_owners`
+  ADD CONSTRAINT `folder_owner_ibfk_2` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id_group`),
+  ADD CONSTRAINT `folder_owner_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folders` (`id_folder`),
+  ADD CONSTRAINT `id_user_fk` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `group`
+-- Constraints for table `groups`
 --
-ALTER TABLE `group`
-  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`),
-  ADD CONSTRAINT `group_ibfk_2` FOREIGN KEY (`id_owner`) REFERENCES `user` (`id_user`);
+ALTER TABLE `groups`
+  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`),
+  ADD CONSTRAINT `group_ibfk_2` FOREIGN KEY (`id_owner`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `group_user`
+-- Constraints for table `group_users`
 --
-ALTER TABLE `group_user`
-  ADD CONSTRAINT `group_user_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `group` (`id_group`),
-  ADD CONSTRAINT `group_user_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+ALTER TABLE `group_users`
+  ADD CONSTRAINT `group_user_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id_group`),
+  ADD CONSTRAINT `group_user_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `perm_group_user`
+-- Constraints for table `perm_group_users`
 --
-ALTER TABLE `perm_group_user`
-  ADD CONSTRAINT `perm_group_user_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permission` (`id_permission`),
-  ADD CONSTRAINT `perm_group_user_ibfk_2` FOREIGN KEY (`id_group_user`) REFERENCES `group_user` (`id_group_user`);
+ALTER TABLE `perm_group_users`
+  ADD CONSTRAINT `perm_group_user_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permissions` (`id_permission`),
+  ADD CONSTRAINT `perm_group_user_ibfk_2` FOREIGN KEY (`id_group_user`) REFERENCES `group_users` (`id_group_user`);
 
 --
--- Constraints for table `subscription`
+-- Constraints for table `subscriptions`
 --
-ALTER TABLE `subscription`
-  ADD CONSTRAINT `subscription_ibfk_1` FOREIGN KEY (`id_owner`) REFERENCES `user` (`id_user`),
-  ADD CONSTRAINT `subscription_ibfk_2` FOREIGN KEY (`id_target`) REFERENCES `user` (`id_user`);
+ALTER TABLE `subscriptions`
+  ADD CONSTRAINT `subscription_ibfk_1` FOREIGN KEY (`id_owner`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `subscription_ibfk_2` FOREIGN KEY (`id_target`) REFERENCES `users` (`id_user`);
 
 --
--- Constraints for table `user_file_like`
+-- Constraints for table `user_file_likes`
 --
-ALTER TABLE `user_file_like`
-  ADD CONSTRAINT `user_file_like_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
-  ADD CONSTRAINT `user_file_like_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `file` (`id_file`);
+ALTER TABLE `user_file_likes`
+  ADD CONSTRAINT `user_file_likes_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `user_file_likes_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
