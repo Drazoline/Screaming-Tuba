@@ -27,12 +27,12 @@ USE screaming_db;
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
-  `id_comment` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `text` varchar(30) NOT NULL,
   `timestamp` date NOT NULL,
   `id_file` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  PRIMARY KEY (`id_comment`),
+  PRIMARY KEY (`id`),
   KEY `fk_file` (`id_file`),
   KEY `fk_user` (`id_user`),
   KEY `id_file` (`id_file`),
@@ -46,13 +46,13 @@ CREATE TABLE IF NOT EXISTS `comments` (
 --
 
 CREATE TABLE IF NOT EXISTS `files` (
-  `id_file` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `data` longblob NOT NULL,
   `times_played` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `timestamp` date NOT NULL,
   `visibility` enum('PUBLIC','PRIVATE','GROUP') NOT NULL DEFAULT 'PRIVATE',
-  PRIMARY KEY (`id_file`),
+  PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -63,10 +63,10 @@ CREATE TABLE IF NOT EXISTS `files` (
 --
 
 CREATE TABLE IF NOT EXISTS `folders` (
-  `id_folder` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `title` varchar(20) NOT NULL,
   `timestamp` date NOT NULL,
-  PRIMARY KEY (`id_folder`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -76,12 +76,12 @@ CREATE TABLE IF NOT EXISTS `folders` (
 --
 
 CREATE TABLE IF NOT EXISTS `folder_files` (
-  `id_folder_file` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `id_folder` int(11) NOT NULL,
   `id_file` int(11) NOT NULL,
   `timestamp` date NOT NULL,
   `title` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_folder_file`),
+  PRIMARY KEY (`id`),
   KEY `id_folder` (`id_folder`,`id_file`),
   KEY `id_file` (`id_file`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -93,11 +93,11 @@ CREATE TABLE IF NOT EXISTS `folder_files` (
 --
 
 CREATE TABLE IF NOT EXISTS `folder_owners` (
-  `id_folder_group` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `id_folder` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_group` int(2) NOT NULL,
-  PRIMARY KEY (`id_folder_group`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `id_folder` (`id_folder`),
   KEY `id_group` (`id_user`),
   KEY `id_group_2` (`id_group`)
@@ -110,11 +110,11 @@ CREATE TABLE IF NOT EXISTS `folder_owners` (
 --
 
 CREATE TABLE IF NOT EXISTS `groups` (
-  `id_group` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `id_file` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `id_owner` int(11) NOT NULL,
-  PRIMARY KEY (`id_group`),
+  PRIMARY KEY (`id`),
   KEY `fk_file` (`id_file`),
   KEY `fk_owner` (`id_owner`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -126,10 +126,10 @@ CREATE TABLE IF NOT EXISTS `groups` (
 --
 
 CREATE TABLE IF NOT EXISTS `group_users` (
-  `id_group_user` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `id_group` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  PRIMARY KEY (`id_group_user`),
+  PRIMARY KEY (`id`),
   KEY `id_group` (`id_group`,`id_user`),
   KEY `id_user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -141,9 +141,9 @@ CREATE TABLE IF NOT EXISTS `group_users` (
 --
 
 CREATE TABLE IF NOT EXISTS `permissions` (
-  `id_permission` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nom` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_permission`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -153,10 +153,10 @@ CREATE TABLE IF NOT EXISTS `permissions` (
 --
 
 CREATE TABLE IF NOT EXISTS `perm_group_users` (
-  `id_perm_group_user` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `id_perm` int(11) NOT NULL,
   `id_group_user` int(11) NOT NULL,
-  PRIMARY KEY (`id_perm_group_user`),
+  PRIMARY KEY (`id`),
   KEY `id_perm` (`id_perm`,`id_group_user`),
   KEY `id_group` (`id_group_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -168,10 +168,10 @@ CREATE TABLE IF NOT EXISTS `perm_group_users` (
 --
 
 CREATE TABLE IF NOT EXISTS `subscriptions` (
-  `id_subscription` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
   `id_target` int(11) NOT NULL,
-  PRIMARY KEY (`id_subscription`),
+  PRIMARY KEY (`id`),
   KEY `id_owner` (`id_owner`,`id_target`),
   KEY `id_target` (`id_target`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -183,13 +183,13 @@ CREATE TABLE IF NOT EXISTS `subscriptions` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id_user` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `password` varchar(30) NOT NULL,
   `email` varchar(20) NOT NULL,
   `user_image` blob,
   `subscription` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_user`),
+  PRIMARY KEY (`id`),
   KEY `subscriptions` (`subscription`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -200,10 +200,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 CREATE TABLE IF NOT EXISTS `user_file_likes` (
-  `id_like` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_file` int(11) NOT NULL,
-  PRIMARY KEY (`id_like`),
+  PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`,`id_file`),
   KEY `id_file` (`id_file`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -216,64 +216,64 @@ CREATE TABLE IF NOT EXISTS `user_file_likes` (
 -- Constraints for table `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`),
-  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `files` (`id`),
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `files`
 --
 ALTER TABLE `files`
-  ADD CONSTRAINT `file_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `file_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `folder_files`
 --
 ALTER TABLE `folder_files`
-  ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folders` (`id_folder`),
-  ADD CONSTRAINT `folder_file_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`);
+  ADD CONSTRAINT `folder_file_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folders` (`id`),
+  ADD CONSTRAINT `folder_file_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `files` (`id`);
 
 --
 -- Constraints for table `folder_owners`
 --
 ALTER TABLE `folder_owners`
-  ADD CONSTRAINT `folder_owner_ibfk_2` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id_group`),
-  ADD CONSTRAINT `folder_owner_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folders` (`id_folder`),
-  ADD CONSTRAINT `id_user_fk` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `folder_owner_ibfk_2` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id`),
+  ADD CONSTRAINT `folder_owner_ibfk_1` FOREIGN KEY (`id_folder`) REFERENCES `folders` (`id`),
+  ADD CONSTRAINT `id_user_fk` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `groups`
 --
 ALTER TABLE `groups`
-  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`),
-  ADD CONSTRAINT `group_ibfk_2` FOREIGN KEY (`id_owner`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `group_ibfk_1` FOREIGN KEY (`id_file`) REFERENCES `files` (`id`),
+  ADD CONSTRAINT `group_ibfk_2` FOREIGN KEY (`id_owner`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `group_users`
 --
 ALTER TABLE `group_users`
-  ADD CONSTRAINT `group_user_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id_group`),
-  ADD CONSTRAINT `group_user_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `group_user_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id`),
+  ADD CONSTRAINT `group_user_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `perm_group_users`
 --
 ALTER TABLE `perm_group_users`
-  ADD CONSTRAINT `perm_group_user_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permissions` (`id_permission`),
-  ADD CONSTRAINT `perm_group_user_ibfk_2` FOREIGN KEY (`id_group_user`) REFERENCES `group_users` (`id_group_user`);
+  ADD CONSTRAINT `perm_group_user_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permissions` (`id`),
+  ADD CONSTRAINT `perm_group_user_ibfk_2` FOREIGN KEY (`id_group_user`) REFERENCES `group_users` (`id`);
 
 --
 -- Constraints for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  ADD CONSTRAINT `subscription_ibfk_1` FOREIGN KEY (`id_owner`) REFERENCES `users` (`id_user`),
-  ADD CONSTRAINT `subscription_ibfk_2` FOREIGN KEY (`id_target`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `subscription_ibfk_1` FOREIGN KEY (`id_owner`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `subscription_ibfk_2` FOREIGN KEY (`id_target`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `user_file_likes`
 --
 ALTER TABLE `user_file_likes`
-  ADD CONSTRAINT `user_file_likes_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
-  ADD CONSTRAINT `user_file_likes_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `files` (`id_file`);
+  ADD CONSTRAINT `user_file_likes_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `user_file_likes_ibfk_2` FOREIGN KEY (`id_file`) REFERENCES `files` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
