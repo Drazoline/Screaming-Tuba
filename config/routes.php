@@ -49,15 +49,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
+    
     $routes->connect('/', ['controller' => 'Files', 'action' => 'index', 'index']);
-=======
-    $routes->connect('/', ['controller' => 'groups', 'action' => 'index', 'index']);
->>>>>>> ad8dbaa00983be39e17e2c592ac515207e5ce819
-=======
-    $routes->connect('/', ['controller' => 'group_users', 'action' => 'index', 'index']);
->>>>>>> c9a2294b196ebe07cbfd8523f15985d756f9a1a6
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
