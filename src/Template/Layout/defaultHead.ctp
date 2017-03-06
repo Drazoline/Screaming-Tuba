@@ -35,7 +35,15 @@ $pageTitle = 'Screaming Tuba';
 <body>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
+
+        <div id="mySidenav" class="sidenav">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
         <?= $this->fetch('content') ?>
+
     </div>
 <footer>
 </footer>
