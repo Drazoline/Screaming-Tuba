@@ -31,17 +31,20 @@ $pageTitle = 'Screaming Tuba';
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="#">Welcome {User}</a>
+        <a href="#">My account</a>
+        <a href="#">Upload</a>
+        <br>
+        <a href="#">Following</a>
+    </div>
 </head>
 <body>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
 
-        <div id="mySidenav" class="sidenav">
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
-        </div>
+
         <?= $this->fetch('content') ?>
 
     </div>
