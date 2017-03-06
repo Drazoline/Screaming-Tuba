@@ -41,7 +41,7 @@ class Installer
         static::createAppConfig($rootDir, $io);
         static::createWritableDirectories($rootDir, $io);
 
-        // ask if the permissions should be changed
+        // ask if the Permissions should be changed
         if ($io->isInteractive()) {
             $validator = function ($arg) {
                 if (in_array($arg, ['Y', 'y', 'N', 'n'])) {
@@ -117,7 +117,7 @@ class Installer
     }
 
     /**
-     * Set globally writable permissions on the "tmp" and "logs" directory.
+     * Set globally writable Permissions on the "tmp" and "logs" directory.
      *
      * This is not the most secure default, but it gets people up and running quickly.
      *
@@ -127,7 +127,7 @@ class Installer
      */
     public static function setFolderPermissions($dir, $io)
     {
-        // Change the permissions on a path and output the results.
+        // Change the Permissions on a path and output the results.
         $changePerms = function ($path, $perms, $io) {
             // Get permission bits from stat(2) result.
             $currentPerms = fileperms($path) & 0777;
@@ -139,7 +139,7 @@ class Installer
             if ($res) {
                 $io->write('Permissions set on ' . $path);
             } else {
-                $io->write('Failed to set permissions on ' . $path);
+                $io->write('Failed to set Permissions on ' . $path);
             }
         };
 
