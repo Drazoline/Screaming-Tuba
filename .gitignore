@@ -5,3 +5,6 @@
 /tmp/sessions/empty
 /tmp/tests/empty
 /tmp
+/logs/error.log
+/.idea/screamingTuba.iml
+/config/routes.php
