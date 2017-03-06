@@ -4,10 +4,10 @@ $this->layout = "defaultHead";
 ?>
 <!DOCTYPE html>
 <html>
-<body class="w3-content" style="max-width:1200px">
+<body class="w3-content" style="max-width:1600px">
 
 <!-- Sidenav/menu -->
-<nav class="w3-sidenav w3-white w3-collapse w3-top" style="z-index:3;width:150px" id="mySidenav">
+<nav class="w3-sidenav w3-white w3-collapse w3-top" style="z-index:3;width:200px" id="mySidenav">
     <div class="w3-container w3-padding-16">
         <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-closebtn w3-hover-text-red"></i>
         <h3 class="w3-wide"><b>LOGO</b></h3>
