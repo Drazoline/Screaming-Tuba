@@ -32,6 +32,9 @@ $pageTitle = 'Screaming Tuba';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 
+</head>
+<body>
+    <?= $this->Flash->render() ?>
     <div id="mySidenav" class="sidenav">
         <a href="#">Welcome {User}</a>
         <a href="#">My account</a>
@@ -39,15 +42,7 @@ $pageTitle = 'Screaming Tuba';
         <br>
         <a href="#">Following</a>
     </div>
-</head>
-<body>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-
-
-        <?= $this->fetch('content') ?>
-
-    </div>
+</body>
 <footer>
 </footer>
 </body>
