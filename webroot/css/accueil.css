@@ -1,0 +1,11 @@
+.nav-bar {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    font-weight: bold;
+    padding-top: 64px!important;
+    font-size: 18px!important;
+    color: #757575!important;
+    font-family: "Montserrat", sans-serif;
+}
