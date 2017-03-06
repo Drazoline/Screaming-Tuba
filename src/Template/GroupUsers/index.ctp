@@ -3,15 +3,15 @@
 <div
     class="row">
     <?php
-    if(!empty($group_users)): foreach($group_users as $group_user): ?>
+    if(!empty($groupUsers)): foreach($groupUsers as $groupUser): ?>
         <div class="post-­‐box">
             <div class="post-­‐content">
                 <div class="caption">
                     <p>
-                        <?php echo $group_user->id_group; ?>
+                        <?php echo $groupUser->id_group; ?>
                     </p>
                     <p>
-                        <?php echo $group_user->id_user; ?>
+                        <?php echo $groupUser->id_user; ?>
                     </p>
                 </div>
             </div>

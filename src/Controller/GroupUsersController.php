@@ -7,11 +7,11 @@
  */
 namespace App\Controller;
 
-class Group_usersController extends AppController
+class GroupUsersController extends AppController
 {
     public function index()
     {
-        $group_users = $this->Group_users->find('all');
-        $this->set(compact('group_users'));
+        $groupUsers = $this->GroupUsers->find('all');
+        $this->set(compact('groupUsers'));
     }
 }
