@@ -1,6 +1,5 @@
 <h1>Folder</h1>
-<div
-        class="row">
+<div class="row">
     <?php
     if(!empty($folders)): foreach($folders as $folder): ?>
     <div class="post-­‐box">
@@ -15,6 +14,8 @@
     <?php
         endforeach;
     else: ?>
-    <p class="no-­‐record">No file found......</p>
+    <p class="no-­‐record">No folder found......</p>
     <?php endif; ?>
+
+    <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
 </div>

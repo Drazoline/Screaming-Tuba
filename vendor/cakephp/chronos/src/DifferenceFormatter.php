@@ -20,6 +20,14 @@ namespace Cake\Chronos;
  */
 class DifferenceFormatter
 {
+
+    /**
+     * The text translator object
+     *
+     * @var \Cake\Chronos\Translator
+     */
+    protected $translate;
+
     /**
      * Constructor.
      *
@@ -76,9 +84,6 @@ class DifferenceFormatter
                 $count = $diffInterval->s;
                 $unit = 'second';
                 break;
-        }
-        if ($count === 0) {
-            $count = 1;
         }
         $time = $this->translate->plural($unit, $count, ['count' => $count]);
         if ($absolute) {

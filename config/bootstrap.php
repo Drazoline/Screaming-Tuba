@@ -65,6 +65,11 @@ use Cake\Mailer\Email;
 use Cake\Network\Request;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+use Cake\ORM\Table;
+use Cake\Validation\Validator;
+use Cake\Routing\RouteBuilder;
+use Cake\Routing\Router;
+use Cake\Routing\Route\DashedRoute;
 
 /*
  * Read configuration file and inject configuration into various
