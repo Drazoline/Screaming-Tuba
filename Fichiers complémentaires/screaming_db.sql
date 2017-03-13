@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 08 Mars 2017 à 21:05
+-- Généré le :  Lun 13 Mars 2017 à 13:02
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `text` varchar(1000) NOT NULL,
-  `timestamp` date NOT NULL,
   `file_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -38,9 +37,9 @@ CREATE TABLE `comments` (
 -- Contenu de la table `comments`
 --
 
-INSERT INTO `comments` (`id`, `text`, `timestamp`, `file_id`, `user_id`) VALUES
-(1, 'Blabla', '2017-03-08', 1, 3),
-(2, 'Hello', '2017-03-08', 2, 4);
+INSERT INTO `comments` (`id`, `text`, `file_id`, `user_id`) VALUES
+(1, 'Blabla', 1, 3),
+(2, 'Hello', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -52,18 +51,17 @@ CREATE TABLE `files` (
   `id` int(11) NOT NULL,
   `data` longblob,
   `times_played` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `timestamp` date NOT NULL
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `files`
 --
 
-INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`, `timestamp`) VALUES
-(1, NULL, 100, 1, '2017-03-08'),
-(2, NULL, 50, 3, '2017-03-08'),
-(3, NULL, 312, 5, '2017-03-08');
+INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`) VALUES
+(1, NULL, 100, 1),
+(2, NULL, 50, 3),
+(3, NULL, 312, 5);
 
 -- --------------------------------------------------------
 
@@ -74,16 +72,16 @@ INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`, `timestamp`) VALUE
 CREATE TABLE `folders` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `timestamp` date NOT NULL
+  `visibility` enum('PUBLIC','PRIVATE','GROUP') NOT NULL DEFAULT 'PRIVATE'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `folders`
 --
 
-INSERT INTO `folders` (`id`, `title`, `timestamp`) VALUES
-(1, 'Test', '2017-03-08'),
-(2, 'Dossier', '2017-03-08');
+INSERT INTO `folders` (`id`, `title`, `visibility`) VALUES
+(1, 'Test', 'PRIVATE'),
+(2, 'Dossier', 'PRIVATE');
 
 -- --------------------------------------------------------
 
