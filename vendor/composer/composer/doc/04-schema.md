@@ -255,7 +255,8 @@ Optional.
 ### Package links
 
 All of the following take an object which maps package names to
-[version constraints](01-basic-usage.md#package-versions).
+versions of the package via version constraints. Read more about
+versions [here](articles/versions.md).
 
 Example:
 
@@ -316,12 +317,12 @@ Example:
 }
 ```
 
-> **Note:** This feature has severe technical limitations, as the 
+> **Note:** This feature has severe technical limitations, as the
 > composer.json metadata will still be read from the branch name you specify
 > before the hash. You should therefore only use this as a temporary solution
 > during development to remediate transient issues, until you can switch to
 > tagged releases. The Composer team does not actively support this feature
-> and will not accept bug reports related to it. 
+> and will not accept bug reports related to it.
 
 It is also possible to inline-alias a package constraint so that it matches
 a constraint that it otherwise would not. For more information [see the
@@ -425,10 +426,11 @@ Example:
 
 Autoload mapping for a PHP autoloader.
 
-Currently [`PSR-0`](http://www.php-fig.org/psr/psr-0/) autoloading,
-[`PSR-4`](http://www.php-fig.org/psr/psr-4/) autoloading, `classmap` generation and
-`files` includes are supported. PSR-4 is the recommended way though since it offers
-greater ease of use (no need to regenerate the autoloader when you add classes).
+[`PSR-4`](http://www.php-fig.org/psr/psr-4/) and [`PSR-0`](http://www.php-fig.org/psr/psr-0/)
+autoloading, `classmap` generation and `files` includes are supported.
+
+PSR-4 is the recommended way since it offers greater ease of use (no need
+to regenerate the autoloader when you add classes).
 
 #### PSR-4
 
@@ -599,6 +601,13 @@ Example:
 }
 ```
 
+#### Optimizing the autoloader
+
+The autoloader can have quite a substantial impact on your request time
+(50-100ms per request in large frameworks using a lot of classes). See the
+[`article about optimizing the autoloader`](articles/autoloader-optimization.md)
+for more details on how to reduce this impact.
+
 ### autoload-dev <span>([root-only](04-schema.md#root-package))</span>
 
 This section allows to define autoload rules for development purposes.
@@ -680,9 +689,9 @@ it in your file to avoid surprises.
 
 All versions of each package are checked for stability, and those that are less
 stable than the `minimum-stability` setting will be ignored when resolving
-your project dependencies. Specific changes to the stability requirements of
-a given package can be done in `require` or `require-dev` (see
-[package links](#package-links)).
+your project dependencies. (Note that you can also specify stability requirements
+on a per-package basis using stability flags in the version constraints that you
+specify in a `require` block (see [package links](#package-links) for more details).
 
 Available options (in order of stability) are `dev`, `alpha`, `beta`, `RC`,
 and `stable`.
