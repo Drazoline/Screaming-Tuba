@@ -21,4 +21,6 @@
     else: ?>
         <p class="no-­‐record">No user(s) found......</p>
         <?php endif; ?>
+
+    <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
 </div>
