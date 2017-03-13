@@ -34,14 +34,21 @@ $pageTitle = 'Screaming Tuba';
 
 </head>
 <body>
+<div>
     <?= $this->Flash->render() ?>
-    <div id="mySidenav" class="sidenav">
+    <div id="mySidenavLeft" class="sidenav sidenav-align">
         <a href="#">Welcome {User}</a>
         <a href="#">My account</a>
         <a href="#">Upload</a>
         <br>
         <a href="#">Following</a>
     </div>
+
+    <div id="mySidenavRight">
+        <iframe src="/Screaming-Tuba/groups" class="groups"></iframe>
+    </div>
+
+</div>
 </body>
 <footer>
 </footer>
