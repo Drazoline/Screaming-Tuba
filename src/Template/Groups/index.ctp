@@ -50,7 +50,8 @@ $this->layout = false;
     else: ?>
         <a style="display:block;text-align:center">You have no groups</a>
     <?php endif; ?>
-        <a style="display:block;text-align:center">Create group</a>
+        <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
+        <!--<a style="display:block;text-align:center">Create group</a>-->
     </div>
 </div>
 </body>
