@@ -31,4 +31,29 @@ class FoldersController extends AppController
         }
         $this->set('folder', $folder);
     }
+
+    public function edit($id = null)
+    {
+      $folder = $this->Folders->get($id);
+      if ($this->request->is(['post', 'put'])) {
+        $folder = $this->Folders->patchEntity($folder, $this->request->data);
+        $folder->modified = date("Y-m-d H:i:s");
+        if ($this->Folders->save($folder)) {
+          $this->Flash->success(__('Your folder has been updated.'));
+          return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Unable to update yourfolder.'));
+      }
+      $this->set('folder', $folder);
+    }
+
+    public function delete($id)
+    {
+      $this->request->allowMethod(['post', 'delete']);
+      $folder = $this->Folders->get($id);
+      if ($this->Folders->delete($folder)) {
+        $this->Flash->success(__('The folder with id: {0} has been deleted', h($id)));
+        return $this->redirect(['action' => 'index']);
+      }
+    }
 }
