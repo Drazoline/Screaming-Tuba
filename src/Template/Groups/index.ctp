@@ -40,18 +40,20 @@ $this->layout = false;
     <div id="groups">
         <a style="display:block;text-align:center">My Groups</a>
 
-    <?php
-    if(!empty($groups)): foreach($groups as $group): ?>
-        <a style="display:block;text-align:center">
-                        <?php echo $group->name; ?>
-        </a>
-        <?php
-    endforeach;
-    else: ?>
-        <a style="display:block;text-align:center">You have no groups</a>
-    <?php endif; ?>
         <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
-        <!--<a style="display:block;text-align:center">Create group</a>-->
+
+        <?php
+        if(!empty($groups)): foreach($groups as $group): ?>
+            <a style="display:block;text-align:center">
+                <?php echo $group->name; ?>
+                <?= $this->Html->link('Edit', ['action' => 'edit', $group->id]) ?>
+                <?= $this->Form->postLink('Delete', ['action' => 'delete', $group->id]) ?>
+            </a>
+            <?php
+        endforeach;
+        else: ?>
+            <a style="display:block;text-align:center">You have no groups</a>
+        <?php endif; ?>
     </div>
 </div>
 </body>

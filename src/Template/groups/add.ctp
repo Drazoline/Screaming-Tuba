@@ -3,7 +3,8 @@
 <?php
     echo $this->Form->create($group);
     echo $this->Form->input('name');
-    echo $this->Form->input('user_id');
+    //echo $this->Form->input('user_id', array('type' => 'select', 'options' => $categories));
+   // echo $this->Form->input('user_id');
     echo $this->Form->button(__('Save group'));
     echo $this->Form->end();
 ?>
