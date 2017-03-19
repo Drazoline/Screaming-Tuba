@@ -17,7 +17,11 @@ class PermGroupUsersController extends AppController
 
     public function index()
     {
-        $permGroupUsers = $this->PermGroupUsers->find('all');
+        $permGroupUsers = $this->PermGroupUsers->find('all')
+        ->contain([
+            'GroupUsers',
+            'Permissions'
+        ]);;
         $this->set(compact('permGroupUsers'));
     }
 
@@ -34,7 +38,23 @@ class PermGroupUsersController extends AppController
             }
             $this->Flash->error(__('Unable to add your permission for the user in your group.'));
         }
+        $this->setPermissions();
+        $this->setGroupUsers();
         $this->set('permGroupUser', $permGroupUser);
+    }
+
+    private function setPermissions()
+    {
+      $permissions_table = TableRegistry::get('Permissions');
+      $permissions = $permissions_table->find('list');
+      $this->set(compact('permissions'));
+    }
+
+    private function setGroupUsers()
+    {
+      $group_users_table = TableRegistry::get('GroupUsers');
+      $group_users = $group_users_table->find('list');
+      $this->set(compact('group_users'));
     }
 
     public function edit($id = null)
@@ -49,6 +69,8 @@ class PermGroupUsersController extends AppController
             }
             $this->Flash->error(__('Unable to update your permission for this user.'));
         }
+        $this->setPermissions();
+        $this->setGroupUsers();
         $this->set('permGroupUser', $permGroupUser);
     }
 

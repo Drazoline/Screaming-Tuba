@@ -1,10 +1,9 @@
-<h1>Blog
-    Posts</h1>
+<h1>Blog User</h1>
 <div
     class="row">
-    <?php
     <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
-    if(!empty($permGroupUsers)): foreach($permGroupUsers as $permGroupUser): ?>
+    <?php if(!empty($permGroupUsers)):
+        foreach($permGroupUsers as $permGroupUser): ?>
         <div class="post-­‐box">
             <div class="post-­‐content">
                 <div class="caption">
@@ -18,10 +17,10 @@
                         <?php echo $permGroupUser->id_group_user; ?>
                     </p>
                 </div>
-                <?= $this->Html->link('Edit', ['action' => 'edit', $comment->id]) ?>
+                <?= $this->Html->link('Edit', ['action' => 'edit', $permGroupUser->id]) ?>
                 <?= $this->Form->postLink(
                 'Delete',
-                ['action' => 'delete', $comment->id],
+                ['action' => 'delete', $permGroupUser->id],
                 ['confirm' => 'Are you sure?'])
                 ?>
             </div>
