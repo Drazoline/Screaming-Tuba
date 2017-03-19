@@ -5,7 +5,7 @@ namespace App\Model\Table;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class UsersTable extends Table
+class FolderOwnersTable extends Table
 {
     public function initialize(array $config)
     {
@@ -17,7 +17,8 @@ class UsersTable extends Table
         $validator
             ->notEmpty('name')
             ->notEmpty('password')
-            ->notEmpty('email');
+            ->notEmpty('email')
+            ->notEmpty('subscription');
         return $validator;
     }
 }

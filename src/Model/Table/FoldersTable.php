@@ -5,7 +5,7 @@ namespace App\Model\Table;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class FoldersTables extends Table
+class FoldersTable extends Table
 {
     public function initialize(array $config)
     {
