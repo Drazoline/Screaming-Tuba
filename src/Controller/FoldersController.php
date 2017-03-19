@@ -42,7 +42,7 @@ class FoldersController extends AppController
           $this->Flash->success(__('Your folder has been updated.'));
           return $this->redirect(['action' => 'index']);
         }
-        $this->Flash->error(__('Unable to update yourfolder.'));
+        $this->Flash->error(__('Unable to update your folder.'));
       }
       $this->set('folder', $folder);
     }
