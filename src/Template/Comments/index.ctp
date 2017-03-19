@@ -3,9 +3,10 @@
 <div
     class="row">
     <?php
+    <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
     if(!empty($comments)): foreach($comments as $comment): ?>
-        <div class="post-­‐box">
-            <div class="post-­‐content">
+        <div class="comment-­‐box">
+            <div class="comment-­‐content">
                 <div class="caption">
                     <p>
                         <?php echo $comment->text; ?>
@@ -15,6 +16,12 @@
                     </p>
                 </div>
             </div>
+            <?= $this->Html->link('Edit', ['action' => 'edit', $comment->id]) ?>
+            <?= $this->Form->postLink(
+            'Delete',
+            ['action' => 'delete', $comment->id],
+            ['confirm' => 'Are you sure?'])
+            ?>
         </div>
         <?php
     endforeach;

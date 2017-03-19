@@ -3,6 +3,7 @@
 <div
     class="row">
     <?php
+    <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
     if(!empty($permGroupUsers)): foreach($permGroupUsers as $permGroupUser): ?>
         <div class="post-­‐box">
             <div class="post-­‐content">
@@ -17,6 +18,12 @@
                         <?php echo $permGroupUser->id_group_user; ?>
                     </p>
                 </div>
+                <?= $this->Html->link('Edit', ['action' => 'edit', $comment->id]) ?>
+                <?= $this->Form->postLink(
+                'Delete',
+                ['action' => 'delete', $comment->id],
+                ['confirm' => 'Are you sure?'])
+                ?>
             </div>
         </div>
         <?php
