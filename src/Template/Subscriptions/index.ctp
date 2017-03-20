@@ -2,6 +2,7 @@
     Posts</h1>
 <div
     class="row">
+    <?= $this -> Html -> link('Ajouter', ['action' => 'add']) ?>
     <?php
     if(!empty($subscriptions)): foreach($subscriptions as $subscription): ?>
         <div class="post-­‐box">
@@ -15,6 +16,7 @@
                     </p>
                 </div>
             </div>
+            <?= $this -> Form -> postLink('Delete', ['action' => 'delete', $subscription -> id], ['confirm' => 'Are you sure?'])?>
         </div>
         <?php
     endforeach;
