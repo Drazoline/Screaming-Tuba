@@ -6,7 +6,7 @@ use Cake\ORM\Entity;
 
 class User extends Entity
 {
-  protected function __toString()
+  public function __toString()
   {
     return $this->_properties['name'];
   }
