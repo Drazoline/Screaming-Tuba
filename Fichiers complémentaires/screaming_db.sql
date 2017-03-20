@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2017 at 01:58 PM
+-- Generation Time: Mar 20, 2017 at 02:44 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -38,8 +38,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `text`, `file_id`, `user_id`) VALUES
-(1, 'Blabla', 1, 3),
-(2, 'Hello', 2, 4);
+(2, 'Hello', 2, 4),
+(3, 'ewerwer', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ CREATE TABLE `folders` (
 --
 
 INSERT INTO `folders` (`id`, `title`, `visibility`, `folder_image`) VALUES
-(1, 'Test', 'PRIVATE', NULL),
+(1, 'Test', 'PRIVATE', 0x53637265616d696e672064622047726170686963616c2e706e67),
 (2, 'Dossier', 'PRIVATE', NULL);
 
 -- --------------------------------------------------------
@@ -122,7 +122,6 @@ CREATE TABLE `folder_owners` (
 --
 
 INSERT INTO `folder_owners` (`id`, `folder_id`, `user_id`, `group_id`) VALUES
-(1, 1, 1, 1),
 (2, 2, 4, 2);
 
 -- --------------------------------------------------------
@@ -142,8 +141,8 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`id`, `name`, `user_id`) VALUES
-(1, 'Baba', 1),
-(2, 'Tartampion', 4);
+(2, 'Tartampion', 4),
+(6, 'etert', 1);
 
 -- --------------------------------------------------------
 
@@ -156,14 +155,6 @@ CREATE TABLE `group_users` (
   `group_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `group_users`
---
-
-INSERT INTO `group_users` (`id`, `group_id`, `user_id`) VALUES
-(1, 1, 1),
-(2, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -372,7 +363,7 @@ ALTER TABLE `user_file_likes`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `files`
 --
@@ -397,7 +388,7 @@ ALTER TABLE `folder_owners`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `group_users`
 --
