@@ -1,11 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Yannick Grégoire
+ * Date: 15/03/2017
+ * Time: 02:13 PM
+ */
 
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class Subscriptions extends Table
+class SubscriptionsTable extends Table
 {
     public function initialize(array $config)
     {

@@ -1,14 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mathieu Godin
- * Date: 2017-03-06
- * Time: 10:44
- */
+
 namespace App\Controller;
 
 use Cake\ORM\TableRegistry;
-use Symphony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Helper\Table;
 
 class SubscriptionsController extends AppController
 {
@@ -20,13 +15,11 @@ class SubscriptionsController extends AppController
 
     public function index()
     {
-        $subscriptions = $this->Subscriptions->find('all')
-            -> contain (['Users']);;
+        $subscriptions = $this->Subscriptions->find('all');
         $this->set(compact('subscriptions'));
     }
 
-    public function add()
-    {
+    public function add(){
         $subscription = $this->Subscriptions->newEntity();
         if ($this->request->is('post'))
         {
@@ -41,30 +34,24 @@ class SubscriptionsController extends AppController
         }
         $this->set('subscription', $subscription);
         $this->getUsers();
-        $this->getTargetUsers();
+
     }
 
-    public function getUsers()
+    private function getUsers()
     {
         $users_table = TableRegistry::get('Users');
-        $users = $users_table ->  find('list');
-        $this -> set(compact('users'));
+        $users = $users_table->find('list');
+        $this->set(compact('users'));
     }
 
-    public function getTargetUsers()
-    {
-        $users_table = TableRegistry::get('Users');
-        $users = $users_table ->  find('list');
-        $this -> set(compact('users'));
-    }
 
     public function delete($id)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $subscription = $this->Subscriptions->get($id);
-        if($this->Subscriptions->delete($subscription))
-        {
-            $this->Flash->success(__('This subscription ({0}) was deleted', h($id)));
+        $comment= $this->Subscriptions->get($id);
+        if ($this->Comments->delete($comment)) {
+            $this->Flash->success(__('The subscription with id: {0} has been deleted.', h($id
+            )));
             return $this->redirect(['action' => 'index']);
         }
     }
