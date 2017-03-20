@@ -1,5 +1,4 @@
-<h1>Blog
-    Posts</h1>
+<h1>Users List</h1>
 <div
     class="row">
     <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>

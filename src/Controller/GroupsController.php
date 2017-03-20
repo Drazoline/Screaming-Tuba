@@ -35,10 +35,10 @@ class GroupsController extends AppController
             //Valeur a remplacer par l'id de l'utilisateur courrant.
             $group->user_id = $this->current_user_id;
             if ($this->Groups->save($group)) {
-                $this->Flash->success(__('Your group has been saved.'));
+                //$this->Flash->success(__('Your group has been saved.'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('Unable to add your folder.'));
+            //$this->Flash->error(__('Unable to add your folder.'));
         }
         $this->set('group', $group);
     }
@@ -49,10 +49,10 @@ class GroupsController extends AppController
             $group = $this->Groups->patchEntity($group, $this->request->data);
             $group->modified = date("Y-m-d H:i:s");
             if ($this->Groups->save($group)) {
-                $this->Flash->success(__('Your group has been updated.'));
+                //$this->Flash->success(__('Your group has been updated.'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('Unable to update your group.'));
+            //$this->Flash->error(__('Unable to update your group.'));
         }
         $this->set('group', $group);
     }
@@ -62,7 +62,7 @@ class GroupsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $group = $this->Groups->get($id);
         if ($this->Groups->delete($group)) {
-            $this->Flash->success(__('The group with id: {0} has been deleted', h($id)));
+            //$this->Flash->success(__('The group with id: {0} has been deleted', h($id)));
             return $this->redirect(['action' => 'index']);
         }
     }
