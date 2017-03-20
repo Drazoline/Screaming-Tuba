@@ -16,6 +16,8 @@ class CommentsTable extends Table
     public function initialize(array $config)
     {
         $this->addBehavior('Timestamp');
+        $this->belongsTo('Users');
+        $this->belongsTo('Files');
     }
     public function validationDefault(Validator $validator)
     {
