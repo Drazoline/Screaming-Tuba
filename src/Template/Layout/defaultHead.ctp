@@ -67,12 +67,6 @@ $pageTitle = 'Screaming Tuba';
             '/Permissions',
             ['class' => 'button', 'target' => 'index']
         ) ?>
-        <br>
-        <a href="#">Following</a>
-    </div>
-
-    <div id="mySidenavRight">
-        <iframe src="/Screaming-Tuba/groups" class="groups"></iframe>
     </div>
 
 </div>
