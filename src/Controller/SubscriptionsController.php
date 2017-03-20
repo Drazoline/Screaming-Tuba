@@ -15,7 +15,11 @@ class SubscriptionsController extends AppController
 
     public function index()
     {
-        $subscriptions = $this->Subscriptions->find('all');
+        $subscriptions = $this->Subscriptions->find('all')
+        ->contain([
+            'Users',
+            'Users'
+        ]);
         $this->set(compact('subscriptions'));
     }
 

@@ -6,12 +6,10 @@
         <div class="comment-­‐box">
             <div class="comment-­‐content">
                 <div class="caption">
-                    <p>
-                        <?php echo $subscription->user_id; ?>
-                    </p>
-                    <p>
+                    <h5>
+                        <?php echo $subscription->user->name; ?>  followed 
                         <?php echo $subscription->target_id; ?>
-                    </p>
+                    </h5>
                 </div>
             </div>
             <?= $this->Form->postLink(
