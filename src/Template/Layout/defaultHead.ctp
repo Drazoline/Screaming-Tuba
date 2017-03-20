@@ -67,6 +67,11 @@ $pageTitle = 'Screaming Tuba';
             '/Permissions',
             ['class' => 'button', 'target' => 'index']
         ) ?>
+       <?= $this->Html->link(
+           'Subscriptions',
+           '/Subscriptions',
+           ['class' => 'button', 'target' => 'index']
+       ) ?>
     </div>
 
 </div>
