@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Lun 20 Mars 2017 à 12:34
--- Version du serveur :  5.7.14
--- Version de PHP :  5.6.25
+-- Host: 127.0.0.1
+-- Generation Time: Mar 20, 2017 at 01:58 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `screaming_db`
+-- Database: `screaming_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -34,7 +34,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `comments`
+-- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`id`, `text`, `file_id`, `user_id`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `comments` (`id`, `text`, `file_id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `files`
+-- Table structure for table `files`
 --
 
 CREATE TABLE `files` (
@@ -57,7 +57,7 @@ CREATE TABLE `files` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `files`
+-- Dumping data for table `files`
 --
 
 INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`, `title`, `mime`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`, `title`, `mime`) V
 -- --------------------------------------------------------
 
 --
--- Structure de la table `folders`
+-- Table structure for table `folders`
 --
 
 CREATE TABLE `folders` (
@@ -78,7 +78,7 @@ CREATE TABLE `folders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `folders`
+-- Dumping data for table `folders`
 --
 
 INSERT INTO `folders` (`id`, `title`, `visibility`, `folder_image`) VALUES
@@ -88,7 +88,7 @@ INSERT INTO `folders` (`id`, `title`, `visibility`, `folder_image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `folder_files`
+-- Table structure for table `folder_files`
 --
 
 CREATE TABLE `folder_files` (
@@ -98,16 +98,16 @@ CREATE TABLE `folder_files` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `folder_files`
+-- Dumping data for table `folder_files`
 --
 
 INSERT INTO `folder_files` (`id`, `folder_id`, `file_id`) VALUES
-(1, 2, 3);
+(7, 1, 2);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `folder_owners`
+-- Table structure for table `folder_owners`
 --
 
 CREATE TABLE `folder_owners` (
@@ -118,7 +118,7 @@ CREATE TABLE `folder_owners` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `folder_owners`
+-- Dumping data for table `folder_owners`
 --
 
 INSERT INTO `folder_owners` (`id`, `folder_id`, `user_id`, `group_id`) VALUES
@@ -128,7 +128,7 @@ INSERT INTO `folder_owners` (`id`, `folder_id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE `groups` (
@@ -138,7 +138,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `user_id`) VALUES
@@ -148,7 +148,7 @@ INSERT INTO `groups` (`id`, `name`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `group_users`
+-- Table structure for table `group_users`
 --
 
 CREATE TABLE `group_users` (
@@ -158,7 +158,7 @@ CREATE TABLE `group_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `group_users`
+-- Dumping data for table `group_users`
 --
 
 INSERT INTO `group_users` (`id`, `group_id`, `user_id`) VALUES
@@ -168,7 +168,7 @@ INSERT INTO `group_users` (`id`, `group_id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `permissions`
+-- Table structure for table `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -177,7 +177,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `permissions`
+-- Dumping data for table `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `nom`) VALUES
@@ -188,7 +188,7 @@ INSERT INTO `permissions` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `perm_group_users`
+-- Table structure for table `perm_group_users`
 --
 
 CREATE TABLE `perm_group_users` (
@@ -198,7 +198,7 @@ CREATE TABLE `perm_group_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `perm_group_users`
+-- Dumping data for table `perm_group_users`
 --
 
 INSERT INTO `perm_group_users` (`id`, `permission_id`, `group_user_id`) VALUES
@@ -208,7 +208,7 @@ INSERT INTO `perm_group_users` (`id`, `permission_id`, `group_user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `subscriptions`
+-- Table structure for table `subscriptions`
 --
 
 CREATE TABLE `subscriptions` (
@@ -218,7 +218,7 @@ CREATE TABLE `subscriptions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `subscriptions`
+-- Dumping data for table `subscriptions`
 --
 
 INSERT INTO `subscriptions` (`id`, `user_id`, `target_id`) VALUES
@@ -227,7 +227,7 @@ INSERT INTO `subscriptions` (`id`, `user_id`, `target_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -240,7 +240,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `user_image`, `subscription`) VALUES
@@ -253,7 +253,7 @@ INSERT INTO `users` (`id`, `name`, `password`, `email`, `user_image`, `subscript
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user_file_likes`
+-- Table structure for table `user_file_likes`
 --
 
 CREATE TABLE `user_file_likes` (
@@ -263,7 +263,7 @@ CREATE TABLE `user_file_likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `user_file_likes`
+-- Dumping data for table `user_file_likes`
 --
 
 INSERT INTO `user_file_likes` (`id`, `user_id`, `file_id`) VALUES
@@ -272,11 +272,11 @@ INSERT INTO `user_file_likes` (`id`, `user_id`, `file_id`) VALUES
 (3, 5, 2);
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
@@ -284,20 +284,20 @@ ALTER TABLE `comments`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `files`
+-- Indexes for table `files`
 --
 ALTER TABLE `files`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `folders`
+-- Indexes for table `folders`
 --
 ALTER TABLE `folders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `folder_files`
+-- Indexes for table `folder_files`
 --
 ALTER TABLE `folder_files`
   ADD PRIMARY KEY (`id`),
@@ -305,7 +305,7 @@ ALTER TABLE `folder_files`
   ADD KEY `file_id` (`file_id`);
 
 --
--- Index pour la table `folder_owners`
+-- Indexes for table `folder_owners`
 --
 ALTER TABLE `folder_owners`
   ADD PRIMARY KEY (`id`),
@@ -314,14 +314,14 @@ ALTER TABLE `folder_owners`
   ADD KEY `group_id` (`group_id`);
 
 --
--- Index pour la table `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `group_users`
+-- Indexes for table `group_users`
 --
 ALTER TABLE `group_users`
   ADD PRIMARY KEY (`id`),
@@ -329,13 +329,13 @@ ALTER TABLE `group_users`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `permissions`
+-- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `perm_group_users`
+-- Indexes for table `perm_group_users`
 --
 ALTER TABLE `perm_group_users`
   ADD PRIMARY KEY (`id`),
@@ -343,7 +343,7 @@ ALTER TABLE `perm_group_users`
   ADD KEY `group_user_id` (`group_user_id`);
 
 --
--- Index pour la table `subscriptions`
+-- Indexes for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
   ADD PRIMARY KEY (`id`),
@@ -351,13 +351,13 @@ ALTER TABLE `subscriptions`
   ADD KEY `target_id` (`target_id`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `user_file_likes`
+-- Indexes for table `user_file_likes`
 --
 ALTER TABLE `user_file_likes`
   ADD PRIMARY KEY (`id`),
@@ -365,134 +365,100 @@ ALTER TABLE `user_file_likes`
   ADD KEY `File_id` (`file_id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `files`
+-- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
--- AUTO_INCREMENT pour la table `folders`
+-- AUTO_INCREMENT for table `folders`
 --
 ALTER TABLE `folders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT pour la table `folder_files`
+-- AUTO_INCREMENT for table `folder_files`
 --
 ALTER TABLE `folder_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT pour la table `folder_owners`
+-- AUTO_INCREMENT for table `folder_owners`
 --
 ALTER TABLE `folder_owners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT pour la table `group_users`
+-- AUTO_INCREMENT for table `group_users`
 --
 ALTER TABLE `group_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `permissions`
+-- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT pour la table `perm_group_users`
+-- AUTO_INCREMENT for table `perm_group_users`
 --
 ALTER TABLE `perm_group_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `subscriptions`
+-- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT pour la table `user_file_likes`
+-- AUTO_INCREMENT for table `user_file_likes`
 --
 ALTER TABLE `user_file_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- Contraintes pour les tables exportées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `comments`
+-- Constraints for table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `c_file_id_fk` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `c_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Contraintes pour la table `files`
+-- Constraints for table `files`
 --
 ALTER TABLE `files`
   ADD CONSTRAINT `fi_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Contraintes pour la table `folder_files`
+-- Constraints for table `folder_files`
 --
 ALTER TABLE `folder_files`
-  ADD CONSTRAINT `ff_file_id_fk` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `ff_folder_id_fk` FOREIGN KEY (`folder_id`) REFERENCES `folders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_file_id` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`),
+  ADD CONSTRAINT `fk_folder_id` FOREIGN KEY (`folder_id`) REFERENCES `folders` (`id`);
 
 --
--- Contraintes pour la table `folder_owners`
+-- Constraints for table `folder_owners`
 --
 ALTER TABLE `folder_owners`
   ADD CONSTRAINT `fo_folder_id_fk` FOREIGN KEY (`folder_id`) REFERENCES `folders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fo_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fo_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `groups`
---
-ALTER TABLE `groups`
-  ADD CONSTRAINT `g_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `group_users`
---
-ALTER TABLE `group_users`
-  ADD CONSTRAINT `go_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `go_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `perm_group_users`
---
-ALTER TABLE `perm_group_users`
-  ADD CONSTRAINT `pgu_group_user_id_fk` FOREIGN KEY (`group_user_id`) REFERENCES `group_users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `pgu_permission_id_fk` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `subscriptions`
---
-ALTER TABLE `subscriptions`
-  ADD CONSTRAINT `s_target_id` FOREIGN KEY (`target_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `s_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `user_file_likes`
---
-ALTER TABLE `user_file_likes`
-  ADD CONSTRAINT `ufl_file_id_fk` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `ufl_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

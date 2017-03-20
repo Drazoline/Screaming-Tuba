@@ -37,9 +37,36 @@ $pageTitle = 'Screaming Tuba';
 <div>
     <?= $this->Flash->render() ?>
     <div id="mySidenavLeft" class="sidenav sidenav-align">
-        <a href="#">Welcome {User}</a>
-        <a href="#">My account</a>
-        <a href="#">Upload</a>
+       <?= $this->Html->link(
+        'Groups',
+        '/Groups',
+        ['class' => 'button', 'target' => 'index']
+        ) ?>
+        <?= $this->Html->link(
+            'Users',
+            '/Users',
+            ['class' => 'button', 'target' => 'index']
+        ) ?>
+        <?= $this->Html->link(
+            'Comments',
+            '/Comments',
+            ['class' => 'button', 'target' => 'index']
+        ) ?>
+        <?= $this->Html->link(
+            'Files',
+            '/Files',
+            ['class' => 'button', 'target' => 'index']
+        ) ?>
+        <?= $this->Html->link(
+            'Folders',
+            '/Folders',
+            ['class' => 'button', 'target' => 'index']
+        ) ?>
+        <?= $this->Html->link(
+            'Permissions',
+            '/Permissions',
+            ['class' => 'button', 'target' => 'index']
+        ) ?>
         <br>
         <a href="#">Following</a>
     </div>
