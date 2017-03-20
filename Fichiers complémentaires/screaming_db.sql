@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 13 Mars 2017 à 13:02
+-- Généré le :  Lun 20 Mars 2017 à 12:34
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -51,17 +51,18 @@ CREATE TABLE `files` (
   `id` int(11) NOT NULL,
   `data` longblob,
   `times_played` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `mime` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `files`
 --
 
-INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`) VALUES
-(1, NULL, 100, 1),
-(2, NULL, 50, 3),
-(3, NULL, 312, 5);
+INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`, `title`, `mime`) VALUES
+(1, NULL, 100, 1, 'meh', NULL),
+(2, NULL, 50, 3, 'test', NULL);
 
 -- --------------------------------------------------------
 
@@ -72,16 +73,17 @@ INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`) VALUES
 CREATE TABLE `folders` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `visibility` enum('PUBLIC','PRIVATE','GROUP') NOT NULL DEFAULT 'PRIVATE'
+  `visibility` enum('PUBLIC','PRIVATE','GROUP') NOT NULL DEFAULT 'PRIVATE',
+  `folder_image` blob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `folders`
 --
 
-INSERT INTO `folders` (`id`, `title`, `visibility`) VALUES
-(1, 'Test', 'PRIVATE'),
-(2, 'Dossier', 'PRIVATE');
+INSERT INTO `folders` (`id`, `title`, `visibility`, `folder_image`) VALUES
+(1, 'Test', 'PRIVATE', NULL),
+(2, 'Dossier', 'PRIVATE', NULL);
 
 -- --------------------------------------------------------
 
@@ -100,8 +102,7 @@ CREATE TABLE `folder_files` (
 --
 
 INSERT INTO `folder_files` (`id`, `folder_id`, `file_id`) VALUES
-(1, 1, 1),
-(2, 2, 2);
+(1, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -243,9 +244,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `user_image`, `subscription`) VALUES
-(1, 'MarcLabrecheFangirl', 'password', 'marclabrechefangirl@gmail.com', NULL, 0),
+(1, 'MarcLabrecheFangirl', 'password', 'marclabrechefangirl@gmail.com', '', 0),
 (2, 'ApacheHelicopter', 'password', 'apacheHelicopter@gmail.com', NULL, 0),
-(3, 'Drazoline', 'password', 'drazoline@gmail.com', NULL, 0),
+(3, 'DrazolineTest', 'password', 'drazoline@gmail.com', '', 0),
 (4, 'Utahime', 'password', 'utahime@gmail.com', NULL, 0),
 (5, 'Dominaterxrv21', 'password', 'dominaterxrv21@gmail.com', NULL, 0);
 
@@ -376,17 +377,17 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT pour la table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT pour la table `folders`
 --
 ALTER TABLE `folders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `folder_files`
 --
 ALTER TABLE `folder_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `folder_owners`
 --
@@ -396,7 +397,7 @@ ALTER TABLE `folder_owners`
 -- AUTO_INCREMENT pour la table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `group_users`
 --
@@ -406,7 +407,7 @@ ALTER TABLE `group_users`
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `perm_group_users`
 --
@@ -421,7 +422,7 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pour la table `user_file_likes`
 --
