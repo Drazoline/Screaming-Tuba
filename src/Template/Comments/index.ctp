@@ -1,9 +1,7 @@
-<h1>Blog
-    Posts</h1>
-<div
-    class="row">
+<h1>Comment</h1>
+<div class="row">
+  <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
     <?php
-    <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
     if(!empty($comments)): foreach($comments as $comment): ?>
         <div class="comment-­‐box">
             <div class="comment-­‐content">

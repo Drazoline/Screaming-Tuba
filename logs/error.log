@@ -575,3 +575,596 @@ Stack Trace:
 #13 {main}
 
 
+2017-03-15 16:23:50 Error: [PDOException] SQLSTATE[HY000] [1049] Unknown database 'screaming_db'
+Request URL: /groups
+Referer URL: http://localhost/Screaming-Tuba/
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(322): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(439): Cake\Database\Connection->schemaCollection()
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->schema()
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1335): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(963): Cake\ORM\Table->query()
+#12 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(20): Cake\ORM\Table->find('all')
+#13 [internal function]: App\Controller\GroupsController->index()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#25 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#26 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#27 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#28 {main}
+
+
+2017-03-15 19:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Groups could not be found.
+Exception Attributes: array (
+  'class' => 'Groups',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /groups
+Referer URL: http://localhost/Screaming-Tuba/
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-15 19:20:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Groups could not be found.
+Exception Attributes: array (
+  'class' => 'Groups',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /groups
+Referer URL: http://localhost/Screaming-Tuba/
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-15 19:21:04 Error: Fatal Error (1): Call to a member function find() on boolean in [C:\wamp64\www\Screaming-Tuba\src\Controller\MainPageController.php, line 20]
+Request URL: /Screaming-Tuba/MainPage
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2017-03-15 19:21:05 Warning: Headers already sent in C:\wamp64\www\Screaming-Tuba\src\Controller\MainPageController.php:20
+2017-03-15 19:21:05 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /Screaming-Tuba/MainPage
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp64\\www\\S...', 20)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-15 19:23:07 Error: [Cake\Routing\Exception\MissingControllerException] Controller class MainPage could not be found.
+Exception Attributes: array (
+  'class' => 'MainPage',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /MainPage
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-03-18 19:08:03 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'user_id' doesn't have a default value
+Request URL: /groups/add
+Referer URL: http://localhost/Screaming-Tuba/groups/add
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1669): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1563): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1491): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1492): Cake\Database\Connection->transactional(Object(Closure))
+#10 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(31): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#11 [internal function]: App\Controller\GroupsController->add()
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#25 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#26 {main}
+
+
+2017-03-18 19:14:18 Error: Fatal Error (1): Call to a member function find() on boolean in [C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php, line 22]
+Request URL: /Screaming-Tuba/groups
+Referer URL: http://localhost/Screaming-Tuba/
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2017-03-18 19:14:19 Warning: Headers already sent in C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php:22
+2017-03-18 19:14:19 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /Screaming-Tuba/groups
+Referer URL: http://localhost/Screaming-Tuba/
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp64\\www\\S...', 22)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-18 19:14:34 Error: Fatal Error (1): Call to a member function find() on boolean in [C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php, line 22]
+Request URL: /Screaming-Tuba/groups
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2017-03-18 19:14:34 Warning: Headers already sent in C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php:22
+2017-03-18 19:14:34 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /Screaming-Tuba/groups
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'C:\\wamp64\\www\\S...', 22)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-18 19:21:55 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\wamp64\www\Screaming-Tuba\src\Template\Groups\index.ctp, line 74]
+Request URL: /Screaming-Tuba/groups
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2017-03-18 19:21:56 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /Screaming-Tuba/groups
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp64\\www\\S...', 74)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-18 19:39:15 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /groups/add
+Referer URL: http://localhost/Screaming-Tuba/groups/add
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1669): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1563): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1491): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1492): Cake\Database\Connection->transactional(Object(Closure))
+#10 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(35): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#11 [internal function]: App\Controller\GroupsController->add()
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#25 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#26 {main}
+
+
+2017-03-18 19:43:40 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /groups/add
+Referer URL: http://localhost/Screaming-Tuba/groups/add
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1669): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1563): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1491): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1492): Cake\Database\Connection->transactional(Object(Closure))
+#10 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(34): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#11 [internal function]: App\Controller\GroupsController->add()
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#25 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#26 {main}
+
+
+2017-03-18 19:43:44 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /groups/add
+Referer URL: http://localhost/Screaming-Tuba/groups/add
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1669): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1563): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1491): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1492): Cake\Database\Connection->transactional(Object(Closure))
+#10 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(34): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#11 [internal function]: App\Controller\GroupsController->add()
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#25 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#26 {main}
+
+
+2017-03-18 19:45:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /groups/add
+Referer URL: http://localhost/Screaming-Tuba/groups/add
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1669): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1563): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1491): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1492): Cake\Database\Connection->transactional(Object(Closure))
+#10 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(36): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#11 [internal function]: App\Controller\GroupsController->add()
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#25 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#26 {main}
+
+
+2017-03-18 19:45:36 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /groups/add
+Referer URL: http://localhost/Screaming-Tuba/groups/add
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1669): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1563): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1491): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1492): Cake\Database\Connection->transactional(Object(Closure))
+#10 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(36): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#11 [internal function]: App\Controller\GroupsController->add()
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#25 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#26 {main}
+
+
+2017-03-18 19:47:38 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /groups/add
+Referer URL: http://localhost/Screaming-Tuba/groups/add
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1669): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1563): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1491): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1492): Cake\Database\Connection->transactional(Object(Closure))
+#10 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(37): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#11 [internal function]: App\Controller\GroupsController->add()
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#25 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#26 {main}
+
+
+2017-03-19 20:08:57 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\wamp64\www\Screaming-Tuba\src\Template\Comments\index.ctp, line 6]
+Request URL: /Screaming-Tuba/Comments
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2017-03-19 20:09:01 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '<'
+Request URL: /Screaming-Tuba/Comments
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp64\\www\\S...', 6)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2017-03-19 20:15:52 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`screaming_db`.`folder_owners`, CONSTRAINT `fo_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /groups/delete/1
+Referer URL: http://localhost/Screaming-Tuba/groups
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1895): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1826): Cake\ORM\Table->_processDelete(Object(Cake\ORM\Entity), Object(ArrayObject))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1831): Cake\Database\Connection->transactional(Object(Closure))
+#9 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(64): Cake\ORM\Table->delete(Object(Cake\ORM\Entity))
+#10 [internal function]: App\Controller\GroupsController->delete('1')
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#25 {main}
+
+
+2017-03-19 20:16:32 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`screaming_db`.`folder_owners`, CONSTRAINT `fo_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /groups/delete/1
+Referer URL: http://localhost/Screaming-Tuba/groups
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1895): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1826): Cake\ORM\Table->_processDelete(Object(Cake\ORM\Entity), Object(ArrayObject))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1831): Cake\Database\Connection->transactional(Object(Closure))
+#9 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(64): Cake\ORM\Table->delete(Object(Cake\ORM\Entity))
+#10 [internal function]: App\Controller\GroupsController->delete('1')
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#25 {main}
+
+
+2017-03-19 20:18:31 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`screaming_db`.`group_users`, CONSTRAINT `go_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /groups/delete/1
+Referer URL: http://localhost/Screaming-Tuba/groups
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1895): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1826): Cake\ORM\Table->_processDelete(Object(Cake\ORM\Entity), Object(ArrayObject))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1831): Cake\Database\Connection->transactional(Object(Closure))
+#9 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(64): Cake\ORM\Table->delete(Object(Cake\ORM\Entity))
+#10 [internal function]: App\Controller\GroupsController->delete('1')
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#25 {main}
+
+
+2017-03-19 20:19:34 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`screaming_db`.`group_users`, CONSTRAINT `go_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /groups/delete/1
+Referer URL: http://localhost/Screaming-Tuba/groups
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1895): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1826): Cake\ORM\Table->_processDelete(Object(Cake\ORM\Entity), Object(ArrayObject))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1831): Cake\Database\Connection->transactional(Object(Closure))
+#9 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(64): Cake\ORM\Table->delete(Object(Cake\ORM\Entity))
+#10 [internal function]: App\Controller\GroupsController->delete('1')
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#25 {main}
+
+
+2017-03-19 20:19:39 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`screaming_db`.`group_users`, CONSTRAINT `go_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Request URL: /groups/delete/1
+Referer URL: http://localhost/Screaming-Tuba/groups
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(172): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(276): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Query.php(190): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1895): Cake\Database\Query->execute()
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1826): Cake\ORM\Table->_processDelete(Object(Cake\ORM\Entity), Object(ArrayObject))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Database\Connection.php(570): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\ORM\Table.php(1831): Cake\Database\Connection->transactional(Object(Closure))
+#9 C:\wamp64\www\Screaming-Tuba\src\Controller\GroupsController.php(64): Cake\ORM\Table->delete(Object(Cake\ORM\Entity))
+#10 [internal function]: App\Controller\GroupsController->delete('1')
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Controller\Controller.php(435): call_user_func_array(Array, Array)
+#12 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#13 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\GroupsController))
+#14 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#18 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#19 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#20 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#21 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#22 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#23 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#24 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#25 {main}
+
+

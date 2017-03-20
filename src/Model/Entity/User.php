@@ -8,7 +8,7 @@ class User extends Entity
 {
   public function __toString()
   {
-    return $this->_properties['name'];
+    return $this->name;
   }
 }
 

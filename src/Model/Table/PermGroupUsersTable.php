@@ -16,7 +16,10 @@ class PermGroupUsersTable extends Table
     public function initialize(array $config)
     {
         $this->addBehavior('Timestamp');
+        $this->belongsTo('GroupUsers');
+        $this->belongsTo('Permissions');
     }
+
     public function validationDefault(Validator $validator)
     {
         $validator
