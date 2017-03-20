@@ -7,6 +7,8 @@
  */
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
+
 class PermGroupUsersController extends AppController
 {
     public function initialize()
@@ -53,8 +55,8 @@ class PermGroupUsersController extends AppController
     private function setGroupUsers()
     {
       $group_users_table = TableRegistry::get('GroupUsers');
-      $group_users = $group_users_table->find('list');
-      $this->set(compact('group_users'));
+      $groupUsers = $group_users_table->find('list');
+      $this->set(compact('groupUsers'));
     }
 
     public function edit($id = null)
