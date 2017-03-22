@@ -1,14 +1,34 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 1442000
- * Date: 2017-02-27
- * Time: 10:37
- */
 namespace App\Controller;
+
+use App\Controller\AppController;
+use Cake\Event\Event;
 
 class UsersController extends AppController
 {
+  public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow('add', 'logout');
+    }
+
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Flash->error(__('Invalid username or password, try again'));
+        }
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
+    }
+
     public function initialize()
     {
         parent::initialize();
@@ -19,6 +39,12 @@ class UsersController extends AppController
     {
         $users = $this->Users->find('all');
         $this->set(compact('users'));
+    }
+
+    public function view($id)
+    {
+        $user = $this->Users->get($id);
+        $this->set(compact('user'));
     }
 
     public function add()

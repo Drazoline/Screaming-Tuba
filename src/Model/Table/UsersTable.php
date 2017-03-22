@@ -15,9 +15,9 @@ class UsersTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notEmpty('name')
-            ->notEmpty('password')
-            ->notEmpty('email');
+            ->notEmpty('username', __("Please enter a username."))
+            ->notEmpty('password', __('Please enter a password.'))
+            ->notEmpty('email', __('Please enter a valid email'));
         return $validator;
     }
 }

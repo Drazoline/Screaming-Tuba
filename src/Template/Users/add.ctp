@@ -1,12 +1,13 @@
-<h1>Add Folder</h1>
-
-<?php
-    echo $this->Form->create($user);
-    echo $this->Form->input('name');
-    echo $this->Form->input('password');
-    echo $this->Form->input('email');
-    echo $this->Form->input('user_image');
-    echo $this->Form->input('subscription');
-    echo $this->Form->button(__('Save user'));
-    echo $this->Form->end();
-?>
+<div class="users form">
+<?= $this->Form->create($user) ?>
+    <fieldset>
+        <legend><?= __('Add a user') ?></legend>
+        <?= $this->Form->input('username') ?>
+        <?= $this->Form->input('password') ?>
+        <?= $this->Form->input('email') ?>
+        <?= $this->Form->input('user_image') ?>
+        <?= $this->Form->input('subscription') ?>
+    </fieldset>
+<?= $this->Form->button(__('Save user')); ?>
+<?= $this->Form->end() ?>
+</div>
