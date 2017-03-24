@@ -18,7 +18,7 @@ class FilesController extends AppController
         $files = $this->Files->find('all')
             ->contain([
                 'Users'
-            ]);;
+            ]);
         $this->set(compact('files'));
     }
 
