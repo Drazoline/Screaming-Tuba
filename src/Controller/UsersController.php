@@ -107,7 +107,7 @@ class UsersController extends AppController
             $email = new Email();
             $email->transport('mailjet');
 
-            $email->from(['alix.berson@gmail.com' => 'Screaming Tuba'])
+            $email->sender(['tubascreaming@gmail.com' => 'Screaming Tuba'])
               ->to($user->email)
               ->subject('Reset Password')
               ->send($reset_token_link);
