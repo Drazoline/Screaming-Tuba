@@ -107,7 +107,7 @@ class UsersController extends AppController
             $email = new Email();
             $email->transport('mailjet');
 
-            $email->sender(['screaming-tuba@gmail.com' => 'Screaming Tuba'])
+            $email->from(['alix.berson@gmail.com' => 'Screaming Tuba'])
               ->to($user->email)
               ->subject('Reset Password')
               ->send($reset_token_link);
@@ -143,8 +143,8 @@ class UsersController extends AppController
 
                     if ($this->Users->save($user)) {
                         $this->Flash->success('Your password has been changed successfully');
-                        $emaildata = ['name' => $user->first_name, 'email' => $user->email];
-                        $this->getMailer('SendEmail')->send('changePasswordEmail', [$emaildata]); //Send Email functionality
+                        /**$emaildata = ['name' => $user->first_name, 'email' => $user->email];
+                        $this->getMailer('SendEmail')->send('changePasswordEmail', [$emaildata]); //Send Email functionality**/
 
                         $this->redirect(['action' => 'view']);
                     } else {

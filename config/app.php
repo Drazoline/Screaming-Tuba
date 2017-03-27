@@ -176,20 +176,29 @@ return [
      * appropriate file to src/Mailer/Transport. Transports should be named
      * 'YourTransport.php', where 'Your' is the name of the transport.
      */
+
     'EmailTransport' => [
-        'default' => [
-            'className' => 'Mail',
-            // The following keys are used in SMTP transports
-            'host' => 'localhost',
-            'port' => 25,
-            'timeout' => 30,
-            'username' => 'user',
-            'password' => 'secret',
-            'client' => null,
-            'tls' => null,
-            'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
-        ],
+   'default' => [
+     'className' => 'Mail',
+        // The following keys are used in SMTP transports
+        'host' => 'localhost',
+        'port' => 587,
+        'timeout' => 30,
+        'username' => 'user',
+        'password' => 'secret',
+        'client' => null,
+        'tls' => null,
+        'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
     ],
+    'mailjet' => [
+        'host' => 'in-v3.mailjet.com',
+        'port' => 587,
+        'timeout' => 60,
+        'username' => 'a8937e80c866b393009c6679078788d6',
+        'password' => 'c5651e7cd1a40d8174f22f21c56adb56',
+        'className' => 'Smtp'
+    ]
+],
 
     /**
      * Email delivery profiles
@@ -200,6 +209,7 @@ return [
      * easier. Each profile accepts a number of keys. See `Cake\Mailer\Email`
      * for more information.
      */
+
     'Email' => [
         'default' => [
             'transport' => 'default',
@@ -302,27 +312,6 @@ return [
           ],
         ],
 
-        'EmailTransport' => [
-          'default' => [
-            'className' => 'Mail',
-            // The following keys are used in SMTP transports
-            'host' => 'localhost',
-            'port' => 25,
-            'timeout' => 30,
-            'username' => 'user',
-            'password' => 'secret',
-            'client' => null,
-            'tls' => null,
-          ],
-          'mailjet' => [
-            'host' => ' in-v3.mailjet.com',
-            'port' => 25,
-            'timeout' => 60,
-            'username' => 'a8937e80c866b393009c6679078788d6',
-            'password' => 'c5651e7cd1a40d8174f22f21c56adb56',
-            'className' => 'Smtp'
-          ]
-        ],
 
     /**
      * Session configuration.

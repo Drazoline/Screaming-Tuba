@@ -6,6 +6,7 @@
   <?= $this->Flash->render() ?>
   <?= $this->Form->create() ?>
   <img class="logo-img" src="../webroot/img/logo.png" alt="logo" style="align: middle;">
+  <h3 style="text-align:center;">Screaming Tuba</h3>
   <br>
       <fieldset class="login-infos">
           <legend class="legend"><?= __("Sign in") ?></legend>
