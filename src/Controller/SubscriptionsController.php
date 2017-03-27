@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Cake\ORM\TableRegistry;
-use Symfony\Component\Console\Helper\Table;
+use Symphony\Component\Console\Helper\Table;
 
 class SubscriptionsController extends AppController
 {
