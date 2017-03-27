@@ -15,7 +15,11 @@ class SubscriptionsController extends AppController
 
     public function index()
     {
-        $subscriptions = $this->Subscriptions->find('all');
+        $subscriptions = $this->Subscriptions->find('all')
+        ->contain([
+            'Users',
+            'Users'
+        ]);
         $this->set(compact('subscriptions'));
     }
 
@@ -48,8 +52,8 @@ class SubscriptionsController extends AppController
     public function delete($id)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $comment= $this->Subscriptions->get($id);
-        if ($this->Comments->delete($comment)) {
+        $subscription= $this->Subscriptions->get($id);
+        if ($this->Subscriptions->delete($subscription)) {
             $this->Flash->success(__('The subscription with id: {0} has been deleted.', h($id
             )));
             return $this->redirect(['action' => 'index']);

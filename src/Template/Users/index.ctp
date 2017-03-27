@@ -1,22 +1,21 @@
 <h1>Users List</h1>
 <div
     class="row">
-    <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
-    <br>
+    <?= $this->Html->link('Add', ['action' => 'add']) ?>
+    <br><br>
     <?php
     if(!empty($users)): foreach($users as $user): ?>
             <div class="post-­‐box">
                 <div class="post-­‐content">
                     <div class="caption">
                         <h4>
-                            <?php echo $user->name; ?>
+                            <?php echo $user->username; ?>
                         </h4>
-                        <p>
+                        <h5>
                                 <?php echo $user->email; ?>
                                 <?= $this->Html->link('Edit', ['action' => 'edit', $user->id]) ?>
-                                <?= $this->Form->postLink('Delete',['action' =>'delete', $user->id], ['confirm' => 'Are you sure?']) ?>
-                        </p>
-
+                                <?= $this->Form->postLink('Delete',['action' =>'delete', $user->id], ['confirm' => 'Are you sure?']) ?>                        </h5>
+                        <br>
                     </div>
                 </div>
             </div>
