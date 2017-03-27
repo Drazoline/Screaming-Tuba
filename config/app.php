@@ -299,8 +299,30 @@ return [
             'file' => 'error',
             'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
             'url' => env('LOG_ERROR_URL', null),
+          ],
         ],
-    ],
+
+        'EmailTransport' => [
+          'default' => [
+            'className' => 'Mail',
+            // The following keys are used in SMTP transports
+            'host' => 'localhost',
+            'port' => 25,
+            'timeout' => 30,
+            'username' => 'user',
+            'password' => 'secret',
+            'client' => null,
+            'tls' => null,
+          ],
+          'mailjet' => [
+            'host' => ' in-v3.mailjet.com',
+            'port' => 25,
+            'timeout' => 60,
+            'username' => 'a8937e80c866b393009c6679078788d6',
+            'password' => 'c5651e7cd1a40d8174f22f21c56adb56',
+            'className' => 'Smtp'
+          ]
+        ],
 
     /**
      * Session configuration.
