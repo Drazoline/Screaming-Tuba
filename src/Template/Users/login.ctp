@@ -19,7 +19,7 @@
 
           <legend class="legend"><?= __("New User") ?></legend><br><br>
 
-          <a href="/Screaming-Tuba/Users/add" target="add"><img src="../img/signup.png" alt="Signup"></a>
+          <a href="/Screaming-Tuba/Users/addUser" target="addUser"><img src="../img/signup.png" alt="Signup"></a>
       </fieldset>
   </div>
 </body>
