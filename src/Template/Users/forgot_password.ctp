@@ -1,7 +1,7 @@
 <body class="body-login">
 <div class="users form ">
   <img class="logo-img" src="../webroot/img/logo.png" alt="logo" style="align: middle;">
-  <h3 style="text-align:center; color:;">Screaming Tuba</h3>
+  <img class="logo-img" src="../webroot/img/font.gif" alt="logo" style="align: middle;">
   <br>
     <?= $this->Form->create() ?>
     <fieldset class="login-infos">
