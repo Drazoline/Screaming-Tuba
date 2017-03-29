@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 22 Mars 2017 à 01:34
+-- Généré le :  Lun 27 Mars 2017 à 14:55
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -231,19 +231,21 @@ CREATE TABLE `users` (
   `password` varchar(250) NOT NULL,
   `email` varchar(50) NOT NULL,
   `user_image` blob,
-  `subscription` tinyint(4) NOT NULL DEFAULT '0'
+  `subscription` tinyint(4) NOT NULL DEFAULT '0',
+  `password_reset_token` varchar(250) DEFAULT NULL,
+  `hashval` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `user_image`, `subscription`) VALUES
-(1, 'MarcLabrecheFangirl', '$2y$10$73jt5TXF8r2e0oiHUNIbSeMWRXYsP7cBeKazeqY30X9vv9teIkXgC', 'marclabrechefangirl@gmail.com', '', 0),
-(3, 'DrazolineTest', '$2y$10$84vUp/Wyve0YrKaCm.C86eJGZohe2mAaEg2Skgxc0ol8JaH0CFzSe', 'drazoline@gmail.com', '', 0),
-(4, 'Utahime', '$2y$10$BQf6WcQDz.7Brex5ZI/fxODfNmVhWylPtmFnaNm4LW9FBhpL4xgju', 'utahime@gmail.com', '', 0),
-(16, 'ApacheHelicopter', '$2y$10$yhu3BEX44irHX1ykv0dIGurQooBBwayYbrFcmXSsCzdpyQXX0o/OW', 'ApacheHelicopter@gmail.com', '', 0),
-(17, 'Dominaterxrv21 ', '$2y$10$8rHKgSsLjUZs0WmY3ZxDYOUX0F2Cyz4qERY/y8w7L9iiqQlFc8/t2', 'Dominaterxrv21@gmail.com', '', 0);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `user_image`, `subscription`, `password_reset_token`, `hashval`) VALUES
+(1, 'MarcLabrecheFangirl', '$2y$10$73jt5TXF8r2e0oiHUNIbSeMWRXYsP7cBeKazeqY30X9vv9teIkXgC', 'marclabrechefangirl@gmail.com', '', 0, NULL, NULL),
+(3, 'DrazolineTest', '$2y$10$84vUp/Wyve0YrKaCm.C86eJGZohe2mAaEg2Skgxc0ol8JaH0CFzSe', 'drazoline@gmail.com', '', 0, NULL, NULL),
+(4, 'Utahime', '$2y$10$T5GQEWSQ.kbYNXkN20WS3uaoPbaiGE73uolAOqG0zVfiS6cEbulTG', 'alix.berson@gmail.com', '', 0, '0720c1a49899b7aac6c4c44fcae74d96586b1347', '4f91338d92277f21013206bd0b33a80af7bd76b2'),
+(16, 'ApacheHelicopter', '$2y$10$yhu3BEX44irHX1ykv0dIGurQooBBwayYbrFcmXSsCzdpyQXX0o/OW', 'ApacheHelicopter@gmail.com', '', 0, NULL, NULL),
+(17, 'Dominaterxrv21 ', '$2y$10$8rHKgSsLjUZs0WmY3ZxDYOUX0F2Cyz4qERY/y8w7L9iiqQlFc8/t2', 'Dominaterxrv21@gmail.com', '', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -372,7 +374,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT pour la table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `folders`
 --
@@ -397,12 +399,12 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT pour la table `group_users`
 --
 ALTER TABLE `group_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `perm_group_users`
 --
@@ -412,7 +414,7 @@ ALTER TABLE `perm_group_users`
 -- AUTO_INCREMENT pour la table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
