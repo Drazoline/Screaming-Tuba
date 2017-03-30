@@ -9,7 +9,7 @@
                 <div class="post-­‐content">
                     <div class="caption">
                         <h4>
-                            <?php echo $user->username; ?>
+                            <?= $this->Html->link( $user->username, ['action' => 'display_user', $user->id]) ?>
                         </h4>
                         <h5>
                                 <?php echo $user->email; ?>

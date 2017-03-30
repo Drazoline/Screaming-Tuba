@@ -165,4 +165,10 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
       }
     }
+
+    public function displayUser($id)
+    {
+        $user = $this->Users->get($id);
+        $this->set(compact('user'));
+    }
 }
