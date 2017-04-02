@@ -170,5 +170,6 @@ class UsersController extends AppController
     {
         $user = $this->Users->get($id);
         $this->set(compact('user'));
+
     }
 }

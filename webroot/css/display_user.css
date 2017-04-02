@@ -1,0 +1,54 @@
+.Username{
+    font-size: 50px;
+    font-family: Carbon;
+    color: #158891;
+}
+
+.header{
+    height: 200px;
+    background: #afafaf;
+}
+
+.main_display{
+    background: #d3d3d3;
+    height: 1000px;
+    padding: 0;
+}
+
+.top_left{
+    width: 50%;
+    height: 50%;
+    float: left;
+    backgroud: #DDD;
+}
+
+.top_right{
+    width: 50%;
+    height: 50%;
+    float: left;
+    backgroud: #AAA;
+}
+
+.bottom_left{
+    width: 50%;
+    height: 50%;
+    float: left;
+    backgroud: #777;
+}
+
+.bottom_right{
+    width: 50%;
+    height: 50%;
+    float: left;
+    backgroud: #444;
+}
+
+.list{
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+@font-face {
+    font-family: "Carbon";
+    src: url("../webroot/font/carbonbl.ttf");
+}
