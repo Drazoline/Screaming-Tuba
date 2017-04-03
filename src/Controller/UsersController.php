@@ -45,13 +45,7 @@ class UsersController extends AppController
         $this->set(compact('users'));
     }
 
-    public function view($id)
-    {
-        $user = $this->Users->get($id);
-        $this->set(compact('user'));
-    }
-
-    public function add()
+    public function addUser()
     {
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
@@ -104,16 +98,22 @@ class UsersController extends AppController
 
             $reset_token_link = Router::url(['controller' => 'Users', 'action' => 'resetPassword'], TRUE) . '/' . $password_token . '#' . $hashval;
 
-            $email = new Email();
-            $email->transport('mailjet');
+            try {
+              $email = new Email();
+              $email->transport('sendgrid');
 
-            $email->from(['alix.berson@gmail.com' => 'Screaming Tuba'])
-              ->to($user->email)
-              ->subject('Reset Password')
-              ->send($reset_token_link);
+              $email->sender(['tubascreaming@gmail.com' => 'Screaming Tuba'])
+                ->to($user->email)
+                ->subject('Reset Password')
+                ->send($reset_token_link);
 
-            $this->Users->save($user);
-            $this->Flash->success('Please click on password reset link, sent in your email address to reset password.');
+              $this->Users->save($user);
+              $this->Flash->success('Please click on password reset link, sent in your email address to reset password.');
+            }
+            catch(Exception $e) {
+              $this->Flash->error('Try again later.');
+            }
+
           }
           else
           {
@@ -125,11 +125,9 @@ class UsersController extends AppController
 
     public function resetPassword($token = null) {
         if (!empty($token)) {
-
             $user = $this->Users->findByPasswordResetToken($token)->first();
 
             if ($user) {
-
                 if (!empty($this->request->data)) {
                     $user = $this->Users->patchEntity($user, [
                         'password' => $this->request->data['new_password'],
@@ -143,10 +141,7 @@ class UsersController extends AppController
 
                     if ($this->Users->save($user)) {
                         $this->Flash->success('Your password has been changed successfully');
-                        /**$emaildata = ['name' => $user->first_name, 'email' => $user->email];
-                        $this->getMailer('SendEmail')->send('changePasswordEmail', [$emaildata]); //Send Email functionality**/
-
-                        $this->redirect(['action' => 'view']);
+                        $this->redirect(['action' => 'login']);
                     } else {
                         $this->Flash->error('Error changing password. Please try again!');
                     }
@@ -169,5 +164,12 @@ class UsersController extends AppController
         $this->Flash->success(__('The user with id: {0} has been deleted', h($id)));
         return $this->redirect(['action' => 'index']);
       }
+    }
+
+    public function displayUser($id)
+    {
+        $user = $this->Users->get($id);
+        $this->set(compact('user'));
+
     }
 }
