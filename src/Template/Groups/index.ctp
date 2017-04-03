@@ -47,6 +47,7 @@ $this->layout = false;
             <a style="display:block;text-align:center">
                 <?php echo $group->name; ?>
                 <?php echo $group->filename; ?>
+                <?php echo $this->Html->image('../webroot/img/groups/'.$group->filename); ?>
                 <?= $this->Html->link('Edit', ['action' => 'edit', $group->id]) ?>
                 <?= $this->Form->postLink('Delete', ['action' => 'delete', $group->id]) ?>
             </a>
