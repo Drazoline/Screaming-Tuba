@@ -1487,3 +1487,797 @@ Stack Trace:
 #13 {main}
 
 
+2017-04-03 12:20:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:22:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:23:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:24:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:24:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:05 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:07 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/..inherit/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/..inheri/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/..inher/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/..inh/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/..inhe/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/..in/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/..i/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:25:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:26:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:26:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:26:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Webroot could not be found.
+Exception Attributes: array (
+  'class' => 'Webroot',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /webroot/img/background_login.jpg
+Referer URL: http://localhost/Screaming-Tuba/css/style.css
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(92): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 12:51:20 Warning: Warning (2): The use statement with non-compound name 'UIViewTrait' has no effect in [C:\wamp64\www\Screaming-Tuba\src\Template\Users\login.ctp, line 2]
+Request URL: /Screaming-Tuba/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1014
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1014
+Cake\View\View::_render() - CORE\src\View\View.php, line 973
+Cake\View\View::render() - CORE\src\View\View.php, line 597
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 127
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 95
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 90
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-04-03 12:53:30 Warning: Warning (2): The use statement with non-compound name 'UIViewTrait' has no effect in [C:\wamp64\www\Screaming-Tuba\src\Template\Users\login.ctp, line 2]
+Request URL: /Screaming-Tuba/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 146
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1014
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1014
+Cake\View\View::_render() - CORE\src\View\View.php, line 973
+Cake\View\View::render() - CORE\src\View\View.php, line 597
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 127
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 95
+Cake\Http\BaseApplication::__invoke() - CORE\src\Http\BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE\src\Routing\Middleware\RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE\src\Routing\Middleware\AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE\src\Error\Middleware\ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE\src\Http\Runner.php, line 65
+Cake\Http\Runner::run() - CORE\src\Http\Runner.php, line 51
+Cake\Http\Server::run() - CORE\src\Http\Server.php, line 90
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2017-04-03 13:18:20 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::webroot() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'webroot',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /users/webroot/css/bootstrap.css
+Referer URL: http://localhost/Screaming-Tuba/users/login/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 13:18:21 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::webroot() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'webroot',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /users/webroot/css/font-awesome.css
+Referer URL: http://localhost/Screaming-Tuba/users/login/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 13:18:21 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::webroot() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'webroot',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /users/webroot/img/logo.png
+Referer URL: http://localhost/Screaming-Tuba/users/login/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 13:18:22 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::webroot() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'webroot',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /users/webroot/img/font.gif
+Referer URL: http://localhost/Screaming-Tuba/users/login/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 13:18:22 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::img() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'img',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /users/img/signup.png
+Referer URL: http://localhost/Screaming-Tuba/users/login/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(121): Cake\Controller\Controller->invokeAction()
+#1 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(95): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#2 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#4 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#5 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#6 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#7 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#8 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#9 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Http\Server.php(90): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#12 C:\wamp64\www\Screaming-Tuba\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-03 13:42:17 Error: Fatal Error (4): syntax error, unexpected '?>' in [C:\wamp64\www\Screaming-Tuba\src\Template\Users\login.ctp, line 24]
+Request URL: /Screaming-Tuba/users/login
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 98
+[main] - [internal], line ??
+
+
+
+2017-04-03 13:42:17 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '?>'
+Request URL: /Screaming-Tuba/users/login
+Stack Trace:
+#0 C:\wamp64\www\Screaming-Tuba\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(98): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'C:\\wamp64\\www\\S...', 24)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

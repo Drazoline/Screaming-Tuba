@@ -32,6 +32,16 @@ $cakeDescription = 'Screaming Tuba';
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../webroot/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../webroot/css/bootstrap.css"/>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="https://use.fontawesome.com/885f761feb.js"></script>
+    <script src="../../js/dynamic_input_form.js"></script>
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
