@@ -29,9 +29,30 @@ class GroupsController extends AppController
     {
         $group = $this->Groups->newEntity();
         if ($this->request->is('post')) {
+            //uploadstart
+            $file = $this->request->data['fileExt']; //put the data into a var for easy use
+
+            $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
+            $arr_ext = array('jpg', 'jpeg', 'png'); //set allowed extensions
+            $setNewFileName = time() . "_" . rand(000000, 999999);
+
+            if (in_array($ext, $arr_ext)) {
+                //do the actual uploading of the file. First arg is the tmp name, second arg is
+                //where we are putting it
+                move_uploaded_file($file['tmp_name'], WWW_ROOT . '/img/groups/' . $setNewFileName . '.' . $ext);
+
+                //prepare the filename for database entry
+                $imageFileName = $setNewFileName . '.' . $ext;
+           }
+
+
+
+            //uploadend
+
             $group = $this->Groups->patchEntity($group, $this->request->data);
             $group->created = date("Y-m-d H:i:s");
             $group->modified = date("Y-m-d H:i:s");
+            $group->filename= $imageFileName;
             //Valeur a remplacer par l'id de l'utilisateur courrant.
             $group->user_id = $this->current_user_id;
             if ($this->Groups->save($group)) {
