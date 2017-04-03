@@ -37,25 +37,30 @@ $this->layout = false;
 <body>
 <div
     class="row">
-    <div id="groups">
-        <a style="display:block;text-align:center">My Groups</a>
 
-        <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
+
+    <div class="groups">
+        <a id="title-center" style="align-content: center">My Groups</a>
 
         <?php
         if(!empty($groups)): foreach($groups as $group): ?>
-            <a style="display:block;text-align:center">
-                <?php echo $group->name; ?>
-                <?php echo $group->filename; ?>
-                <?php echo $this->Html->image('../webroot/img/groups/'.$group->filename); ?>
-                <?= $this->Html->link('Edit', ['action' => 'edit', $group->id]) ?>
-                <?= $this->Form->postLink('Delete', ['action' => 'delete', $group->id]) ?>
+            <a>
+                <div class="group">
+                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle', 'width' => '60', 'height' => '60')); ?>
+                    <p style="float: right"><?php echo $group->name; ?></p>
+                </div>
             </a>
             <?php
         endforeach;
+
         else: ?>
             <a style="display:block;text-align:center">You have no groups</a>
         <?php endif; ?>
+
+        <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
+    </div>
+    <div>
+
     </div>
 </div>
 </body>
