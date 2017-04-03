@@ -46,6 +46,7 @@ $this->layout = false;
         if(!empty($groups)): foreach($groups as $group): ?>
             <a style="display:block;text-align:center">
                 <?php echo $group->name; ?>
+                <?php echo $group->filename; ?>
                 <?= $this->Html->link('Edit', ['action' => 'edit', $group->id]) ?>
                 <?= $this->Form->postLink('Delete', ['action' => 'delete', $group->id]) ?>
             </a>
