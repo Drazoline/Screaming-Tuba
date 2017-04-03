@@ -20,7 +20,7 @@ $this->assign('title', __("Login"));
 
       <legend class="legend"><?= __("New User") ?></legend><br><br><br>
 
-      <a href="/Screaming-Tuba/Users/addUser" target="addUser"><button class="btn-info btn-login"><?= __('Sign up') ?></button></a>
+      <a href="/Screaming-Tuba/Users/addUser" target="_self"><button type="button" class="btn-info btn-login" ><?= __('Sign up') ?></button></a>
     </fieldset>
   </div>
 </body>
