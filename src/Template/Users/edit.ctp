@@ -3,12 +3,13 @@
         move_uploaded_file($_FILES['file']['tmp_name'],$_FILES['file'],['name']);
     }*/?>
 <div class="users form">
-<?= $this->Form->create($user) ?>
+<?= $this->Form->create($user, ['type' => 'file']) ?>
     <fieldset>
         <legend><?= __('Edit a user') ?></legend>
         <?= $this->Form->input('username') ?>
         <?= $this->Form->input('password') ?>
         <?= $this->Form->input('email') ?>
+        <?= $this->Form->input('fileExt') ?>
         <!--<form actions="" method="post" enctype="multipart/form-data">
             <input type="file" name="file">
             <input type="submit" name="submit">
