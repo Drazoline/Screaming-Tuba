@@ -40,14 +40,14 @@ $this->layout = false;
 
 
     <div class="groups">
-        <a id="title-center" style="align-content: center">My Groups</a>
+        <a id="title-center" style="align-content: center; text-align: center;">My Groups</a>
 
         <?php
         if(!empty($groups)): foreach($groups as $group): ?>
             <a>
                 <div class="group">
-                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle', 'width' => '60', 'height' => '60')); ?>
-                    <p style="float: right"><?php echo $group->name; ?></p>
+                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle','margin'=>'auto', 'width' => '60', 'height' => '60', 'vertical-align' =>'middle')); ?>
+                    <p style="float: right; margin:auto;"> <?php echo $group->name; ?></p>
                 </div>
             </a>
             <?php
