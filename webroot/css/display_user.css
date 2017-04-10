@@ -1,52 +1,101 @@
 .Username{
     font-size: 50px;
     font-family: Carbon;
-    color: #158891;
+    color: #135a63;
+}
+
+img{
+    width: 200px;
+    display: block;
+    border-radius: 50%;
+    margin:auto;
 }
 
 .header{
-    height: 200px;
-    background: #afafaf;
+    padding: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    height: auto;
+    background: #808080;
+    -webkit-box-shadow: 0px 3px 5px rgba(85, 85, 85, 0.49);
+    -moz-box-shadow:    0px 3px 5px rgba(85, 85, 85, 0.49);
+    box-shadow:         0px 3px 5px rgba(85, 85, 85, 0.49);
 }
 
 .main_display{
-    background: #d3d3d3;
-    height: 1000px;
-    padding: 0;
+    height: 100%;
+    height: 100%;
+    padding: 10px;
 }
 
 .top_left{
-    width: 50%;
-    height: 50%;
+    width: 45%;
+    height: 300px;
     float: left;
-    backgroud: #DDD;
+    border:2px groove #616161;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    background: #afafaf;
+    padding:15px;
+    margin-top: 10px;
+    margin-left: 50px;
 }
 
 .top_right{
-    width: 50%;
-    height: 50%;
-    float: left;
-    backgroud: #AAA;
+    width: 45%;
+    height: 300px;
+    float: right;
+    border:2px groove #616161;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    background: #afafaf;
+    padding:15px;
+    margin-top: 10px;
+    margin-right: 50px;
 }
 
 .bottom_left{
-    width: 50%;
-    height: 50%;
+    width: 45%;
+    height: 300px;
     float: left;
-    backgroud: #777;
+    border:2px groove #616161;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    background: #afafaf;
+    padding:15px;
+    margin-top: 10px;
+    margin-left: 50px;
 }
 
 .bottom_right{
-    width: 50%;
-    height: 50%;
-    float: left;
-    backgroud: #444;
+    width: 45%;
+    height: 300px;
+    float: right;
+    border:2px groove #616161;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    background: #afafaf;
+    padding:15px;
+    margin-top: 10px;
+    margin-right: 50px;
 }
 
 .list{
     overflow-y: scroll;
     overflow-x:hidden;
 }
+
+.settings{
+    background-image: '../webroot/img/Settings.png' ;
+    height: 40px;
+    width: 40px;
+}
+
 
 @font-face {
     font-family: "Carbon";

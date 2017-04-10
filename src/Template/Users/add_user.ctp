@@ -17,7 +17,7 @@ $this->assign('title', __("Sign Up"));
                 <button type="submit" class="btn-info btn-login" ><?= __('Sign up') ?></button>
                 <?= $this->Form->end() ?>
                 <legend class="legend"><?= __("Already a user?") ?></legend><br><br><br>
-                <a href="/Screaming-Tuba/Users/login" target="add"><button class="btn-info btn-login" ><?= __('Sign in') ?></button></a>
+                <a href="/Screaming-Tuba/Users/login" target="_self"><button class="btn-info btn-login" ><?= __('Sign in') ?></button></a>
             </fieldset>
     </div>
 </body>

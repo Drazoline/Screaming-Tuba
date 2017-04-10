@@ -13,6 +13,8 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+\Cake\Core\Plugin::load('BootstrapUI');
+
 /*
  * You can remove this if you are confident that your PHP version is sufficient.
  */

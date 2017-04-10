@@ -39,7 +39,7 @@ $cakeDescription = 'Screaming Tuba';
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../webroot/css/font-awesome.css"/>
     <link rel="stylesheet" href="../webroot/css/bootstrap.css"/>
-    <script src="../webroot./js/bootstrap.js"></script>
+    <script src="../webroot/js/bootstrap.js"></script>
     <script src="https://use.fontawesome.com/885f761feb.js"></script>
     <script src="../webroot/js/dynamic_input_form.js"></script>
 </head>

@@ -10,6 +10,7 @@ use Cake\Mailer\Email;
 
 class UsersController extends AppController
 {
+
   public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -64,7 +65,25 @@ class UsersController extends AppController
     public function edit($id = null)
     {
       $user = $this->Users->get($id);
-      if ($this->request->is(['post', 'put'])) {
+      if ($this->request->is(['post', 'put'])) {//uploadstart
+          $file = $this->request->data['fileExt']; //put the data into a var for easy use
+
+          $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
+          $arr_ext = array('jpg', 'jpeg', 'png'); //set allowed extensions
+          $setNewFileName = time() . "_" . rand(000000, 999999);
+
+          if (in_array($ext, $arr_ext)) {
+              //do the actual uploading of the file. First arg is the tmp name, second arg is
+              //where we are putting it
+              move_uploaded_file($file['tmp_name'], WWW_ROOT . '/img/profile/' . $setNewFileName . '.' . $ext);
+
+              //prepare the filename for database entry
+              $imageFileName = $setNewFileName . '.' . $ext;
+          }
+
+
+
+          //uploadend
         $user = $this->Users->patchEntity($user, $this->request->data);
         $user->modified = date("Y-m-d H:i:s");
         if ($this->Users->save($user)) {
@@ -73,7 +92,9 @@ class UsersController extends AppController
         }
         $this->Flash->error(__('Unable to update your user.'));
       }
+      $user->user_image= $imageFileName;
       $this->set('user', $user);
+
     }
 
     public function forgotPassword()
@@ -170,6 +191,8 @@ class UsersController extends AppController
     {
         $user = $this->Users->get($id);
         $this->set(compact('user'));
+        //$currentUser = $this->Auth->getUser($user);
+        //$this->set(compact('currentUser'));
 
     }
 }
