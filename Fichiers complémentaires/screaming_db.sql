@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
+-- version 4.5.5.1
+-- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 10 Avril 2017 à 13:42
--- Version du serveur :  5.7.14
--- Version de PHP :  5.6.25
+-- Généré le :  Lun 10 Avril 2017 à 16:23
+-- Version du serveur :  5.7.11
+-- Version de PHP :  5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -234,7 +234,10 @@ CREATE TABLE `users` (
   `username` varchar(20) NOT NULL,
   `password` varchar(250) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `user_image` blob,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `birthdate` date DEFAULT NULL,
+  `user_image` varchar(255) DEFAULT NULL,
   `subscription` tinyint(4) NOT NULL DEFAULT '0',
   `hashval` varchar(250) DEFAULT NULL,
   `password_reset_token` varchar(250) DEFAULT NULL
@@ -244,12 +247,12 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `user_image`, `subscription`, `hashval`, `password_reset_token`) VALUES
-(1, 'MarcLabrecheFangirl', '$2y$10$73jt5TXF8r2e0oiHUNIbSeMWRXYsP7cBeKazeqY30X9vv9teIkXgC', 'marclabrechefangirl@gmail.com', '', 0, NULL, NULL),
-(3, 'DrazolineTest', '$2y$10$84vUp/Wyve0YrKaCm.C86eJGZohe2mAaEg2Skgxc0ol8JaH0CFzSe', 'drazoline@gmail.com', '', 0, NULL, NULL),
-(4, 'Utahime', '$2y$10$BQf6WcQDz.7Brex5ZI/fxODfNmVhWylPtmFnaNm4LW9FBhpL4xgju', 'utahime@gmail.com', '', 0, NULL, NULL),
-(16, 'ApacheHelicopter', '$2y$10$yhu3BEX44irHX1ykv0dIGurQooBBwayYbrFcmXSsCzdpyQXX0o/OW', 'ApacheHelicopter@gmail.com', '', 0, NULL, NULL),
-(17, 'Dominaterxrv21 ', '$2y$10$8rHKgSsLjUZs0WmY3ZxDYOUX0F2Cyz4qERY/y8w7L9iiqQlFc8/t2', 'Dominaterxrv21@gmail.com', '', 0, NULL, NULL);
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `first_name`, `last_name`, `birthdate`, `user_image`, `subscription`, `hashval`, `password_reset_token`) VALUES
+(1, 'MarcLabrecheFangirl', '$2y$10$73jt5TXF8r2e0oiHUNIbSeMWRXYsP7cBeKazeqY30X9vv9teIkXgC', 'marclabrechefangirl@gmail.com', 'Marc', 'Labrèche', '1969-02-10', '', 0, NULL, NULL),
+(3, 'DrazolineTest', '$2y$10$84vUp/Wyve0YrKaCm.C86eJGZohe2mAaEg2Skgxc0ol8JaH0CFzSe', 'drazoline@gmail.com', 'Yannick', 'Grégoire', '1997-02-21', '', 0, NULL, NULL),
+(4, 'Utahime', '$2y$10$BQf6WcQDz.7Brex5ZI/fxODfNmVhWylPtmFnaNm4LW9FBhpL4xgju', 'utahime@gmail.com', 'Alix', 'Berson', '1993-03-10', '', 0, NULL, NULL),
+(16, 'ApacheHelicopter', '$2y$10$yhu3BEX44irHX1ykv0dIGurQooBBwayYbrFcmXSsCzdpyQXX0o/OW', 'ApacheHelicopter@gmail.com', 'Benoite', 'Brindacier', '2001-09-11', '', 0, NULL, NULL),
+(17, 'Dominaterxrv21 ', '$2y$10$8rHKgSsLjUZs0WmY3ZxDYOUX0F2Cyz4qERY/y8w7L9iiqQlFc8/t2', 'Dominaterxrv21@gmail.com', 'Mathieu', 'Godin', '1996-12-13', '', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
