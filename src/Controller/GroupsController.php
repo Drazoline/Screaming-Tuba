@@ -20,7 +20,7 @@ class GroupsController extends AppController
     public function index()
     {
         $groups = $this->Groups->find('all', array(
-            'conditions' => array('Groups.user_id' => $this->current_user_id)
+            'conditions' => array('Groups.user_id' => $this->Auth->user('id'))
         ));
         $this->set(compact('groups'));
     }
@@ -54,7 +54,7 @@ class GroupsController extends AppController
             $group->modified = date("Y-m-d H:i:s");
             $group->filename= $imageFileName;
             //Valeur a remplacer par l'id de l'utilisateur courrant.
-            $group->user_id = $this->current_user_id;
+            $group->user_id = $this->Auth->user('id');;
             if ($this->Groups->save($group)) {
                 //$this->Flash->success(__('Your group has been saved.'));
                 return $this->redirect(['action' => 'index']);
