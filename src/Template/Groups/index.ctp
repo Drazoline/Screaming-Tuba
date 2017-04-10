@@ -47,7 +47,7 @@ $this->layout = false;
             <a>
                 <div class="group">
                     <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle','margin'=>'auto', 'width' => '60', 'height' => '60', 'vertical-align' =>'middle')); ?>
-                    <p style="float: right; margin:auto;"> <?php echo $group->name; ?></p>
+                    <p style=" margin:auto;"> <?php echo $group->name; ?></p>
                 </div>
             </a>
             <?php
