@@ -23,6 +23,7 @@ class GroupsController extends AppController
             'conditions' => array('Groups.user_id' => $this->Auth->user('id'))
         ));
         $this->set(compact('groups'));
+
     }
 
     public function add()

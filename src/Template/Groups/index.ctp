@@ -36,6 +36,20 @@ $this->layout = false;
 
 </head>
 <body>
+<div class="menus">
+    <a>
+        Welcome user<br>
+    </a>
+    <a>
+        My account<br>
+    </a>
+    <a>
+        Upload<br>
+    </a>
+    <a>
+        Following<br>
+    </a>
+</div>
 <div
     class="row">
 
@@ -61,7 +75,46 @@ $this->layout = false;
         $this->Html->image('../webroot/img/add_icon.png', array('class' => 'img-circle')), ['action' => 'add'], array('escape' => false)
         ); ?>
     </div>
-    <div>
+
+    <div id="contents">
+        <div>
+            <div id="title-group" class="title-group">Je me Babamuse</div>
+            <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle-title')); ?>
+        </div>
+        <div>
+        <div class="stat-members">
+            <div id="members-wrap" class="categories">
+                <h3><?= __('Members')?></h3>
+                <div class="categories-content" >
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="members-wrap" class="categories">
+                <h3><?= __('Stats')?></h3>
+                <div class="categories-content" >
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <h3><?= __('Projects')?></h3>
+            <div class="categories-content" style="display: inline-block;">
+                <ul>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </ul>
+            </div>
+        </div>
+        </div>
 
     </div>
 </div>
