@@ -15,6 +15,7 @@
 
 $pageTitle = 'Screaming Tuba';
 $this->layout = false;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,14 +41,14 @@ $this->layout = false;
 
 
     <div class="groups">
-        <a id="title-center" style="align-content: center; text-align: center;">My Groups</a>
+        <a id="title-center" style="align-content: center; text-align: center;">Groups</a>
 
         <?php
         if(!empty($groups)): foreach($groups as $group): ?>
             <a>
                 <div class="group">
-                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle','margin'=>'auto', 'width' => '60', 'height' => '60', 'vertical-align' =>'middle')); ?>
-                    <p style=" margin:auto;"> <?php echo $group->name; ?></p>
+                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle')); ?>
+                    <!--<p style=" margin:auto;"> <?php echo $group->name; ?></p>-->
                 </div>
             </a>
             <?php
@@ -56,8 +57,9 @@ $this->layout = false;
         else: ?>
             <a style="display:block;text-align:center">You have no groups</a>
         <?php endif; ?>
-
-        <?= $this->Html->link('Ajouter', ['action' => 'add']) ?>
+        <?php echo $this->Html->link(
+        $this->Html->image('../webroot/img/add_icon.png', array('class' => 'img-circle')), ['action' => 'add'], array('escape' => false)
+        ); ?>
     </div>
     <div>
 
