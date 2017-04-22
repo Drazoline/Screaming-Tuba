@@ -10,6 +10,9 @@
     border-radius: 50%;
     display: block;
     margin: auto;
+    width: 60px;
+    height: 60px;
+    vertical-align:middle;
 }
 
 body {
@@ -46,23 +49,26 @@ body {
 }
 .group{
     text-align: center;
-    border: 1px solid black;
-    display: inline-block;
-    padding: 12px 12px 12px 12px;
-    
-
+    //border: 1px solid black;
+    padding: 4px 4px 4px 4px;
+    overflow: hidden;
+    transition: 0.3s
+}
+.group:hover {
+    border-radius: 30%;
+    background-color: #c9c9c9;
 }
 
 .groups a {
-    padding: 12px 12px 12px 12px;
+    padding: 4px 4px 0px 4px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
-    transition: 0.3s;
-    align-content: center;
-    text-align: center;
+    transition: 0.3s
 }
+
+
 
 
 @media screen and (max-height: 450px) {
