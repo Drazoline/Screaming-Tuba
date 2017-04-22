@@ -92,7 +92,7 @@ class UsersController extends AppController
         }
         $this->Flash->error(__('Unable to update your user.'));
       }
-      $user->user_image= $imageFileName;
+      $user->user_image = $imageFileName;
       $this->set('user', $user);
 
     }
@@ -191,8 +191,8 @@ class UsersController extends AppController
     {
         $user = $this->Users->get($id);
         $this->set(compact('user'));
-        //$currentUser = $this->Auth->getUser($user);
-        //$this->set(compact('currentUser'));
+        $currentUser = $this->Auth->user('id');
+        $this->set(compact('currentUser'));
 
     }
 }
