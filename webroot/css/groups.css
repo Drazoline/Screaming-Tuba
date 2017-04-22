@@ -14,6 +14,37 @@
     height: 60px;
     vertical-align:middle;
 }
+.img-circle-title {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    padding-top: 5px;
+}
+.categories {
+    padding: 0px 10px 10px 20px;
+    flex: 100px 1 0;
+}
+
+.projects {
+    padding: 0px 10px 10px 20px;
+    display: inline-block;
+}
+.projects h3 {
+    text-align: center;
+}
+.categories-content {
+    border: 1px solid #ccc!important;
+}
+.categories-content li{
+    padding-right: 25px !important;
+    padding-bottom: 5px;
+}
+.categories h3 {
+    text-align: center;
+}
 
 body {
     overflow:hidden;
@@ -47,6 +78,37 @@ body {
     border: 1px solid #ccc!important;
     height: 800px;
 }
+
+.menus {
+    float: left;
+    border: 1px solid #ccc!important;
+    height: 800px;
+}
+.menus a {
+    text-align: center;
+    padding: 8px 8px 0px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+.stat-members {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 20%;
+}
+.contents {
+    border: 1px solid #ccc!important;
+    background-color: red;
+}
+.title-group{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+
+}
 .group{
     text-align: center;
     //border: 1px solid black;
@@ -60,7 +122,7 @@ body {
 }
 
 .groups a {
-    padding: 4px 4px 0px 4px;
+    padding: 8px 8px 0px 8px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
