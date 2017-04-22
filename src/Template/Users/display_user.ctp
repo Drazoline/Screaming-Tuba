@@ -2,9 +2,9 @@
 $pageTitle = 'Screaming Tuba : '.$user->username;
 $this->layout = false;
 $db =  mysqli_connect("localhost","root","","screaming_db");
-?>
+?><html>
 <!DOCTYPE html>
-<html>
+
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,13 +34,34 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
 
         <?php endif ?>
         <h1 class="Username" style="display:block;text-align:center"><?php echo $user->username ?></h1>
-        <!--<a><?/*= $this->Html->link( ($this->Html->image('../webroot/img/Settings.png')), ['action' => 'edit', $user->id]) */?></a>-->
-        <?php
 
-/*            if( ){
+        <?php if($currentUser == $user->id) :?>
+        <!--<a><?/*= $this->Html->link( ($this->Html->image('../webroot/img/Settings.png')), ['action' => 'edit', $user->id]) */?></a>-->
+        <?php else:?>
+            <?php
+
+            echo "<form action='' method='post'> <input type='submit' name='btnSubscribe' value='Subscribe' class='subscribe'/> </form>";
+
+            if(isset($_POST['btnSubscribe']))
+            {
+                $sql = "SELECT id FROM subscriptions WHERE subscriptions.user_id = $currentUser AND subscriptions.target_id = $user->id";
+                $sth = $db->query($sql);
+                if(mysqli_num_rows($sth)!=0){
+                    $sql = "DELETE FROM subscriptions WHERE subscriptions.user_id = $currentUser AND subscriptions.target_id = $user->id";
+                    $db->query($sql);
+                    echo "delete $currentUser et $user->id";
+                }
+                Else{
+                    $sql = "INSERT INTO subscriptions VALUES (DEFAULT, $currentUser, $user->id)";
+                    $db->query($sql);
+                    echo "insert $currentUser et $user->id";
+                }
+
 
             }
-        echo $_SESSION['USERID']*/?>
+
+            ?>
+        <?php endif ?>
     </div>
     <div class="main_display">
         <div class="row">
