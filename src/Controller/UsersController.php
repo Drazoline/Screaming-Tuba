@@ -80,19 +80,16 @@ class UsersController extends AppController
               //prepare the filename for database entry
               $imageFileName = $setNewFileName . '.' . $ext;
           }
-
-
-
           //uploadend
         $user = $this->Users->patchEntity($user, $this->request->data);
         $user->modified = date("Y-m-d H:i:s");
+        $user->user_image = $imageFileName;
         if ($this->Users->save($user)) {
           $this->Flash->success(__('Your user has been updated.'));
           return $this->redirect(['action' => 'index']);
         }
         $this->Flash->error(__('Unable to update your user.'));
       }
-      $user->user_image = $imageFileName;
       $this->set('user', $user);
 
     }
