@@ -1,10 +1,7 @@
 <?php
 $pageTitle = 'Screaming Tuba : '.$user->username;
 $this->layout = false;
-$db =  mysqli_connect("localhost","root","","screaming_db");
-    if(isset($_POST['submit'])){
-        move_uploaded_file($_FILES['file']['tmp_name'],$_FILES['file'],['name']);
-    }?>
+$db =  mysqli_connect("localhost","root","","screaming_db");?>
 <html>
 <head>
     <?= $this->Html->charset() ?>
@@ -37,19 +34,14 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
     </div>
         <div class="users form">
             <?= $this->Form->create($user, ['type' => 'file']) ?>
-            <fieldset>
+            <fieldset class="user_edit_form">
                 <legend><?= __('Edit a user') ?></legend>
-                <
-                <?php echo $user->first_name; ?>
+                <?php echo "FirstName: "; echo $user->first_name; ?>
                 <br/>
-                <?php echo $user->last_name; ?>
+                <?php echo "LastName: "; echo $user->last_name; ?>
                 <?= $this->Form->input('password') ?>
                 <?= $this->Form->input('email') ?>
-                <?= $this->Form->input('fileExt') ?>
-                <form actions="" method="post" enctype="multipart/form-data">
-                    <input type="file" name="file">
-                    <input type="submit" name="submit">
-                </form>
+                <?= $this->Form->file('fileExt') ?>
                 <?= $this->Form->input('subscription') ?>
             </fieldset>
             <?= $this->form->button(__('Save User')) ?>
