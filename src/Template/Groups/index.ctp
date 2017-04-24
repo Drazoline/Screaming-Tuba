@@ -38,7 +38,8 @@ $this->layout = false;
 <body>
 <div class="menus">
     <a>
-        Welcome user<br>
+        Welcome <br>
+        <?php echo $this->request->session()->read('Auth.User.username') ?><br><br>
     </a>
     <a>
         My account<br>
@@ -79,7 +80,7 @@ $this->layout = false;
     <div id="contents">
         <div>
             <div id="title-group" class="title-group">Je me Babamuse</div>
-            <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle-title')); ?>
+            <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle-title img-top')); ?>
         </div>
         <div>
         <div class="stat-members">
@@ -87,9 +88,9 @@ $this->layout = false;
                 <h3><?= __('Members')?></h3>
                 <div class="categories-content" >
                     <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
+                        <li>Marcus_Babounne</li>
+                        <li>Bâtisse</li>
+                        <li>Grompiette</li>
                     </ul>
                 </div>
             </div>
@@ -97,16 +98,16 @@ $this->layout = false;
                 <h3><?= __('Stats')?></h3>
                 <div class="categories-content" >
                     <ul>
-                        <li>Coffee</li>
-                        <li>Tea</li>
-                        <li>Milk</li>
+                        <li>Blablabla</li>
+                        <li>Test</li>
+                        <li>Lol</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="projects">
             <h3><?= __('Projects')?></h3>
-            <div class="categories-content" style="display: inline-block;">
+            <div class="categories-content projects-content" style="display: inline-block;">
                 <ul>
                     <li>Coffee</li>
                     <li>Tea</li>
