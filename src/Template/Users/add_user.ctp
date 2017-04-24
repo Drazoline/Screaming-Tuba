@@ -12,6 +12,8 @@ $this->assign('title', __("Sign Up"));
                 <legend class="legend"><?= __('Sign Up') ?></legend>
                 <?= $this->Form->input('username', array('style'=>'font-size: 11px; height:30px')) ?>
                 <?= $this->Form->input('password', array('style'=>'font-size: 11px; height:30px')) ?>
+                <?= $this->Form->input('first_name', array('style'=>'font-size: 11px; height:30px')) ?>
+                <?= $this->Form->input('last_name', array('style'=>'font-size: 11px; height:30px')) ?>
                 <?= $this->Form->input('email', array('style'=>'font-size: 11px; height:30px')) ?>
                 <br>
                 <button type="submit" class="btn-info btn-login" ><?= __('Sign up') ?></button>
