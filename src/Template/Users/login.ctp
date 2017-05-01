@@ -15,7 +15,7 @@ $this->assign('title', __("Login"));
       <?= $this->Form->input('password', array('style'=>'font-size: 11px; height:30px')) ?>
       <?= $this->Html->link("Forgot Password?",['controller'=>'Users','action'=>'forgotPassword'], array('style'=>'font-size: 10px; height:20px; margin-left: 64%;'));?>
       <br>
-      <button type="submit" class="btn-info btn-login" ><?= __('Login') ?></button>
+      <button type="submit" class="btn-info btn-login" ><?= __('Sign In') ?></button>
       <?= $this->Form->end() ?>
 
       <legend class="legend"><?= __("New User") ?></legend><br><br><br>

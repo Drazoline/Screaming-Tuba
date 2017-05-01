@@ -4,11 +4,25 @@
     color: #135a63;
 }
 
-img{
-    width: 200px;
+.smallimg{
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    margin:auto;
+    float: left;
+    margin-right: 5px;
+}
+
+.bigimg{
+    width: 10vw;
+    height: 10vw;
     display: block;
     border-radius: 50%;
     margin:auto;
+}
+
+.scrolllist{
+    overflow-y: auto;
 }
 
 .header{
@@ -91,9 +105,11 @@ img{
 }
 
 .settings{
-    background-image: '../webroot/img/Settings.png' ;
-    height: 40px;
-    width: 40px;
+    height: 2vw;
+    width: 2vw;
+    position: absolute;
+    right: 40px;
+    top: 220px;
 }
 
 .subscribe{
