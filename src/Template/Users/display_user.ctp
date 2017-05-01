@@ -93,7 +93,6 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                             <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')); ?></div>
 
                         <?php endif ?>
-                        <?= $this->Html->link( $rowData['username'], ['action' => 'display_user', $rowData['id']]) ?>
                     <?php endwhile; ?>
                     <?php else: ?>
                         <p> No subscribers</p>
