@@ -37,8 +37,9 @@ class GroupsController extends AppController
         $this->loadModel('Users');
 
         $query = $this->Users->find();
-        $query->innerJoinWith('GroupUsers', function ($q) {
-            return $q->where(['GroupUsers.group_id' => '61']);
+        $query->innerJoinWith('GroupUsers', function ($q) use ($groupId) {
+
+            return $q->where(['GroupUsers.group_id' => $groupId]);
         });
 
         $this->set('results', $query);

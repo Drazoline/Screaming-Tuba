@@ -8,7 +8,6 @@
         <div id="members-wrap" class="categories">
             <h3><?= __('Members')?></h3>
             <div class="categories-content" >
-
                 <ul>
                     <?php
                     if(!empty($results)): foreach($results as $result): ?>
