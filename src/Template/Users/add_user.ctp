@@ -22,7 +22,7 @@ $this->assign('title', __("Sign Up"));
                 <legend class="legend"><?= __("Already a user?") ?></legend><br><br><br>
             </fieldset>
             <form method="post" name="gotologin">
-                <button class="btn-info btn-login" name="btnLogin" ><?= __('Sign in') ?></button>
+              <a href="/Screaming-Tuba/Users/login" target="_self"><button type="button" class="btn-info btn-login" ><?= __('Sign in') ?></button></a>
 
             </form>
 <?php
