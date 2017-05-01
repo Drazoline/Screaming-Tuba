@@ -29,7 +29,9 @@ $this->layout = false;
     <?= $this->Html->meta('icon') ?>
 
     <?=$this->Html->css('groups.css') ?>
-
+    <?=$this->Html->script('jquery-3.2.1.min.js') ?>
+    <?=$this->Html->script('groups.js') ?>
+    <script type="text/javascript">var groupAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'getGroupInfo']) ?>';</script>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -62,7 +64,7 @@ $this->layout = false;
         if(!empty($groups)): foreach($groups as $group): ?>
             <a>
                 <div class="group">
-                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle')); ?>
+                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle', 'id' => 'img-group-'.$group->id)); ?>
                     <!--<p style=" margin:auto;"> <?php echo $group->name; ?></p>-->
                 </div>
             </a>
@@ -78,44 +80,7 @@ $this->layout = false;
     </div>
 
     <div id="contents">
-        <div>
-            <div id="title-group" class="title-group">Je me Babamuse</div>
-            <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle-title img-top')); ?>
-        </div>
-        <div>
-        <div class="stat-members">
-            <div id="members-wrap" class="categories">
-                <h3><?= __('Members')?></h3>
-                <div class="categories-content" >
-                    <ul>
-                        <li>Marcus_Babounne</li>
-                        <li>Bâtisse</li>
-                        <li>Grompiette</li>
-                    </ul>
-                </div>
-            </div>
-            <div id="members-wrap" class="categories">
-                <h3><?= __('Stats')?></h3>
-                <div class="categories-content" >
-                    <ul>
-                        <li>Blablabla</li>
-                        <li>Test</li>
-                        <li>Lol</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="projects">
-            <h3><?= __('Projects')?></h3>
-            <div class="categories-content projects-content" style="display: inline-block;">
-                <ul>
-                    <li>Coffee</li>
-                    <li>Tea</li>
-                    <li>Milk</li>
-                </ul>
-            </div>
-        </div>
-        </div>
+
 
     </div>
 </div>
