@@ -10,6 +10,9 @@ class GroupUsersTable extends Table
     public function initialize(array $config)
     {
         $this->addBehavior('Timestamp');
+        $this->hasMany('Users', array(
+            'foreignKey' => 'user_id'
+        ));
     }
 
     public function validationDefault(Validator $validator)
