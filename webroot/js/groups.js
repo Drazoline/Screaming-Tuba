@@ -1,7 +1,6 @@
-$( document ).ready(function() {
+$( document ).ready(function(event) {
     console.log( "ready!" );
-    $("[id^=img-group-]").click(function() {
-        console.log(event.target.id);
+    $("[id^=img-group-]").click(function(event) {
         var groupId = event.target.id.split('-')[2];
         $.ajax({
             type:"POST",
@@ -9,7 +8,7 @@ $( document ).ready(function() {
             data: {$groupId: groupId},
             url: groupAjaxUrl + '/' + groupId,
             success : function(data) {
-                //console.log(data);
+                console.log(data);
                 var $contentDiv = $('#contents');
                 $contentDiv.empty();
                 $contentDiv.append(data);

@@ -35,27 +35,6 @@ class GroupsController extends AppController
         $this->set('group', $group);
         $this->loadModel('GroupUsers');
         $this->loadModel('Users');
-
-        /*$users=$this->Users->query('SELECT us.* FROM users us, group_users gu where  gu.group_id = '. $group.'id' .' and us.id = gu.user_id;');*/
-
-        /*$groupusers = $this->Users->query('SELECT * FROM users where id = 4;');
-        $results = $groupusers->all();*/
-        /*
-         * http://stackoverflow.com/questions/43274997/cake-php-3-4-how-to-add-2-inner-joins-on-the-same-query */
-      /* $options['joins'] = array(
-            array('table' => '(group_users as `GroupUsers` INNER JOIN groups as `Group`
-                      ON ( `Group`.id = `GroupUsers`.group_id and `Group`.id=61 ))',
-//        'alias' => 'Channel',  // the alias is 'included' in the 'table' field
-                'type' => 'LEFT',
-                'conditions' => array(
-                    'GroupUsers.user_id = Users.id',
-                )
-            )
-        );*/
-       //$query = 'Users.id AS `Users__id`, Users.username AS `Users__username` FROM users Users, group_users gu where  gu.group_id = '. $group.'id' .' and Users.id = gu.user_id;';
-
-        //$results = $this->Users->find('all', $options);
-        $this->set('results', $query);
     }
 
     public function add()
