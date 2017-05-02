@@ -32,20 +32,22 @@ $db =  mysqli_connect("localhost","root","","screaming_db");?>
         <?php endif ?>
         <h1 class="Username" style="display:block;text-align:center"><?php echo $user->username ?></h1>
     </div>
-        <div class="users_form">
-            <?= $this->Form->create($user, ['type' => 'file']) ?>
-            <fieldset class="user_edit_form">
-                <b><?php echo "First Name "; ?></b>
-                <?php echo $user->first_name; ?>
-                <br/>
-                <b> <?php echo "Last Name "; ?> </b>
-                <?php echo $user->last_name; ?>
-                <?= $this->Form->input('password') ?>
-                <?= $this->Form->input('email') ?>
-                <?= $this->Form->file('fileExt', array('style'=>'align: center')) ?>
-            </fieldset>
-            <button type="submit" class="btn-info btn-save" ><?= __('Save User') ?></button>
-            <?= $this->Form->end() ?>
+    <div class="users_form">
+        <div class="edit_form">
+        <?= $this->Form->create($user, ['type' => 'file']) ?>
+        <fieldset class="user_edit_form">
+            <b><?php echo "First Name "; ?></b>
+            <?php echo $user->first_name; ?>
+            <br/>
+            <b> <?php echo "Last Name "; ?> </b>
+            <?php echo $user->last_name; ?>
+            <?= $this->Form->input('password') ?>
+            <?= $this->Form->input('email') ?>
+            <?= $this->Form->file('fileExt', array('style'=>'align: center')) ?>
+        </fieldset>
+        <button type="submit" class="btn-info btn-save" ><?= __('Save User') ?></button>
+        <?= $this->Form->end() ?>
         </div>
+    </div>
 </body>
 </html>
