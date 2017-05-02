@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Lun 10 Avril 2017 à 16:23
--- Version du serveur :  5.7.11
--- Version de PHP :  5.6.19
+-- Host: 127.0.0.1
+-- Generation Time: May 02, 2017 at 11:25 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `screaming_db`
+-- Database: `screaming_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -33,42 +33,34 @@ CREATE TABLE `comments` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `comments`
---
-
-INSERT INTO `comments` (`id`, `text`, `file_id`, `user_id`) VALUES
-(2, 'Hello', 2, 4),
-(3, 'ewerwer', 2, 1);
-
 -- --------------------------------------------------------
 
 --
--- Structure de la table `files`
+-- Table structure for table `files`
 --
 
 CREATE TABLE `files` (
   `id` int(11) NOT NULL,
-  `data` longblob,
   `times_played` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
-  `mime` varchar(200) DEFAULT NULL
+  `filename` varchar(255) NOT NULL,
+  `filesize` int(11) NOT NULL,
+  `filemime` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `files`
+-- Dumping data for table `files`
 --
 
-INSERT INTO `files` (`id`, `data`, `times_played`, `user_id`, `title`, `mime`) VALUES
-(1, NULL, 100, 1, 'meh', NULL),
-(2, NULL, 50, 3, 'test', NULL),
-(4, 0xffd8ffe000104a46494600010100000100010000fffe003b43524541544f523a2067642d6a7065672076312e3020287573696e6720494a47204a50454720763830292c207175616c697479203d2038300affdb00430006040506050406060506070706080a100a0a09090a140e0f0c1017141818171416161a1d251f1a1b231c1616202c20232627292a29191f2d302d283025282928ffdb0043010707070a080a130a0a13281a161a2828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828282828ffc000110800b800b803012200021101031101ffc4001f0000010501010101010100000000000000000102030405060708090a0bffc400b5100002010303020403050504040000017d01020300041105122131410613516107227114328191a1082342b1c11552d1f02433627282090a161718191a25262728292a3435363738393a434445464748494a535455565758595a636465666768696a737475767778797a838485868788898a92939495969798999aa2a3a4a5a6a7a8a9aab2b3b4b5b6b7b8b9bac2c3c4c5c6c7c8c9cad2d3d4d5d6d7d8d9dae1e2e3e4e5e6e7e8e9eaf1f2f3f4f5f6f7f8f9faffc4001f0100030101010101010101010000000000000102030405060708090a0bffc400b51100020102040403040705040400010277000102031104052131061241510761711322328108144291a1b1c109233352f0156272d10a162434e125f11718191a262728292a35363738393a434445464748494a535455565758595a636465666768696a737475767778797a82838485868788898a92939495969798999aa2a3a4a5a6a7a8a9aab2b3b4b5b6b7b8b9bac2c3c4c5c6c7c8c9cad2d3d4d5d6d7d8d9dae2e3e4e5e6e7e8e9eaf2f3f4f5f6f7f8f9faffda000c03010002110311003f00f1282d6497f78ce72d92493d6af5adaadc5c0887cece71c5413f9d2cab1c5c01c607415da78274809309641b9873935f358ac47b2839c99f7b42845696d111691e10559cbcf9641d33debb3b5d21f0890a617f415b56f05bc5107b8600ff0008a4b9d76d6d23666748d1072c4e302be5ebe32be225a6a76aadc8b968c6cbb93d8e850a286b9653eb8e2b9dd57c470cda88d17c2b6f1dcea2fc35d3f30c20756f7c7e59f5e95c4f8bfc792eb0b243a7b489a7212ace0e0ce7fba3fd9fe75a1e125fec7b32d902eae30d2bf71e8a3d8575d3cba7429fb6c4eb27b47a7cff00c8f3e156b63aab852968b77fe47af456b69e4223b2b48a002c7824fad37fb22de404aed07dabcfc6ab247f33cb8c9006477adbd2b5d61208de4049f5e2bc6ab83ad05cd167a32c3d582f7646aea5e1b6285a03f30ae5aee19ad1b6cca41f535de59eabd378e3ad59d42d2d752b624a2eeaca862aa424a1515d110c7d4a2ed5363cb0cfb5fe638f5cf4aa7a869f16a503a29d8fe9eb5bfe24d27ecaade5f047623ad730976d1025c614103f1af770edcd73d3dcf5954a75a9f31cb6a5a1c96a188906ff00427ad635adfc96f21c9391c735da6ad2c1a8e9ed721be68816c81f780f4ae5f52f2e0b1812d7699a5f9e6982957271ca8cf2a01603b671cd7d0e139aac1fb4e87cee36a468d48c69eecd9d26f23bf38621bf87af4acaf136986d30f1e76b556d024305c80381e82baff104227d1c330c902b093f615d72eccd634fdb526dee79a7cdea68cb7a9a74c84311ce41ed492a9899039051c6e4907461fd0d7acb53c694941da4264fa9a327d4d3b69a02934ae5f297f43bbfb1dc32ca7fd1e7e1f3fc0dd9bfc6a0f10816dad413c4418ca2e5979527be0d471231e00cd3e489e18c2ba6eb590ed7523eee7a11e8688b4a7cc6189c339536e2b6d47dfc8f00570c76060ca4751f4a2aaddacb2588c1de917ca48fe7456d4f6dcf2670d763d0342d21af2eb1c2c40e4b62badb8d52cf4a84416eca4a8c13eb5ce4da92da5b48907ca07ca2b95bdd49999941dcfd48f4fafa57cd7d5a78b95e5b763eeabf25157a8f44749a978ae72924bb8a44a3938ae5f50bfbad4ecff7d295590fdc1d02fafb9ae7afb509ef6e22b663b5038f917a7d7deae2dcbccf7296e19e51b6285146724fa57b143030a0934b53e6b1998baefd9d27eefe66a68a8b757b1a220105af381fc4fd87e1d6baa961bd906554a81d33c568f87f448343d16dd650a6e36ef949eee7aff87e154b51d484d2159e6091e380a6bccad88f6f55aa6b447bf9750950c3a8ad2fab7fd7632351b89e048d1e5077caab9cf4e735a5a5eb8d294f38007a1fa8eb5cd5cdd5bdc3e2d91884914ef63f5a5d2332bcbb724ef27e95d53c345d1bc96a99cd4b13258c7152ba6bf267a9d9789e3b28c7da6dee1edc0e67c02abed9cf1f8e2baaf0b7892cf53d4c5946ce9394f30472632e99c6548241c1e383c77ae33c27b52dd96e1d59704b29e98ee0d73be0d9e3b2f12bddd92ca2012c935a460ff092140f5e848c7602bc7865b4717cf18a6a51d9f433ccaa4e94a36774cf52d475dd2f5196e6ca61245770c6f204751960bc9c7bfb1fe55e79ad413c5a74b7a23cdaa4cd1b48095037801483df0ac091e99cf5e75e2b6fb678eb5243bfcfb43348a028ea102f3df18ec7839ad5b2b9bcf1359dd21b6586cad10ac7648982a491b893d727038aeec050c36166ef2b5ed74fa37fa1cbcf899c5c29fc2bafaec78c5cde2d9bc315d34b25b29e8818060a78e47be3a7b555b491ee615bb6325c0d8565c9dcd1b073ce3a90415e6bd0f5ef0ee85a6c777fda1a80805c5b39649064e55494519e48de173d3d39e48f2bf0b99bfe121b55b357dd248100da0e47ae0ff5afa0549463289e754c5ce388526ef6d0dcd2230f7019186d3d31debaed62411e8f827a8acc96c20d3bc5135adb2c891140fb24ea87710791c738ed4be2bba54b51183cf4e2bc3af1e7af148fabc3cd2a4e6ce326e589a921783ec77105ce707e788e3a3771ed9aacac4dded23861c7d6ba1d3b48328dd201b08e457a539aa49731e5c683c55e31394b49a485955d0bc4c323d47ae2ba8b0d27ed6892464146190477154eeb4d1608c186521b8283fdd61915abe1fd47fb22ee286ec17d3673c381930b7f81a588939c39a96ff99cf82aab0f57d96276fcbfe01a769e1e5520e0927b55bd4b41dda74e8170e633b78ef8e2bb8d3aca39d5248b0f1b8cab210430f5cd6d5be8f1c99f314f03a135f2b53349539ddbd8fa5955a3c8e115a33e758a5fb2dfb46eb886750d823d7bd15d87c50f0db688b0dc4519365bb6c520ff009647fb8dec7b1fc28afa8a138e2a9aab07a33e52abf61270b9ccea7acade482db4f19e4ee94f4fc3d6a9c213718a33bb072edea6b319c5ac3f270e78e3f956868b1910b31e5ba1fa9ae854e34a3eeec7256c555c54f9aa3ff2453fb3a9bf9a4c80aa8467d0938fea6bd07c0fa00579b5730ba40177c1bb0092472d8f4c74fad71da1581d5f536b5c909bb0edd9573c9fcbf9d7d013db84d0d52dc28500280a3a0f4af2b38c73a2a3496f2dfd3fe09e965182f6ad4e4b4b9e5fac6b334cd24728db1007049e07d4d71334cd7370cb24ac5141676cf4515d278cd8ade797287551d81fbc7b5733f6726d2588101df2f2b7a28e71fc85756069c234d492b5cebcdf14e32fabd3e86ca58ac3e1db6be2183dc5c281e80104e3fcfa53f420eb2dc403bca4e7bf356ef6ea3b8d02c2d524de6197278c7006056bf82ac217f16c91dc1c21195f738cd1526fead39cba5dfdcce54953c5c6db28a5f81d2ae9b7167e18be9190b131807d7612371ffbe49ae425babcd23c6b6f7b6b1896c840914614ee5e14641c77dc4e71d335edf731411c24ceaa616431889bf8811ce6bcbf59d3db42d3e7f22549124c2c31b330312ab65402a0e79ec47e26bc6c97328b94a335ac9ff5f71b63e93af1534edca763a82ea3a65f0f16e936c2654895350b4638dca1b248c8ee33cfe356fe1b37f69ea5acead1a7916972372db03b9a35639524fae6bc95fc4dafe90d776f37da2083508950194ac80459c0dbc9e7861f81fc2b2e95a9d9adeded99b94d3ad86e9257731a3018c12d9032320000e738c576d6c0cab73a764decedd3cc9c3d48aa0e3cc95f4bdfa5efb7ea6bfc5fb68358f19f97e6aab436fbae7660fccbc363df007e24d52d3346834db916fa7c524d74c3e468c9f34e4e63907752082a7d738c64815cf5fc52c337da639248d1817598fcdcb024824f5e73fa57a678474a922f085dea16905b34e816dee124c90e481bc3b7de20e158739524e3b5754ab7d5e846329e9a2fd0f3f178754a77b5de9f2d0e3ef6579ee277b9967b899702e27113a8c2ff000e08040ce463031cf5ae7afae8ea171c3640e063b54de24b8b89758ba7bcb563711011b2be5997181866046ef63fd2a9d84244f33a1180824db8ec4815d1eca2bde47561f133e5e596dd5935ed8886c0caaf8993e618adaf08cd2ea512c4c5cb05ca9c7519c1e7a1c1fe62a9ea2915ae9f21bc912379176a231c9e7be3d2aefc39332cfa6e46f8daf0280a4e0abe4367071c7070476eb58545cf869c9eeb63778874b151f67d56abfccbde31d28c1632614e658778e3f8a339fe4c7f2ae5b4a912facded263c8e84751e86bd5fc626dee6feff004a6255e3b45b9b560705241b9587b82194115e41a742d6bafc5160aacebbc03e8466b1cbea3a943dedf739f1f1729aaa975b33aaf0178baebc3f7cf6b700490ab6d9613ebfde43d89f4e87dbad7ae43e2bb0b9b549ed252e8fd88c303d0823b1cd7815d209b52be9570474fcaaf785f5cb5b4bb87ed2cde439c49cf423a31fe47db1e95cd986554b15fbd8af7badba9ae16ba83e49edafe67b0eb65b5fd36eac24b577b79e32af91d3d08f71d7f0a2b36e3c5c2d611e48f9dba1345791879632847968e88f46ae1e94e579dae7cfaa44d2b39ff531fea6ba0f0c2acda75c333e24de4818cd61ac38d2d760e4e32056c6816ce824498108555d947f1672003edc57dae21ae47a9f3380a6e55526af74ff0023abf04e9f25b5bdcdf2c6596794a0ff007578cfe2735ddd9eae6d97ca91485239c9e0573da26b28628619404741b4646148f4ac4f1deaf1acf1d95bab09251b9db3c04ef8faf4af9aa94678cc438cd6ff0091f570c4d2c1e1d45ecbf329f8cb558f55d4de5b751f6684654e396f56fc7f97d6a8d95b425adadeea4d9f6a901988e76a282d8fcc0acdbf97c8d2a77c8f35b1c7b13fe15d37816d6171f6dbf864b82b1e5157d58f7fc147e75ec492c350f7765a79ff00573c2a52788aee4f56ff0005725d6b4eb7b2823fb31cabe483b719e9fe354ceab2d96a16d736ac5263346a87df23afb75ad8f1c4ed2a69e5218e18c8970a9f453cd72b76bb12ca7946d479c80e7d140ce3f127f2abc1fef30eb9fadd7e6462f99629af4fd0f775be3a95ca2b44143a965663c9e09e3f2aad168b1ea28df65927babbc9da228d56355f42581cff005a4f85b6b2ebfaaadd4f2063142142024fcc49ce7e9b7f5af5ab19342f0ddbcc6ed96df764e66750ec4fa203903ebcd7c5ce12a359d2a4ecd7ddfe67762314a4dd28c5b7d91f25f8d4cf657b7105d97fb799f60f9fe689102ecc0e8063700071cd4fe1cd1f50f16eb9676fac6adabdfdbe4a2c6772a94eb8dc49033ec0d773e38b5d1b57d67ce8522930dbb7639cf604f7fa51a3dcff00665f45710955319c8afa1fed69fd5d72ab4edd7b9dd4786bdad37527bbd52feac6e78cfe145dcba524b24e64be69c4b0dbc51160475d871d0027a9feb5e9cba169ba0f836e0ce520696d40950e39936fa5726bf10eeee9911ae122887deda06e23d335e7df123c612dc4b2169cc917242ef20015e2275b19354669b5bebd1fcb730a592e21c92aef962b56fc974384d5cdabeab125d5e48e7eea150aad8e8158e3246063935a965a069451c3bcd197183891ba579dea17735f6ab6e8cc41765c17183cf4e7d3deb406afa8590293a152bc64b62beaea61ab38454656763a70d8fcbe35274e74d72a7a3b5ff3b9d6ea5e0b6936bc132dc40096c3b1121e381bb9cd50f0d5d5b787b5590dc4ae9e4219161618cbf41f53cb74accb4f135def556b98d14ff7a4e0556d7afadae2e6db6491dc5c3365b69dcb8c838a9a746bcbf755b58bec658cab815075b0f6e75d1f5f23a9d035837fe29fed4d49094b85936aeec6114281ec467f91acfd7ed20b3f112dd412136ef9f2a363931e55be507d3238a5bcbb57bc122ed30c317951ece87382467b81802b13569ddd599c7f75a320f42b938fc413f9538525ed7dcd15ad63ceabeee19b9eb2bdff00af9973455f32ea656e4b0607f2ae502335e4b186da4e700d7416174963aa3493e446e9b971dc91d2b9bb893fd3f78eec7f9d76d18be7976b23c8ad517b282ea9bfd0ecbc3524b379315e4c796118673f748ec7fa5159765283b849cc6e30c3f4a2b86bd1e69b7b7c8f5f0d88fddaff0032c69569e5a2ef4dfb0e153fbc7b7e1deb4ac2448e6944ff00eb5f1b98f7f403d852e9fa84097d32617683b14ff33f9ff2ad0bcb7b568de6322a2a8dc4e7a0a9ab51b972c96e7ab81c2c29d353835745537e2cda7c60c88c1553aefdc3231fe7b572c666bbd7e6f30863fc4474e3a81edc63f0ab97cef6ce974e9812a1f2c30e557a67ea723f3acdf0ec65eea799b0140e49e2bb68528c22e7e478399e2e55aa2a6975192cdf68badb364287deea3fba3ffad5dac715d3c2cc2728b21cec8ce0018c019f61815c8ceb04bab46b0b654e16420f1d7afe55d9ff0069c6a3e5daa07000158e35bb45451e8e454a0d4dd47a2b197a8dbbdb24b2925996238c9cf248c7f234fd034d7d7eccacb218ad6ddfcc9260392d8fba33ef9f6e7dea96a977733ea91ac43cc5664c443abe0e40fc4d6c8be834cd06281dbc98d87992807e625b92a3d4f38fc29cdce14a318fc4ff0001d3a346be32a549e908ef7eb6b58e83e1df8aa7f09dedecda7ba1802f9204df3123a93eddba5278b7c6727886f9ae2d6dff007c54060bf7777f7abcfb417935abc16c84c5133b3381d8124e07e15d6ead776da1da241651abcedf2851c9ce3a9ae1ad84a71aea4d5e7fd6e7b7809d19d3facc128a4ace5d5f925e5b1456eef2d936444649cb16cf27bf6aab2eadab21c80ae3fd9352da7888c4a89a9db31c803785e09ad681b49bfc14758c9f4e31552bd2779c2fe7b9dd094312bf7555a6ba6cd7c99863c437636891a3427a96ca91fa543757968c44d34d26a138c3ac11a304ce33f331ec0fa56beaf63159465fce8dd3af3c1acc96f22b3b449f50824851d4b429de7c638ff6793d7b8e95bd1709da54e2795993ab462e35eb69e9ff0007f3388d59ae5b5197ed64f9ea4061d36e074fc2ade836d05edd2c529c39e809fbc7daaa5f2dccd335cce0979c994927ae4d69d95a24a914eb98cae11c8ea8c30326bd6a8ed0b5fee3e2f07093c45dabeb7b3ea8ed34af0b595cc63a6e23b8e95ce6bfe1e3a66ad06e4fdd191437a104d6ee9bab08ee365ecbf66988f96651947ff78763ef56b5ad422d46148a568a578dc159236e0e0e715e342a57a7575778b3ee71186c1e32838c22a325f277460eb96b75a24e967202f03aefb790f75fee9f71590ccc5d4ca4ed0c188aeabc57ac43a9787d6299112ea0955e21921c7661d304107b1ec2b91241561df15d987e694139ab3ebfe67cd62e2a9d59528bbc7a7f97c8d8d72d418578e178fa5727751b44c41e48e41af47d5f4e91b476b80ca4b2a49b41e46475ae25945d2490b8c4cbc0c773dbf3abc2d5528e9d0f2f1d859d2925256bea8229cb5ba91dc01fad15159fc924113f5593068ada495ce68c9db71f1ca626c293c714ed52fe692d91039d84f23d6a0396930a3249c01eb523d8c86efc8670554e4b0a6a31e64d9db3ad354dc62f465f3712ea7240267fbf11519ec71c7ea0557b7408aca7214f247eb5259b83ac46a31e5a3a28ff00be853f568fc8632a9ca3e47d31d3f43fa543b27ca8c1a94e2ea3d59024462815a31f33bf1f87f9156121ba9719c8152c17296de4abae488837e2c73fd056ff00866da6d7ef1e18ff00716b0af993cca32557b28ff68f41f89ed5855a8e09c9ecba9ec60a941c14799ddf444de01d393fb5e79ee5b2f0c5840dd99b3cfe001fceaaf896d6dfeda60857cd924902e7a9273dab6756961b08cd9da2889072d83cfd09ee7d6b98963b9ba8c496724e4ba9f9629307a7231d7d6b928b955a9ed6f6563dfc453860b0ae959394b5645a5dc436373a94b693c0a0c8ea3270ca80f0557be7daa763b9778f9ae1d7e62fc08c1f5ace97499b4d169e7c263fb407524e7a9c6d1d3820e0d7a4fc1cf03c7e2b88dceaac1b4e8d8e62c90d330c6412390067ea71f9f462a74e947db3678984c6ca9c3d9cb68dec977dff005dce32dcbc765e4ac705cc783b5c9dac3fa1aab7cab6b179b6603b8421e37043264751f8f715d7fc4cf02cde1191dec65f374b12850acd8921663c0cff0010cfe5fad715a8cd3189438f2a443912670cb81fad450a90ac954a6ee9ff005aa3b25888d4a52d1a692b75b7a3ff0032eda6bf0c7a5c572da679f7d182a6595b3103d036df5e86b9fb9bab8d4aea6bdbc93cf9ce5b3230e1474007f415d9f80b4bfed8ba8608ad21bd68b01219c1f28b123733e3b0dc001dcb7b57a16a7e06b0686796fbc1da5ac5072ed61a84a8c727036e491c77c835a7b6a3424f9b46ff0023c6c4549d49a5772b25f7dbf43c46c2d51e4495cc9347195dbcf0c473b07af3f90c9ad87096122b6c59a595b75c20e04a0b06207a74e0d74573e1ab0b7b966d3bed362a71e5ff00686d982e78c6f4c6dffbe4d72b6f1cada8cb1ce466362a48e41229baaaa6b17748eba308d28fbd1b49fe1e6587b74983fd9584b16d76114a76c91804751dfaf6a86e1e3b79adece360d207f32420e4018e07ea7f2abfad5bc690e911dca6e56590b0e872403589a759f92b05cb6e3be47505bab60e07f9f6356e9a4b566d4f113a938c6dd77f256ff33b5d3f4a5beb5cb6d62dfc2e323f2acad73c28d656ef79a7c6ce918fdf41d4a0fef2fa8f515634dd51ed64f295c02470586466b725f1135bcd12bc2ef718dd88909dc3e9cf1ef5e5296229cfddd5763e971f470d5e926f47b276bd9ffc139db4d40ff634659837978818f5dc87953fae3f0ae7b4db529accb3b0f915c05f76278fc867f4ae835eb7b6805dcb6692430dc4626f25d0af94ea79c7b1dd9e3deb24b8b55b4339dbfbc12484f6247f418af4295926e3f68f90c7b9394635778ff5ff0004e6a47c4ccd9e7793fad14c9886949439567241f6cd15e858f9e9bd59ad65079513decbc0e4443d4fad3a1ca5bbca7966cb1352eb7389af92d6d80114436281db146a7b6df4d8e21c3cac07e03ffd75ce9b959bebf91e8548a52714f48fe651d2d4299ae246da130fee4e7207e957f50912f6c63f273f3e71f55ffeb5643c877baa9c2679156ec9b36d0f979fdd4b9207f9f715728ebcc4c2a24b93a10dfb1fb6ccbdc10bf800057a569b796de17f07c2830d7337efe765191bc8e149e9c0c71eb9ae77c3ba1da5c21bab9669a4dc72a7800f51f5e08ab5e3416623d3a0933f6c0ccd216625963e3686cf4e8481d87d6b8710e15e4a8eb64f5f923e830984ab83a4b16ed797c377dfa9993ddb49692cf36ef3a4e79078cf4c66abc71cf07875f50f3e68cc370ab6fb30396c96e719e83a67bd4d0db49acdf2dadb60469f333b70140e0927d0549e28bd826b3b7b0b21b6c2d4928c78f35cf573edd87b7d6b6a6b5508af37e488cc6aa707393bd95979beafe474771ac43abf85ef20d6aed7edd02abc0588025058723bee1c9e3d3df15dd7c2ed7e3f0b7862c11ace5ba9aed2494a44541542f907248c76c7d2bcfbc3d7ed268c6e60861b676416af2c6c4190e700919e3193d3038ae8f43b6d575bb8926d1a2812d620b6d0cb72c5524d80e11703249f98eee95e663a11e594368a77d5e9b5ac4d0841a552abd2496dbfa9b7f127508bc4bf0ff509ada378e681c7990be0b2323827a7fb273f435e411689e29d4ecc450e87a84d00e7cc16ce07b72462bb89353fb36b53586ab6b3593dec46dee2297a6e0080cadd181048fcaa0f0c4ef6b2243392fe54e16741cef507918f4ce0fd0d2c0afa9d2708a56bdd5fcfcfe4462e0dbfdd4f47a3f3eaaff236fe185acbe13b3bf975dd16f0968d3180548da4b9390723048fcab73c49e2432ac50c1a36a96e01c92cb24c31f420d66c3a98b3b583edf20204d8759482e622dc640ea471f867bd60f88fc4ba7ca648c4d1347e624819490e8573c05ef904fe759454eb567377d7b376d34d89861bd9a4f4d3bffc398fe24bf6d5d6e5836cb585fcb48802bb9b00976079ef802b94865920132aa16790601ea467a9fcab6cdd5bdddf1b9b78e77b674fdfb8438df93827f03fa554b74806b012da55955a36271ce2bd7a11b4b92c695fde5cca5aed7bf7ec68eb59b8bab457902aa83f31edf74563ddcf1c161f648c969e3b991830e9b7820e7d0658d6bc96e97b7d1dbcaec88e0ee61d55460b1fc87e78aceb9413d8b4cb1f942edcc56d0af216253c9fe9eec58f6ae89a4dabbd8e3854947e05ab6f5217977daa4f19c10460ff004ad4b1d4dd1433b2283b06e7e178dd904f6fbc0e7dab034f598acd12a6f39188c75190304559168f0a992e5e39113398464f3ce39e8791584e9c7e167b54b1552515385efbf926bab3a0b8ba4d5aeededdc32a461c9190436304fd4703f31591a94902ea39b93ba28b126d1d588cf14c8266b2f10c7090105bc051940e3730cb63f13595aa31925b895ba6d207e39ffeb52a54796492dadf99e4e3b18ebb739abcaeeff248c99583b060a14312db4741cf4a2a49131144d8ed8a2bd03c095ee6a692892dc4d34d204ef93cd45ab4eb3ea11ac6e1a341c1155a394c782bc11cd3a6963742db7f7a46140acb95a9dcea8c94a16ebbfa945a53d1796635bde1d48d22b859012eebb8127bd6558d99701dfb9ad1918dba2b270791fcbfc69d56a4b91134d38b5396c68e857a6112a60b6f1b0003243ff0ff0087e22924d1a6b999da24b85909ced31f19ef9cd63e9ac4cecbc93bf9c576363aceb3ae469197920180a8b6f129de4704b1278fc2b96ac65097342cbbb6cf5f0d8d84a8aa559376dacb5fbee6a58784eece931a3e20dc033470905e53fed39e02fb60d66b7872de5936444ddba9dade536238ff00df94ff004fcab7574ef137d9a5b49cdecb0498059e2f9c2f1900a67dfad6b490e8d63e0dbe4874e9237822f3a796e54a3b0461c4647524903b019cf6c579f1ad514adcdcd77f65afbd9ae271149c538475b7da5f92d8e157465b1f14db69058dc994191ad210719dbf277c92724e0e38c13d6bdffc39e01f126a1a5da4975ad5be9315a3ee821b6b659806c153bd8900fde238e3dcf5af9ebe1dea77575e329af5e73fda374e11642338666ce7f0da0fe15f65781ee22bcd2d22b452ba7dbc4b0459eafc72c7f106bb311463292535ccd2ea795f59a9eced1d13678c78f749d4e2b8363e23b5b5bf8910b1b8b6888caff78a1c918f55271df15e15e25bb3a2eb97306933bb4255181762c4123b1ee318eb9afa67c57a9326aad751b91b6286f2307a8667304abf40406c7ad7cd9f1461b787c6d7cf651a4514c1660ab80aa5941381f5a8c1508d3abc895a2d6dd3a1b56af3a986e67bc5ad7a963c356d6fe24d3aeedee2798eaf130940662237849553803a32939cf4c139e95bfa5e9cba46a2749d62008c4ed0c63da41edce307d8f7af39d1b53b9d1efa3bdb1936ccb90770c8753d548ee08e0fb57d00ba8d8f8c342b3805a1b99a48d4c52b292ea304329c11b9948c751900b63d5e62a74ed65ee3f95bcfd09c0626d3e696ad7e28ca8f43b067656410dc28044b09da587bfad66def856dbcf56cc6ccdc07917bff00bc3047e75b2be05f1042c0d8c820b72394b89fe607d0603607e3f9534f8375fb747293db97e4806691cf5cff00171ed5e3c6a463276ae8f7febd42a249d27f869fe67137ba6cfa55d4cf333b47e44a9b18ef29f77277752bdb9e79ef593a99dba95a2230fdddac69129fba72a7afd493f9d6eeb765ad2931de97698120b1206548c15fbbd0e3f4159de2cbbb079ad8e9b07d9594005665cbc58f43d0af1d7f957b342ab95937ccddf55b7ccf3ea5384af2a7eedb5b3fd0c481f37735dc25963122c4ca4608ce48cffdf27f5ababe5ce446ec70ca776d3cf0bfe3516a88623e75a91e45ce18af66f4fe67f33eb56b4492ddeca7b9b999808879491e32d8cf4fd3afbd6d56cd29a2309889d384e837abbb5fa94ef24335e417521064688a48477653827f9565df1ff44551d5d80febfd2b40c2c9a7cb74d80af2158d4f539ea6a9b153796f1b7756c7fbc781fcab4a76e9d0e0a9793d777fa952ee5536d6f0a8c6c04b1f524ff8628a65e2ed931456f1d8e1a8ddc6ed20e31cd685959e2169df927841fccd57316d9d6327e6fe2f6ad3d425105bc207076e40fa9c7f4ace727a25d4da94149ebb2293dc6c994745071516a92033470a3061b49c8f5eb505c86578c375396ab5696227827bc69e31e4b2a08b397627be3b0f7aa5151f798dca553dc8ff0048ab672bc514af83ba4fba6bd47e1f5cc50dd5ac9b01de0a91903e703b707a8fe5ef5c2dae9e64d17ccdbc86207f9fc6a7d335092c6ce70848914068f1d4303907f4ae4c545578b8c77d8edc04d519af6bf0d8fa023d66e2d8439b6521a4556677508179c9ce73c75e9d8d7967c6ff00132ea578ba5c1bc042b2b9ce30b83b508f5c1ddff02c1fbb55edbe242dce972dbea50a1206f8ff0075b8b30e42ee18033d338e0135e7b797135e5c5c5e5d3992e277691dcff112724d7265d96fb1a9ed6ac5292d34fcc59962e9d4f768bba6743e0ab39214fed646db15b4ea1ffe05b954fe041fcebea5f05eacda5f83ec5c6e04df247201d4a2dbabb7f53f8d7cf5f0da38352b13a3492794b7ebe596f464f35c7ea56bd0aef5f6b2f06d9c2ecb1dcc5a8cb6d36efe07fb32444fe6c4d755693751f919fb35ece115d7529f8f75c1757be55ab651cdda6475c3dcb3a7e0320d78af8ae66bcd5373b2831c48aedead8c903f3c7e15ebb05a1b4b3fb76ac8d1ccab3c76d1301f3170e11bea36b0fc05787cc1a7b89ee2407679bf30fa93c7e95783d66dbe9fa9a632d4e82847693fc864080e4a2b15eec6bd07e0f788a6d2bc430d8e43c770ff00ba52463cce98f6dc38fa85ed9ae084b25e49b0e1221c045e055a8bceb2bc827b5cacb0b878db1d083915d75e8aad4e54e6b73cca553d9d4524f63ea7b8bcd46e34cbad421bdb26b155792395d987ca33c1031f4273dab262d56d9acedef06b96ecae99002a8e08e84312723dfbd784eabe29d63506560c90e5417291282efddb38e3279e2b126d435263896f2e189ecd21af16193d551e552497925b79e9f89ea2c75084f9b95cbfaf53dbf5fd4eda585376a2268c1c30545dc3dc6073f4ae7b54d02d35ab531c375148f8ca3a91953ebc57972dd5dc6c98b89b0e0329de78ec6b4adeff00502e17ed721c02dfbd224031ecd9ff0022b7581a94ace33d5774762cd30f3bc6a53d09ee44d6768da6de822480b2ab28efefedd0d64dacc232006c96721d075207391fad6ac17336a334b25c8e7682bc93c2f07af3ce6b2f54b716d7a244180adfa576c3f965b9e557b7c50dba77b16352bc177751f9636c28a0a2fa2f6ff1aa7a86e5b8df9e50ae3f002a582d9cdf228ff5729183e83b8a97594530c52a1c8946ff00d4d52b45a8a25f34e2e6c66aca0aa4c3a3927f407fad151df5e2dcdb5b431c223112fcc7392cdc64fe828ab826958c310e329b6993697149797cdb14b313daa7d5944ba82a2b068d30a0af4e00cf3df9acdb292559248d64658db960a719f635a5732a46e1dba05da07e559c93552e74d3e5f60edb99d7ff00f1f49ec2aa5bc816fd198e1776093dbb55e4916e1e7908e1573fad65db279b748a4704e4d744354d33926b96d2ee76da396fb2cd13138539c54969a60ba99244036ab90ebed55bc3d309ad2527878c6c7fc3bfe54786af3fe26b72a4f049207d457993524e6e3ba3d6a7c8fd9a7b330fec0130a4f6047d3ffd79a4bb50a8a074031577e730dc165661048d861d949e41fc79fcea93e6e5c2a03e95e8c27a5d9e656a5cb3b47666ff0082e696cf6dcaff00cbbcc928ff0075b28c7f0c0fcebe8287c2967ac368dabb79674a85c4f7ebead1a1f98fd4820fd05787786e0fb46b52e950819fecf64fabe430fd715ea5e1df13c763f0bf558eee531ca12546527a6540c7d771af2f1126e775fd5f63d78d1b5251bedbfcb730be29f88ada5f173177dd6da785ca03f79954ed5fcd8d7935cc61ed158205696669182f41c67fad59d6cbdccbe7dc176b9b97f34e7dce40a9750922d2e3b38271be49373c8c3a28e0607e55bd18fb3b5b56ff00432acdd6f765a463fad91916b6a25465807fa421c95fef0f5ab2e5564f2f7ab38fbc14e71f8d55d5eddada5f949cf4c83d7b7f4fd6974f8f65b8f53c935dd06dabdf43cdab150f77975459a95ac1eead5a5897263233f4a8e3469182a8249ed5dff8674736fa7cad740059508607b0c572e2f14a847cceecab012c6d46adeedb5679dce5112d1dd094f3655207048183fce9e928d426885b5b886353e5825b2d231f5fe7536bc8a56da28b958d06e23bbbf27f403f3abba7ac715ae9127968ad1cac653d4b36e39cfe02aa524a9a975772961ef5dc1bd15aff0082228f6c5a95b40a7018b47f98207eb8a5d6edb6dd88a5e3cd51f9e2b3ef2e1db518671f796457fc8d5af126a62eeee39553cb29b4633e86b35197345aec6739c1c24bb3d3d06d80f32d9933b658ba1f423fcfeb552ea371a54692021e191a320f6e011fccd5990bdb6aa5c6d092c61ca9efd8d47ab5c89252db5951f8c67b8039fe75a2bf32b7a909c541a7bec653e0460fad1514af91b7de8ae848e16cb562a0312792dc01577554d96c4e0b74c8f7f5a834d4df3ae7a640addd6add638dba3275523d2b9aa4ed5123d1a34dca849ad91cd5a1d9a6dcb1eac71506947fd300f553fe3fd29ccdb6c0afab1fe74fd0103eab021eb26507d48205756ca4ce2b73ce30f4fc4d3d0cb2deddc00ed598707f1ff0350db33d8eb6e09fe2c66ad5be6ce79527429344c1f9f4e87f95477e164ba771d71b85733779becd1d6a3c908ff3266f68f1ab5e5da4a018e4019811d73c62b32116ba6df34736eca364719dc3b62a5b19984d1367efae3f2a9bc4d65e7c0b7300cc88a588f55eff00975fceb9e2ed53964f467a36bd0f69057945dfef27f08ea30da6a5a9eb171bbe5da88abc9666270a3f051557c4bab1d66475b45786d98f9d246dc61f807f90c7e35cd5b34d2810a92103798c47d319ff003eb5ab3218608e252a5df0cfb4e7e8b5bca8c63539fafe8714b173a945524b4d6efab6ddcb5e1f8a3bad563fb53b05fe138cedc74aa5e330a97f0146de0a32e7d40765fe95aba323c30cd3a81e66ddaa7fda3d07e15ccebd2b35f1808005be620477f989fe66950f7ab5d3d8bc4a54b09cad6b27b9ad2ecbcd0ed670ca5d54ac8a3f84a80a3f3001fcea8586a26d11e39205991ba738c5581666c741b5b972c24b9763b73c14e8323f3fcea0b7b3f33518a35e5256014fd7bff5ad63ca94aef4bb30a8a7cd0b2b49a57f9afd4ec3c2371a75d5c2a2c2c93f5c373f956afc42bb961d2922b7c88cb8f331c657d3e99c525a69d6b67abda4d6b8d9ca38eb818e0fe63f5a83c6372b752ada44473cb9f45eff00e1f8d78adaa98a8cd6ab7d4fac82951cbe74dd94b6d3a9cde8d1b5e69d2dec837046393fed9e7f2031fe4557b694a5aa29e8242d8faaff008e6af92b0e9d2468a1419d8803b0daa2b1e7942dbb63826bd34dcdbedd0f9fab6a318ebadb5f32bdd5c2aacbb402dc60fa63b54da94067820b98470e377d3dab3994954f57602ba1d0258eeeddf4e9176dc264c6dd9bbe3eb5b4d722525d0f3a9a751f2bebb7a95ae2e16eed2de63c4c998dc5664d2b2bc7bb3b15b2b9edea2a7b88248ef9621f2ef70ac0fb523c2649e4848e73c7d69c3952d3626a7337aad762bea36be532ca83f74e71f43456cda20bab26865191d0fb514bdbc568cd960255573c366416901b77c48a55d0e30477a9b53ba55b231ee3b98fddf6a28acdc53a9a9a424e141dbb18374a45ac5c7def9bf3aab1b3c6eae9b9594e411d41a28aed8ec799534968742dabbead2c0b74804eb1ba34806378e08c8f5e0d36d70d1c5bbaa9643f8514573548a8e88eda55255bde9bbbff0086265942c76a4766ae8a194346bdf0770ff0a28ae3c4a5a33d6c0c9ddaf2460dfd92e997d344171149fbd8dbd57d3f034b616cdf69f9faaa8639f53cff005a28ad39dba5ccf7b194a8c235f952d2e74ba4db09a68e323f7687737d7bd79fb46fa96b5205e0cb23b671d0649a28a580779cfe5fa9be6f15c94a3d2eff0043b1d6adc6a3e13d36e215c08a21191e85783fa8acff0004dbf9f7aeae7e748dfca07fbd81fd28a2a149aa351766cdaa528bc5d195b57157fb8acda9dd5a5cb895995d09041ed5b490c915a2cd707fd2271e6303d541fbabf973f8d1455e222a118f2adce3c04e551d4527f0ec675fb84b72077358133966da3a668a2b5c3ad0e1c6c9f31760855e781075009ab1a526d9e5ba4e1e1ba19fa1ff00268a289b767fd7534a31578fafe86a78caccc5751dc47c7ce1863d7159b2467fb40c9d37206fce8a2b9f0f36e9abf99d38fa718d695bba3434b45459ce3249c003a93451456b0a11ab77233ab8c9d08c2304b6fd4fffd9, 5, 1, 'fffv', 'image/jpeg');
+INSERT INTO `files` (`id`, `times_played`, `user_id`, `group_id`, `title`, `filename`, `filesize`, `filemime`) VALUES
+(5, 0, 16, 61, 'song_voyage', 'rip', 92, 'img');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `folders`
+-- Table structure for table `folders`
 --
 
 CREATE TABLE `folders` (
@@ -79,7 +71,7 @@ CREATE TABLE `folders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `folders`
+-- Dumping data for table `folders`
 --
 
 INSERT INTO `folders` (`id`, `title`, `visibility`, `folder_image`) VALUES
@@ -90,7 +82,7 @@ INSERT INTO `folders` (`id`, `title`, `visibility`, `folder_image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `folder_files`
+-- Table structure for table `folder_files`
 --
 
 CREATE TABLE `folder_files` (
@@ -99,17 +91,10 @@ CREATE TABLE `folder_files` (
   `file_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `folder_files`
---
-
-INSERT INTO `folder_files` (`id`, `folder_id`, `file_id`) VALUES
-(7, 1, 2);
-
 -- --------------------------------------------------------
 
 --
--- Structure de la table `folder_owners`
+-- Table structure for table `folder_owners`
 --
 
 CREATE TABLE `folder_owners` (
@@ -120,7 +105,7 @@ CREATE TABLE `folder_owners` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `folder_owners`
+-- Dumping data for table `folder_owners`
 --
 
 INSERT INTO `folder_owners` (`id`, `folder_id`, `user_id`, `group_id`) VALUES
@@ -129,7 +114,7 @@ INSERT INTO `folder_owners` (`id`, `folder_id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE `groups` (
@@ -142,18 +127,18 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `user_id`, `filename`, `filesize`, `filemime`) VALUES
 (2, 'Tartampion', 4, NULL, 0, 'text/plain'),
-(56, 'sadasd', 1, '1491830061_71685.jpg', 0, 'text/plain'),
-(58, 'test align 2', 1, '1491831297_717773.png', 0, 'text/plain');
+(61, 'Test', 16, '1493046302_469207.jpg', 0, 'text/plain'),
+(62, 'RP', 16, '1493654992_447082.jpg', 0, 'text/plain');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `group_users`
+-- Table structure for table `group_users`
 --
 
 CREATE TABLE `group_users` (
@@ -162,10 +147,17 @@ CREATE TABLE `group_users` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `group_users`
+--
+
+INSERT INTO `group_users` (`id`, `group_id`, `user_id`) VALUES
+(1, 61, 4);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `permissions`
+-- Table structure for table `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -174,7 +166,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `permissions`
+-- Dumping data for table `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `nom`) VALUES
@@ -186,7 +178,7 @@ INSERT INTO `permissions` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `perm_group_users`
+-- Table structure for table `perm_group_users`
 --
 
 CREATE TABLE `perm_group_users` (
@@ -196,7 +188,7 @@ CREATE TABLE `perm_group_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `perm_group_users`
+-- Dumping data for table `perm_group_users`
 --
 
 INSERT INTO `perm_group_users` (`id`, `permission_id`, `group_user_id`) VALUES
@@ -206,7 +198,7 @@ INSERT INTO `perm_group_users` (`id`, `permission_id`, `group_user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `subscriptions`
+-- Table structure for table `subscriptions`
 --
 
 CREATE TABLE `subscriptions` (
@@ -216,7 +208,7 @@ CREATE TABLE `subscriptions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `subscriptions`
+-- Dumping data for table `subscriptions`
 --
 
 INSERT INTO `subscriptions` (`id`, `user_id`, `target_id`) VALUES
@@ -226,7 +218,7 @@ INSERT INTO `subscriptions` (`id`, `user_id`, `target_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -244,7 +236,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `first_name`, `last_name`, `birthdate`, `user_image`, `subscription`, `hashval`, `password_reset_token`) VALUES
@@ -257,7 +249,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `first_name`, `last_
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user_file_likes`
+-- Table structure for table `user_file_likes`
 --
 
 CREATE TABLE `user_file_likes` (
@@ -267,7 +259,7 @@ CREATE TABLE `user_file_likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `user_file_likes`
+-- Dumping data for table `user_file_likes`
 --
 
 INSERT INTO `user_file_likes` (`id`, `user_id`, `file_id`) VALUES
@@ -276,11 +268,11 @@ INSERT INTO `user_file_likes` (`id`, `user_id`, `file_id`) VALUES
 (3, 5, 2);
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
@@ -288,20 +280,21 @@ ALTER TABLE `comments`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `files`
+-- Indexes for table `files`
 --
 ALTER TABLE `files`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `group_id` (`group_id`);
 
 --
--- Index pour la table `folders`
+-- Indexes for table `folders`
 --
 ALTER TABLE `folders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `folder_files`
+-- Indexes for table `folder_files`
 --
 ALTER TABLE `folder_files`
   ADD PRIMARY KEY (`id`),
@@ -309,7 +302,7 @@ ALTER TABLE `folder_files`
   ADD KEY `file_id` (`file_id`);
 
 --
--- Index pour la table `folder_owners`
+-- Indexes for table `folder_owners`
 --
 ALTER TABLE `folder_owners`
   ADD PRIMARY KEY (`id`),
@@ -318,14 +311,14 @@ ALTER TABLE `folder_owners`
   ADD KEY `group_id` (`group_id`);
 
 --
--- Index pour la table `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `group_users`
+-- Indexes for table `group_users`
 --
 ALTER TABLE `group_users`
   ADD PRIMARY KEY (`id`),
@@ -333,13 +326,13 @@ ALTER TABLE `group_users`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `permissions`
+-- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `perm_group_users`
+-- Indexes for table `perm_group_users`
 --
 ALTER TABLE `perm_group_users`
   ADD PRIMARY KEY (`id`),
@@ -347,7 +340,7 @@ ALTER TABLE `perm_group_users`
   ADD KEY `group_user_id` (`group_user_id`);
 
 --
--- Index pour la table `subscriptions`
+-- Indexes for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
   ADD PRIMARY KEY (`id`),
@@ -355,13 +348,13 @@ ALTER TABLE `subscriptions`
   ADD KEY `target_id` (`target_id`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `user_file_likes`
+-- Indexes for table `user_file_likes`
 --
 ALTER TABLE `user_file_likes`
   ADD PRIMARY KEY (`id`),
@@ -369,100 +362,108 @@ ALTER TABLE `user_file_likes`
   ADD KEY `File_id` (`file_id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT pour la table `files`
+-- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `folders`
+-- AUTO_INCREMENT for table `folders`
 --
 ALTER TABLE `folders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT pour la table `folder_files`
+-- AUTO_INCREMENT for table `folder_files`
 --
 ALTER TABLE `folder_files`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT pour la table `folder_owners`
+-- AUTO_INCREMENT for table `folder_owners`
 --
 ALTER TABLE `folder_owners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
--- AUTO_INCREMENT pour la table `group_users`
+-- AUTO_INCREMENT for table `group_users`
 --
 ALTER TABLE `group_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT pour la table `permissions`
+-- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `perm_group_users`
+-- AUTO_INCREMENT for table `perm_group_users`
 --
 ALTER TABLE `perm_group_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `subscriptions`
+-- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
--- AUTO_INCREMENT pour la table `user_file_likes`
+-- AUTO_INCREMENT for table `user_file_likes`
 --
 ALTER TABLE `user_file_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- Contraintes pour les tables exportées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `comments`
+-- Constraints for table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `c_file_id_fk` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `c_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Contraintes pour la table `files`
+-- Constraints for table `files`
 --
 ALTER TABLE `files`
-  ADD CONSTRAINT `fi_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fi_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`);
 
 --
--- Contraintes pour la table `folder_files`
+-- Constraints for table `folder_files`
 --
 ALTER TABLE `folder_files`
   ADD CONSTRAINT `fk_file_id` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`),
   ADD CONSTRAINT `fk_folder_id` FOREIGN KEY (`folder_id`) REFERENCES `folders` (`id`);
 
 --
--- Contraintes pour la table `folder_owners`
+-- Constraints for table `folder_owners`
 --
 ALTER TABLE `folder_owners`
   ADD CONSTRAINT `fo_folder_id_fk` FOREIGN KEY (`folder_id`) REFERENCES `folders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fo_group_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fo_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `group_users`
+--
+ALTER TABLE `group_users`
+  ADD CONSTRAINT `group_users_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `group_users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
