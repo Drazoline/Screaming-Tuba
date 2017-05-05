@@ -14,6 +14,12 @@
     height: 60px;
     vertical-align:middle;
 }
+.file-add {
+    border-radius: 50%;
+    display: block;
+    bottom:0;
+    left:0;
+}
 .img-top {
   margin-bottom:35px !important;
 }
@@ -139,7 +145,7 @@ body {
 }
 
 .projects-content {
-  width: 700%;
+  width: calc(500% - 100px);
   height: 365px;
 }
 .projects-content li{

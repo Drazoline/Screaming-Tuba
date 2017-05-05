@@ -34,11 +34,30 @@
     </div>
     <div class="projects">
         <h3><?= __('Files')?></h3>
+
         <div class="categories-content projects-content" style="display: inline-block;">
             <ul>
-                <li>Coffee</li>
-                <li>Tea</li>
-                <li>Milk</li>
+                <?php
+                if(!empty($files)): foreach($files as $file): ?>
+                    <li>
+                        <?= $file->title ?>
+                    </li>
+
+                    <?php
+                endforeach;
+
+                else: ?>
+                    <a style="display:block;text-align:center">No users</a>
+                <?php endif; ?>
+                <?php
+                echo $this->Form->create('file', array('type' => 'file', 'url' => array('app' => true, 'controller' => 'groups', 'action' => 'save_new_file'), 'id' => 'upload-form'));
+                echo $this->Form->input('title');
+                echo $this->Form->file('fileExt');
+                echo $this->Form->input('user_id', array('type' => 'hidden', 'label' => false,  'value' => $userid));
+                echo $this->Form->input('group_id', array('type' => 'hidden', 'label' => false,  'value' => $groupid));
+                echo $this->Form->submit('Apply', array('class' => 'form-control'));
+                echo $this->Form->end();
+                ?>
             </ul>
         </div>
     </div>
