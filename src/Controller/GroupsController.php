@@ -33,16 +33,20 @@ class GroupsController extends AppController
             $group = $this->Groups->get($groupId);
        // }
         $this->set('group', $group);
-        $this->loadModel('GroupUsers');
+        //$this->loadModel('GroupUsers');
         $this->loadModel('Users');
+        $this->loadModel('Files');
 
         $query = $this->Users->find();
         $query->innerJoinWith('GroupUsers', function ($q) use ($groupId) {
-
             return $q->where(['GroupUsers.group_id' => $groupId]);
         });
 
+        $files = $this->Files->find()->where(['group_id =' => $groupId]);
+        $this->set('userid', $this->Auth->user('id'));
+        $this->set('groupid', $groupId);
         $this->set('results', $query);
+        $this->set('files', $files);
     }
 
     public function add()
@@ -64,9 +68,6 @@ class GroupsController extends AppController
                 //prepare the filename for database entry
                 $imageFileName = $setNewFileName . '.' . $ext;
            }
-
-
-
             //uploadend
 
             $group = $this->Groups->patchEntity($group, $this->request->data);
@@ -83,6 +84,41 @@ class GroupsController extends AppController
         }
         $this->set('group', $group);
     }
+
+    public function saveNewFile()
+    {
+        $this->loadModel('Files');
+        $fileAdd = $this->Files->newEntity();
+        if ($this->request->is('post')) {
+            //uploadstart
+            $file = $this->request->data['fileExt']; //put the data into a var for easy use
+
+            $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
+            $arr_ext = array('jpg', 'jpeg', 'png'); //set allowed extensions
+            $setNewFileName = time() . "_" . rand(000000, 999999);
+
+            if (in_array($ext, $arr_ext)) {
+                //do the actual uploading of the file. First arg is the tmp name, second arg is
+                //where we are putting it
+                move_uploaded_file($file['tmp_name'], WWW_ROOT . '/files/' . $setNewFileName . '.' . $ext);
+
+                //prepare the filename for database entry
+                $imageFileName = $setNewFileName . '.' . $ext;
+            }
+            //uploadend
+
+            $fileAdd = $this->Files->patchEntity($fileAdd, $this->request->data);
+            $fileAdd->times_played = 0;
+            $fileAdd->filesize = $file['size'];
+            $fileAdd->filemime = $file['type'];
+            $fileAdd->created = date("Y-m-d H:i:s");
+            $fileAdd->modified = date("Y-m-d H:i:s");
+            $fileAdd->filename= $imageFileName;
+            $this->Files->save($fileAdd);
+        }
+    }
+
+
     public function edit($id = null)
     {
         $group = $this->Groups->get($id);

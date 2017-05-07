@@ -5,7 +5,8 @@
 }
 
 img{
-    width: 200px;
+    width: 10vw;
+    height: 10vw;
     display: block;
     border-radius: 50%;
     margin:auto;
@@ -13,6 +14,7 @@ img{
 
 .header{
     padding: 5px;
+    padding-top: 2%;
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
@@ -28,20 +30,21 @@ img{
     margin-top: 1%;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 30%;
     border:2px solid black;
     -moz-border-radius:8px;
     -webkit-border-radius:8px;
     border-radius:8px;
     background: #afafaf;
     padding:15px;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
 }
 
-.button{
-
+.edit_form{
+    display: inline-block;
 }
+
 .btn-login{
     border-radius: 10%;
     border: 2px solid #1798A5;

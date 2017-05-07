@@ -27,10 +27,10 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
     <div id="Title" class="header">
         <?php
         if($user['user_image'] == "") :?>
-            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'bigimg')); ?></div>
+            <?php echo $this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'bigimg')); ?>
 
         <?php else:?>
-            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/'.$user->user_image, array('class' => 'bigimg')); ?></div>
+            <?php echo $this->Html->image('../webroot/img/profile/'.$user->user_image, array('class' => 'bigimg')); ?>
 
         <?php endif ?>
         <h1 class="Username" style="display:block;text-align:center"><?php echo $user->username ?></h1>
@@ -39,7 +39,14 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
         <?=$this->Html->link($this->Html->image('../webroot/img/settings.png', array('class' => 'settings')), ['action' => 'edit', $user->id], array('escape' => false));?>
         <?php else:?>
             <?php
-            echo "<form action='' method='post'> <input type='submit' name='btnSubscribe' value='Subscribe' class='subscribe'/> </form>";
+            $sql = "SELECT id FROM subscriptions WHERE subscriptions.user_id = $currentUser AND subscriptions.target_id = $user->id";
+            $sth = $db->query($sql);
+            if(mysqli_num_rows($sth)!=0){
+                echo "<form action='' method='post'> <input type='submit' name='btnSubscribe' value='Unsubscribe' class='btn-danger subscribe' id='btnSubscribe'/> </form>";
+            }
+            else{
+                echo "<form action='' method='post'> <input type='submit' name='btnSubscribe' value='Subscribe' class='btn-info subscribe' id='btnSubscribe'/> </form>";
+            }
 
             if(isset($_POST['btnSubscribe']))
             {
@@ -53,9 +60,9 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                     $sql = "INSERT INTO subscriptions VALUES (DEFAULT, $currentUser, $user->id)";
                     $db->query($sql);
                 }
+                header("Refresh:0");
             }
-            ?>
-        <?php endif ?>
+        endif ?>
     </div>
     <div class="main_display">
         <div class="row">
@@ -67,13 +74,12 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                     if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
                         <?php
                         if($rowData['filename'] == "") :?>
-                            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')); ?></div>
+                            <?=$this->Html->Link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
 
                         <?php else:?>
-                            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/'.$rowData['filename'], array('class' => 'smallimg')); ?></div>
+                            <?=$this->Html->Link($this->Html->image('../webroot/img/profile/'.$rowData['filename'], array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
 
                         <?php endif ?>
-                        <?= $this->Html->link( $rowData['name'], ['action' => 'groups', $rowData['id']]) ?>
                     <?php endwhile; ?>
                     <?php else: ?>
                         <p> No groups</p>
@@ -87,10 +93,10 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                     $sth = $db->query($sql); if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
                         <?php
                         if($rowData['user_image'] == "") :?>
-                            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')); ?></div>
+                            <?= $this->Html->link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
 
                         <?php else:?>
-                            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')); ?></div>
+                            <?=$this->Html->link($this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
 
                         <?php endif ?>
                     <?php endwhile; ?>
@@ -119,17 +125,14 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                 <div class="scrolllist">
                     <?php $sql = "SELECT users.id, users.username, users.user_image FROM users JOIN subscriptions ON users.id = subscriptions.target_id WHERE subscriptions.user_id = $user->id";
                     $sth = $db->query($sql); if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
-                        <div style="display:block">
                         <?php
                         if($rowData['user_image'] == "") :?>
-                            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')); ?></div>
+                            <?=$this->Html->link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
 
                         <?php else:?>
-                            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')); ?></div>
+                            <?=$this->Html->link($this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
 
                         <?php endif ?>
-                        <h3><?= $this->Html->link( $rowData['username'], ['action' => 'display_user', $rowData['id']]) ?></h3>
-                        </div>
                     <?php endwhile; ?>
                     <?php else: ?>
                         <p> No subscriptions</p>
