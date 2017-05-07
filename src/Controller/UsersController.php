@@ -66,6 +66,7 @@ class UsersController extends AppController
     {
       $user = $this->Users->get($id);
       if ($this->request->is(['post', 'put'])) {//uploadstart
+          $imageFileName = "";
           $file = $this->request->data['fileExt']; //put the data into a var for easy use
 
           $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
@@ -83,7 +84,9 @@ class UsersController extends AppController
           //uploadend
         $user = $this->Users->patchEntity($user, $this->request->data);
         $user->modified = date("Y-m-d H:i:s");
-        $user->user_image = $imageFileName;
+        if($imageFileName != ""){
+            $user->user_image = $imageFileName;
+        }
         if ($this->Users->save($user)) {
           $this->Flash->success(__('Your user has been updated.'));
           return $this->redirect(['action' => 'index']);

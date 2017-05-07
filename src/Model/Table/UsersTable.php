@@ -9,6 +9,7 @@ class UsersTable extends Table
 {
     public function initialize(array $config)
     {
+      $this->displayField('username');
         $this->addBehavior('Timestamp');
         $this->hasMany('GroupUsers');
 
