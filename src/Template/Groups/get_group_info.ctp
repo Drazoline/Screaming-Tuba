@@ -16,7 +16,7 @@
                         </li>
                         <?php
                     endforeach; ?>
-                    <a href="/Screaming-Tuba/GroupUsers/add" target="_self"><button type="button" class="btn-info btn_add" ><?= __('+') ?></button></a>
+                    <a href="/Screaming-Tuba/GroupUsers/add" target="_self"><button type="button" class="btn-info btn_add" style="border-radius: 50%; margin-left: 85px; margin-top: 10px;"><?= __('+') ?></button></a>
 
                     <?php else: ?>
                         <a style="display:block;text-align:center">No users</a>
