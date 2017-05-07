@@ -156,3 +156,8 @@ body {
 .title-center {
     text-align: center;
 }
+
+.btn_add {
+  float:right;
+  padding-right: 15px;
+}

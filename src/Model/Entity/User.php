@@ -9,7 +9,7 @@ class User extends Entity
 {
   public function __toString()
   {
-    return $this->name;
+    return $this->username;
   }
 
   protected $_accessible = [
