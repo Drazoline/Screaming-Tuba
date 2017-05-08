@@ -15,9 +15,10 @@
                             <?= $result->username ?>
                         </li>
                         <?php
-                    endforeach;
+                    endforeach; ?>
+                    <a href="/Screaming-Tuba/GroupUsers/add" target="_self"><button type="button" class="btn-info btn_add" style="border-radius: 50%; margin-left: 85px; margin-top: 10px;"><?= __('+') ?></button></a>
 
-                    else: ?>
+                    <?php else: ?>
                         <a style="display:block;text-align:center">No users</a>
                     <?php endif; ?>
                 </ul>
