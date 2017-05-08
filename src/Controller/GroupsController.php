@@ -20,13 +20,28 @@ class GroupsController extends AppController
 
     public function index()
     {
+
         $groups = $this->Groups->find('all', array(
             'conditions' => array('Groups.user_id' => $this->Auth->user('id'))
         ));
+
+        $query = $this->Groups->find('all')
+            ->where(['user_id' => $this->Auth->user('id')]);
         $this->set(compact('groups'));
+        $defaultGroupId = $query->first();
+        $this->set(compact('defaultGroupId'));
         $currentUser = $this->Auth->user('id');
         $this->set(compact('currentUser'));
+        if($this->request->is('post')){
+            $this->redirect(['controller' => 'search','action' => 'search', $this->request->data('search')]);
+        }
 
+        $query2 = $this->Groups->find()
+            ->innerJoinWith('GroupUsers', function ($q) {
+                return $q->where(['GroupUsers.user_id' => $this->Auth->user('id')]);
+            });
+
+        $this->set(compact('query2'));
     }
 
     public function getGroupInfo($groupId)
