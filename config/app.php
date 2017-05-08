@@ -194,8 +194,8 @@ return [
         'port'=> 587,
         'timeout'=> 30,
         'host' => 'smtp.sendgrid.net',
-        'username'=>'apikey',
-        'password'=>'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',
+        'username'=>'username',
+        'password'=>'password',
         'className'=>'Smtp'
       ],
      ],
