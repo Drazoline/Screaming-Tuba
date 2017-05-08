@@ -13,7 +13,10 @@ class GroupUsersTable extends Table
         $this->hasMany('Users', array(
             'foreignKey' => 'user_id'
         ));
-        $this->belongsTo('Groups');
+        $this->hasMany('Groups', array(
+            'foreignKey' => 'group_id'
+        ));
+
     }
 
     public function validationDefault(Validator $validator)

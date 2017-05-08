@@ -50,6 +50,11 @@ $(document ).ready(function(event) {
         callAjax(groupid);
     } else if (defaultGroupId != '') {
         callAjax(defaultGroupId);
+    } else {
+        var $contentDiv = $('#contents');
+        $contentDiv.empty();
+        $contentDiv.append("<div class=\"no-group-message\">Aucun groupe</div>");
+
     }
 
 
