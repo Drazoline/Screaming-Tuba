@@ -272,7 +272,7 @@ body {
 }
 
 .table-files {
-  padding-bottom: 20px;
+  border-collapse: collapse;
 }
 
 .colonne-files {
@@ -282,4 +282,13 @@ body {
 td, tr, th {
   padding-right: 20px;
   text-align: center;
+  padding-bottom: 10px;
+}
+
+.add-file {
+  padding-left: 10px;
+}
+
+.first {
+  padding-top: 20px;
 }

@@ -38,13 +38,14 @@
 
         <div class="categories-content projects-content" style="display: inline-block; padding-top:10px;">
             <table class="table-files">
-                <tr>
+                <tr style="border-bottom: 1px solid #000000;">
                     <th class="colonne-files">Nom</th>
                     <th>Fichier</th>
                     <th>Par</th>
                     <th>Nb. Télé.</th>
                     <th>Télécharger</th>
                 </tr>
+
                 <?php
                 if(!empty($files)): foreach($files as $file): ?>
                     <tr>
@@ -68,13 +69,13 @@
                 <?php endif; ?>
             </table>
                 <?php
-                echo $this->Form->create('file', array('style' => 'padding-left: 10px;', 'type' => 'file', 'url' =>
+                echo $this->Form->create('file', array('class' => 'add-file first', 'type' => 'file', 'url' =>
                     array('app' => true, 'controller' => 'groups', 'action' => 'save_new_file'), 'id' => 'upload-form'));
-                echo $this->Form->input('title', array('label' => array('text' => 'Description', 'style' => 'padding-right: 10px;')));
+                echo $this->Form->input('title', array('class' => 'add-file', 'label' => array('text' => 'Description')));
                 echo $this->Form->file('fileExt');
-                echo $this->Form->input('user_id', array('style' => 'padding-left: 10px;', 'type' => 'hidden', 'label' => false,  'value' => $userid));
-                echo $this->Form->input('group_id', array('style' => 'padding-left: 10px;', 'type' => 'hidden', 'label' => false,  'value' => $groupid));
-                echo $this->Form->submit('Apply', array('style' => 'padding-left: 10px;', 'class' => 'form-control'));
+                echo $this->Form->input('user_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $userid));
+                echo $this->Form->input('group_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $groupid));
+                echo $this->Form->submit('Apply', array('class' => 'add-file', 'class' => 'form-control'));
                 echo $this->Form->end();
                 ?>
         </div>
