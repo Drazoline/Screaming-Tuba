@@ -30,6 +30,15 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
 
     <?=$this->Html->css('groups.css') ?>
     <?=$this->Html->script('jquery-3.2.1.min.js') ?>
+    <?=$this->Html->script('js.cookie.js') ?>
+
+    <?php
+    if (!empty($defaultGroupId)) {
+        echo "<script type=\"text/javascript\">var defaultGroupId = '" . $defaultGroupId->id . "';</script>";
+    } else {
+        echo "<script type=\"text/javascript\">var defaultGroupId = '';</script>";
+    }
+    ?>
     <?=$this->Html->script('groups.js') ?>
     <script type="text/javascript">var groupAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'getGroupInfo']) ?>';</script>
     <script type="text/javascript">var fileAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'saveNewFile']) ?>';</script>
@@ -56,50 +65,27 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
         </a>
     </div>
     <div id="contents" class="content">
-        <!--<!--Code du feed starts here-->
-        <?php
-        /*        $currentUser = $this->Auth->user('id');
-                $sql_groups = "SELECT groups.id FROM groups JOIN group_users ON groups.id = group_users.group_id JOIN users ON users.id = group_users.user_id WHERE users.id = $currentUser";
-                $sth = $db->query($sql_groups);
-                if(mysqli_num_rows($sth)!=0){
-                    $counter = 0;
-                    $sql = "SELECT files.id, files.title, files.filename, files.filesize, files.filemime, groups.id, groups.name, groups.filename, groups.filesize, groups.filemime, users.id, users.username, users.user_image
-                      FROM files JOIN groups ON groups.id = files.group_id, JOIN users ON files.user_id = users.id WHERE";
-                    while ($rowData = mysqli_fetch_assoc($sth)){
-                        if ($counter != 0){
-                            $sql = $sql + ' AND';
-                        }
-                        $sql = $sql + ' files.group_id = ' + $rowData["id"];
-                        $counter += 1;
-                    }
-                    $sth = $db->query($sql);
-                    while ($rowData = mysqli_fetch_assoc($sth)):*/?>
-        <!--Code d'affichage d'une file dans le feed here-->
-        <?/*= $this->Form->create($comment) */?>
-        <fieldset class="comment_form">
-            <?/*= $this->Form->input('text') */?>
-            <?/*= $this->Form->input('file_id', array('type' => 'hidden'), array('value' => $rowData->id)) */?>
-            <?/*= $this->Form->input('user_id', array('type' => 'hidden'), array('value' => $currentUser)) */?>
-        </fieldset>
-        <button type="submit" class="btn-info btn-save" ><?/*= __('Save Comment') */?></button>
-        <?/*= $this->Form->end() */?>
-        <?php /*$sql_comments = "SELECT comments.text, users.id, users.username, users.user_image FROM comments JOIN users ON users.id = comments.user_id WHERE comments.file_id = $rowData->id";
-                    $sth_comments = $db->query($sql_comments);
-                    while ($rowData_comments = mysqli_fetch_assoc($sth_comments)):*/?>
-
-        --><?php
-        /*                    endwhile;
-                    endwhile;
-
-                }
-
-            */?>
+        <div class="no-group-message">Aucun groupe</div>
     </div>
     <div class="groups">
         <a id="title-center" style="align-content: center; text-align: center;">Groups</a>
-
         <?php
         if(!empty($groups)): foreach($groups as $group): ?>
+            <a>
+                <div class="group">
+                    <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle', 'id' => 'img-group-'.$group->id)); ?>
+                    <!--<p style=" margin:auto;"> <?php echo $group->name; ?></p>-->
+                </div>
+            </a>
+            <?php
+        endforeach;
+
+        else: ?>
+            <a style="display:block;text-align:center">You have no groups</a>
+        <?php endif; ?>
+        <?= $query2 ?>
+        <?php
+        if(!empty($query2)): foreach($query2 as $group): ?>
             <a>
                 <div class="group">
                     <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle', 'id' => 'img-group-'.$group->id)); ?>

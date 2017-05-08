@@ -70,7 +70,7 @@
                 <?php
                 echo $this->Form->create('file', array('type' => 'file', 'url' =>
                     array('app' => true, 'controller' => 'groups', 'action' => 'save_new_file'), 'id' => 'upload-form'));
-                echo $this->Form->input('title');
+                echo $this->Form->input('title', array('label' => array('text' => 'Description')));
                 echo $this->Form->file('fileExt');
                 echo $this->Form->input('user_id', array('type' => 'hidden', 'label' => false,  'value' => $userid));
                 echo $this->Form->input('group_id', array('type' => 'hidden', 'label' => false,  'value' => $groupid));
