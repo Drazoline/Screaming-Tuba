@@ -20,6 +20,7 @@ class GroupsController extends AppController
 
     public function index()
     {
+
         $groups = $this->Groups->find('all', array(
             'conditions' => array('Groups.user_id' => $this->Auth->user('id'))
         ));
@@ -31,6 +32,9 @@ class GroupsController extends AppController
         $this->set(compact('defaultGroupId'));
         $currentUser = $this->Auth->user('id');
         $this->set(compact('currentUser'));
+        if($this->request->is('post')){
+            $this->redirect(['controller' => 'search','action' => 'search', $this->request->data('search')]);
+        }
 
         $query2 = $this->Groups->find();
         $query2->innerJoinWith('GroupUsers', function ($q){

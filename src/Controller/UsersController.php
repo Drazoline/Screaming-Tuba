@@ -120,20 +120,23 @@ class UsersController extends AppController
             $reset_token_link = Router::url(['controller' => 'Users', 'action' => 'resetPassword'], TRUE) . '/' . $password_token . '#' . $hashval;
 
             try {
-              $email = new Email();
-              $email->transport('sendgrid');
+            $email = new Email();
+            $email->transport('sendgrid');
 
-              $email->sender(['tubascreaming@gmail.com' => 'Screaming Tuba'])
-                ->to($user->email)
-                ->subject('Reset Password')
-                ->send($reset_token_link);
+            $email->delivery = 'smtp';
+            $email->to($user->email);
+            $this->set('name', 'Recipient Name');
+            $email->subject('Reset Password');
+            $email->sendAs = 'both';
+            $email->send("Bonjour. Pour réinitialiser votre mot de passe, veuillez cliquer sur le lien suivant: " . $reset_token_link);
 
-              $this->Users->save($user);
-              $this->Flash->success('Please click on password reset link, sent in your email address to reset password.');
-            }
-            catch(Exception $e) {
-              $this->Flash->error('Try again later.');
-            }
+
+            $this->Users->save($user);
+            $this->Flash->success('Cliquer sur le lien reçu par email pour changer de mot de passe.');
+          }
+          catch(Exception $e) {
+            $this->Flash->error('Une erreur est survenue, réessayer plus tard.');
+          }
 
           }
           else

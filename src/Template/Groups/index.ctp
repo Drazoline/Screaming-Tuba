@@ -40,6 +40,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
     }
     ?>
     <?=$this->Html->script('groups.js') ?>
+    <?=$this->Html->css('header.css') ?>
     <script type="text/javascript">var groupAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'getGroupInfo']) ?>';</script>
     <script type="text/javascript">var fileAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'saveNewFile']) ?>';</script>
     <?= $this->fetch('meta') ?>
@@ -47,6 +48,14 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
     <?= $this->fetch('script') ?>
 
 </head>
+<header class="header">
+    <div align="Right" class="search-bar">
+        <?= $this->Form->create(); ?>
+        <?= $this->Form->input('search', array('type' => 'search', 'label' => 'Search: ')) ?>
+        <?= $this->Form->button(__('Search')) ?>
+        <?= $this->Form->end() ?>
+    </div>
+</header>
 <body>
 <div>
     <div class="menus">
