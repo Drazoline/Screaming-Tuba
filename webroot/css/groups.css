@@ -270,3 +270,16 @@ body {
     display: inline-block;
     overflow-y: scroll;
 }
+
+.table-files {
+  padding-bottom: 20px;
+}
+
+.colonne-files {
+  padding-left:10px !important;
+}
+
+td, tr, th {
+  padding-right: 20px;
+  text-align: center;
+}
