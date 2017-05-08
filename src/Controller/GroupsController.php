@@ -89,33 +89,37 @@ class GroupsController extends AppController
     {
         $this->loadModel('Files');
         $fileAdd = $this->Files->newEntity();
+        $status = 'failure';
         if ($this->request->is('post')) {
             //uploadstart
             $file = $this->request->data['fileExt']; //put the data into a var for easy use
+            if($file['tmp_name'] !== '') {
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
+                $arr_ext = array('jpg', 'jpeg', 'png', 'pdf'); //set allowed extensions
+                $setNewFileName = time() . "_" . rand(000000, 999999);
 
-            $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
-            $arr_ext = array('jpg', 'jpeg', 'png'); //set allowed extensions
-            $setNewFileName = time() . "_" . rand(000000, 999999);
+                if (in_array($ext, $arr_ext)) {
+                    //do the actual uploading of the file. First arg is the tmp name, second arg is
+                    //where we are putting it
+                    move_uploaded_file($file['tmp_name'], WWW_ROOT . '/files/' . $setNewFileName . '.' . $ext);
 
-            if (in_array($ext, $arr_ext)) {
-                //do the actual uploading of the file. First arg is the tmp name, second arg is
-                //where we are putting it
-                move_uploaded_file($file['tmp_name'], WWW_ROOT . '/files/' . $setNewFileName . '.' . $ext);
-
-                //prepare the filename for database entry
-                $imageFileName = $setNewFileName . '.' . $ext;
+                    //prepare the filename for database entry
+                    $imageFileName = $setNewFileName . '.' . $ext;
+                    $fileAdd = $this->Files->patchEntity($fileAdd, $this->request->data);
+                    $fileAdd->times_played = 0;
+                    $fileAdd->filesize = $file['size'];
+                    $fileAdd->filemime = $file['type'];
+                    $fileAdd->created = date("Y-m-d H:i:s");
+                    $fileAdd->modified = date("Y-m-d H:i:s");
+                    $fileAdd->filename = $imageFileName;
+                    $this->Files->save($fileAdd);
+                    $status = 'success';
+                } else {
+                    $status = 'wrongfiletype';
+                }
             }
-            //uploadend
-
-            $fileAdd = $this->Files->patchEntity($fileAdd, $this->request->data);
-            $fileAdd->times_played = 0;
-            $fileAdd->filesize = $file['size'];
-            $fileAdd->filemime = $file['type'];
-            $fileAdd->created = date("Y-m-d H:i:s");
-            $fileAdd->modified = date("Y-m-d H:i:s");
-            $fileAdd->filename= $imageFileName;
-            $this->Files->save($fileAdd);
         }
+        $this->set('status', $status);
     }
 
 

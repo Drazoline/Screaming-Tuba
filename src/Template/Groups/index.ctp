@@ -39,25 +39,62 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
 
 </head>
 <body>
-<div class="menus">
-    <a>
-        Welcome <br>
-        <?php echo $this->request->session()->read('Auth.User.username') ?><br><br>
-    </a>
-    <a>
-        My account<br>
-    </a>
-    <a>
-        Upload<br>
-    </a>
-    <a>
-        Following<br>
-    </a>
-</div>
-<div
-    class="row">
+<div>
+    <div class="menus">
+        <a>
+            Welcome <br>
+            <?php echo $this->request->session()->read('Auth.User.username') ?><br><br>
+        </a>
+        <a>
+            My account<br>
+        </a>
+        <a>
+            Upload<br>
+        </a>
+        <a>
+            Following<br>
+        </a>
+    </div>
+    <div id="contents" class="content">
+        <!--<!--Code du feed starts here-->
+        <?php
+        /*        $currentUser = $this->Auth->user('id');
+                $sql_groups = "SELECT groups.id FROM groups JOIN group_users ON groups.id = group_users.group_id JOIN users ON users.id = group_users.user_id WHERE users.id = $currentUser";
+                $sth = $db->query($sql_groups);
+                if(mysqli_num_rows($sth)!=0){
+                    $counter = 0;
+                    $sql = "SELECT files.id, files.title, files.filename, files.filesize, files.filemime, groups.id, groups.name, groups.filename, groups.filesize, groups.filemime, users.id, users.username, users.user_image
+                      FROM files JOIN groups ON groups.id = files.group_id, JOIN users ON files.user_id = users.id WHERE";
+                    while ($rowData = mysqli_fetch_assoc($sth)){
+                        if ($counter != 0){
+                            $sql = $sql + ' AND';
+                        }
+                        $sql = $sql + ' files.group_id = ' + $rowData["id"];
+                        $counter += 1;
+                    }
+                    $sth = $db->query($sql);
+                    while ($rowData = mysqli_fetch_assoc($sth)):*/?>
+        <!--Code d'affichage d'une file dans le feed here-->
+        <?/*= $this->Form->create($comment) */?>
+        <fieldset class="comment_form">
+            <?/*= $this->Form->input('text') */?>
+            <?/*= $this->Form->input('file_id', array('type' => 'hidden'), array('value' => $rowData->id)) */?>
+            <?/*= $this->Form->input('user_id', array('type' => 'hidden'), array('value' => $currentUser)) */?>
+        </fieldset>
+        <button type="submit" class="btn-info btn-save" ><?/*= __('Save Comment') */?></button>
+        <?/*= $this->Form->end() */?>
+        <?php /*$sql_comments = "SELECT comments.text, users.id, users.username, users.user_image FROM comments JOIN users ON users.id = comments.user_id WHERE comments.file_id = $rowData->id";
+                    $sth_comments = $db->query($sql_comments);
+                    while ($rowData_comments = mysqli_fetch_assoc($sth_comments)):*/?>
 
+        --><?php
+        /*                    endwhile;
+                    endwhile;
 
+                }
+
+            */?>
+    </div>
     <div class="groups">
         <a id="title-center" style="align-content: center; text-align: center;">Groups</a>
 
@@ -76,50 +113,10 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
             <a style="display:block;text-align:center">You have no groups</a>
         <?php endif; ?>
         <?php echo $this->Html->link(
-        $this->Html->image('../webroot/img/add_icon.png', array('class' => 'img-circle')), ['action' => 'add'], array('escape' => false)
+            $this->Html->image('../webroot/img/add_icon.png', array('class' => 'img-circle')), ['action' => 'add'], array('escape' => false)
         ); ?>
     </div>
-
-    <div id="contents">
-    <!--<!--Code du feed starts here-->
-    <?php
-/*        $currentUser = $this->Auth->user('id');
-        $sql_groups = "SELECT groups.id FROM groups JOIN group_users ON groups.id = group_users.group_id JOIN users ON users.id = group_users.user_id WHERE users.id = $currentUser";
-        $sth = $db->query($sql_groups);
-        if(mysqli_num_rows($sth)!=0){
-            $counter = 0;
-            $sql = "SELECT files.id, files.title, files.filename, files.filesize, files.filemime, groups.id, groups.name, groups.filename, groups.filesize, groups.filemime, users.id, users.username, users.user_image 
-              FROM files JOIN groups ON groups.id = files.group_id, JOIN users ON files.user_id = users.id WHERE";
-            while ($rowData = mysqli_fetch_assoc($sth)){
-                if ($counter != 0){
-                    $sql = $sql + ' AND';
-                }
-                $sql = $sql + ' files.group_id = ' + $rowData["id"];
-                $counter += 1;
-            }
-            $sth = $db->query($sql);
-            while ($rowData = mysqli_fetch_assoc($sth)):*/?>
-                <!--Code d'affichage d'une file dans le feed here-->
-                <?/*= $this->Form->create($comment) */?>
-                <fieldset class="comment_form">
-                    <?/*= $this->Form->input('text') */?>
-                    <?/*= $this->Form->input('file_id', array('type' => 'hidden'), array('value' => $rowData->id)) */?>
-                    <?/*= $this->Form->input('user_id', array('type' => 'hidden'), array('value' => $currentUser)) */?>
-                </fieldset>
-                <button type="submit" class="btn-info btn-save" ><?/*= __('Save Comment') */?></button>
-                <?/*= $this->Form->end() */?>
-            <?php /*$sql_comments = "SELECT comments.text, users.id, users.username, users.user_image FROM comments JOIN users ON users.id = comments.user_id WHERE comments.file_id = $rowData->id";
-                    $sth_comments = $db->query($sql_comments);
-                    while ($rowData_comments = mysqli_fetch_assoc($sth_comments)):*/?>
-
-                        --><?php
-/*                    endwhile;
-            endwhile;
-
-        }
-
-    */?>
-    </div>
+    <br style="clear: left;" />
 </div>
 </body>
 </html>

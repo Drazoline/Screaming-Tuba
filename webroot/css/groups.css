@@ -43,7 +43,6 @@
 }
 .projects h3 {
     text-align: center;
-    width: 700%;
     color: #1798A5;
 }
 .categories-content {
@@ -89,12 +88,33 @@ body {
 
 .groups {
     float: right;
+    width: 90px;
     border: 1px solid #ccc!important;
     height: 800px;
 }
 
+
+.groups a {
+    padding: 8px 8px 0px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.content {
+    float: left;
+    /*
+    le calc est très sensible
+     */
+    width: calc(100% - 296px);
+    border: 1px solid black;
+}
+
 .menus {
     float: left;
+    width: 200px;
     border: 1px solid #ccc!important;
     height: 800px;
 }
@@ -110,8 +130,8 @@ body {
 .stat-members {
     display: flex;
     flex-direction: column;
+    flex-direction: column;
     float: left;
-    width: 21.5%;
 }
 .contents {
     border: 1px solid #ccc!important;
@@ -135,17 +155,7 @@ body {
     background-color: #c9c9c9;
 }
 
-.groups a {
-    padding: 8px 8px 0px 8px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
 .projects-content {
-  width: calc(500% - 100px);
   height: 365px;
 }
 .projects-content li{
