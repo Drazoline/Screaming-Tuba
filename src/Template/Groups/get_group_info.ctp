@@ -3,7 +3,7 @@
     <div id="title-group" class="title-group"><?= $group->name ?></div>
     <?php  echo $this->Html->image('../webroot/img/groups/'.$group->filename, array('class' => 'img-circle-title img-top')); ?>
 </div>
-<div>
+<div style="float: left;width: 100%;">
     <div class="stat-members">
         <div id="members-wrap" class="categories">
             <h3><?= __('Members')?></h3>

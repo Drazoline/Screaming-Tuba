@@ -38,8 +38,13 @@
 }
 
 .projects {
+    /*
     padding: 0px 10px 10px 70px;
+    */
+    padding-right: 10px;
     display: inline-block;
+    float: left;
+    width: calc(100% - 270px);
 }
 .projects h3 {
     text-align: center;
@@ -133,6 +138,7 @@ body {
     flex-direction: column;
     flex-direction: column;
     float: left;
+    width: 260px;
 }
 .contents {
     border: 1px solid #ccc!important;
@@ -158,6 +164,7 @@ body {
 
 .projects-content {
   height: 365px;
+    width: 100%;
 }
 .projects-content li{
     padding-right: 25px !important;
