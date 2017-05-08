@@ -20,12 +20,16 @@ class GroupsController extends AppController
 
     public function index()
     {
+
         $groups = $this->Groups->find('all', array(
             'conditions' => array('Groups.user_id' => $this->Auth->user('id'))
         ));
         $this->set(compact('groups'));
         $currentUser = $this->Auth->user('id');
         $this->set(compact('currentUser'));
+        if($this->request->is('post')){
+            $this->redirect(['controller' => 'search','action' => 'search', $this->request->data('search')]);
+        }
 
     }
 
