@@ -44,7 +44,12 @@ class GroupsController extends AppController
             return $q->where(['GroupUsers.group_id' => $groupId]);
         });
 
-        $files = $this->Files->find()->where(['group_id =' => $groupId]);
+        $files = $this->Files->find()
+            ->select(['username' => 'users.username'])
+            ->select($this->Files)
+            ->contain(['Users'])
+            ->where(['group_id =' => $groupId]);
+
         $this->set('userid', $this->Auth->user('id'));
         $this->set('groupid', $groupId);
         $this->set('results', $query);
@@ -108,7 +113,7 @@ class GroupsController extends AppController
                     //prepare the filename for database entry
                     $imageFileName = $setNewFileName . '.' . $ext;
                     $fileAdd = $this->Files->patchEntity($fileAdd, $this->request->data);
-                    $fileAdd->times_played = 0;
+                    $fileAdd->org_filename = $file['name'];
                     $fileAdd->filesize = $file['size'];
                     $fileAdd->filemime = $file['type'];
                     $fileAdd->created = date("Y-m-d H:i:s");

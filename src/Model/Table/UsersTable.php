@@ -12,6 +12,7 @@ class UsersTable extends Table
       $this->displayField('username');
         $this->addBehavior('Timestamp');
         $this->hasMany('GroupUsers');
+        $this->hasMany('Files');
 
     }
 

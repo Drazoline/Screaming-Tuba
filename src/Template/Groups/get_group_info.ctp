@@ -37,21 +37,39 @@
         <h3><?= __('Files')?></h3>
 
         <div class="categories-content projects-content" style="display: inline-block;">
-            <ul>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Fichier</th>
+                    <th>Par</th>
+                    <th>Nb. Télé.</th>
+                    <th>Télécharger</th>
+                </tr>
                 <?php
                 if(!empty($files)): foreach($files as $file): ?>
-                    <li>
-                        <?= $file->title ?>
-                    </li>
+                    <tr>
+                        <td><?= $file->title;?></td>
+                        <td><?= $file->org_filename;?></td>
+                        <td><?= $file->username;?></td>
+                        <td><?= $file->times_downloaded;?></td>
 
+                        <td><?=  $this->Html->link(
+                                'Télécharger',
+                                '../webroot/files/'.$file->filename,
+                                ['class' => 'button', 'target' => '_blank', 'download' =>$file->org_filename, 'onclick'=> 'console.log("ok")']
+                            ); ?>
+                        </td>
+                    <tr>
                     <?php
                 endforeach;
 
                 else: ?>
                     <a style="display:block;text-align:center">No users</a>
                 <?php endif; ?>
+            </table>
                 <?php
-                echo $this->Form->create('file', array('type' => 'file', 'url' => array('app' => true, 'controller' => 'groups', 'action' => 'save_new_file'), 'id' => 'upload-form'));
+                echo $this->Form->create('file', array('type' => 'file', 'url' =>
+                    array('app' => true, 'controller' => 'groups', 'action' => 'save_new_file'), 'id' => 'upload-form'));
                 echo $this->Form->input('title');
                 echo $this->Form->file('fileExt');
                 echo $this->Form->input('user_id', array('type' => 'hidden', 'label' => false,  'value' => $userid));
@@ -59,7 +77,6 @@
                 echo $this->Form->submit('Apply', array('class' => 'form-control'));
                 echo $this->Form->end();
                 ?>
-            </ul>
         </div>
     </div>
 </div>
