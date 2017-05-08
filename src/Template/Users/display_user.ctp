@@ -27,7 +27,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
     <div id="Title" class="header">
         <?php
         if($user['user_image'] == "") :?>
-            <?php echo $this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'bigimg')); ?>
+            <?php echo $this->Html->image('../webroot/img/profile/user_default.png', array('class' => 'bigimg')); ?>
 
         <?php else:?>
             <?php echo $this->Html->image('../webroot/img/profile/'.$user->user_image, array('class' => 'bigimg')); ?>
@@ -62,7 +62,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                 }
                 header("Refresh:0");
             }
-        endif ?>
+            endif ?>
     </div>
     <div class="main_display">
         <div class="row">
@@ -74,10 +74,10 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                     if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
                         <?php
                         if($rowData['filename'] == "") :?>
-                            <?=$this->Html->Link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
+                            <?=$this->Html->Link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
 
                         <?php else:?>
-                            <?=$this->Html->Link($this->Html->image('../webroot/img/profile/'.$rowData['filename'], array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
+                            <?=$this->Html->Link($this->Html->image('../webroot/img/groups/'.$rowData['filename'], array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
 
                         <?php endif ?>
                     <?php endwhile; ?>
@@ -93,7 +93,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                     $sth = $db->query($sql); if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
                         <?php
                         if($rowData['user_image'] == "") :?>
-                            <?= $this->Html->link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
+                            <?= $this->Html->link($this->Html->image('../webroot/img/profile/user_default.png', array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
 
                         <?php else:?>
                             <?=$this->Html->link($this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
@@ -112,8 +112,15 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                 <div class="scrolllist">
                     <?php $sql = "SELECT DISTINCT files.id, files.title, (SELECT COUNT(user_file_likes.id) FROM user_file_likes WHERE file_id = files.id) AS countLikes FROM files JOIN user_file_likes ON user_file_likes.file_id = files.id WHERE files.user_id = $user->id ORDER BY countLikes";
                     $sth = $db->query($sql); if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
-                        <p><?php echo $rowData['title'];?></p>
-                        <p><?php echo $rowData['countLikes'];?></p>
+                        <h4>
+                            <?php echo $rowData['title'];?>
+                            <?php echo $rowData['countLikes'];?>
+                            <?php if($rowData['countLikes'] < 1):
+                                    echo "Lits";
+                                  else:
+                                    echo "Lit";
+                                  endif;?>
+                        </h4>
                     <?php endwhile; ?>
                     <?php else: ?>
                         <p> No files lit</p>
@@ -127,7 +134,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                     $sth = $db->query($sql); if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
                         <?php
                         if($rowData['user_image'] == "") :?>
-                            <?=$this->Html->link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
+                            <?=$this->Html->link($this->Html->image('../webroot/img/profile/user_default.png', array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
 
                         <?php else:?>
                             <?=$this->Html->link($this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')), ['action' => 'display_user', $rowData['id']], array('escape' => false)); ?>

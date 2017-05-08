@@ -24,7 +24,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");?>
     <div id="Title" class="header">
         <?php
         if($user['user_image'] == "") :?>
-            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/profile.jpg'); ?></div>
+            <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/user_default.png'); ?></div>
 
         <?php else:?>
             <div class="circleborder"><?php echo $this->Html->image('../webroot/img/profile/'.$user->user_image); ?></div>
@@ -35,16 +35,16 @@ $db =  mysqli_connect("localhost","root","","screaming_db");?>
     <div class="users_form">
         <div class="edit_form">
         <?= $this->Form->create($user, ['type' => 'file']) ?>
-        <fieldset class="user_edit_form">
-            <b><?php echo "First Name "; ?></b>
-            <?php echo $user->first_name; ?>
-            <br/>
-            <b> <?php echo "Last Name "; ?> </b>
-            <?php echo $user->last_name; ?>
-            <?= $this->Form->input('password') ?>
-            <?= $this->Form->input('email') ?>
-            <?= $this->Form->file('fileExt', array('style'=>'align: center')) ?>
-        </fieldset>
+            <fieldset class="user_edit_form">
+                <b><?php echo "First Name "; ?></b>
+                <?php echo $user->first_name; ?>
+                <br/>
+                <b> <?php echo "Last Name "; ?> </b>
+                <?php echo $user->last_name; ?>
+                <?= $this->Form->input('password') ?>
+                <?= $this->Form->input('email') ?>
+                <?= $this->Form->file('fileExt', array('style'=>'align: center')) ?>
+            </fieldset>
         <button type="submit" class="btn-info btn-save" ><?= __('Save User') ?></button>
         <?= $this->Form->end() ?>
         </div>

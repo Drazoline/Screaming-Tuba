@@ -38,7 +38,7 @@ class CommentsController extends AppController
             $comment->modified = date("Y-m-d H:i:s");
             if ($this->Comments->save($comment)) {
                 $this->Flash->success(__('Your comment has been saved.'));
-                return $this->redirect(['controller' => 'groups','action' => 'index']);
+                return $this->redirect(['controller' => 'feed','action' => 'index']);
             }
             $this->Flash->error(__('Unable to add your comment. '));
         }
