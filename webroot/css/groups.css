@@ -110,6 +110,7 @@ body {
      */
     width: calc(100% - 296px);
     border: 1px solid black;
+    height: 100vw;
 }
 
 .menus {
@@ -173,12 +174,10 @@ body {
     text-align: center;
 }
 
-<<<<<<< HEAD
 .btn_add {
   float:right;
   padding-right: 15px;
 }
-=======
 .feedfile{
     width: 50%;
     height: auto;
@@ -261,4 +260,3 @@ body {
     display: inline-block;
     overflow-y: scroll;
 }
->>>>>>> 2a28a96d5103d442a59dd0fe4085e7ea9b58aa62
