@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2017 at 11:25 PM
+-- Generation Time: May 08, 2017 at 03:14 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -41,10 +41,12 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `files` (
   `id` int(11) NOT NULL,
-  `times_played` int(11) NOT NULL,
+  `times_played` int(11) NOT NULL DEFAULT '0',
+  `times_downloaded` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
+  `org_filename` varchar(255) NOT NULL,
   `filename` varchar(255) NOT NULL,
   `filesize` int(11) NOT NULL,
   `filemime` varchar(45) NOT NULL
@@ -54,8 +56,9 @@ CREATE TABLE `files` (
 -- Dumping data for table `files`
 --
 
-INSERT INTO `files` (`id`, `times_played`, `user_id`, `group_id`, `title`, `filename`, `filesize`, `filemime`) VALUES
-(5, 0, 16, 61, 'song_voyage', 'rip', 92, 'img');
+INSERT INTO `files` (`id`, `times_played`, `times_downloaded`, `user_id`, `group_id`, `title`, `org_filename`, `filename`, `filesize`, `filemime`) VALUES
+(16, 0, 0, 16, 61, 'asdasd', 'RACINE_PHEDRE.pdf', '1494209035_700195.pdf', 175795, 'application/pdf'),
+(17, 0, 0, 16, 61, 'zxcasdas', 'h.jpg', '1494209249_659667.jpg', 11984, 'image/jpeg');
 
 -- --------------------------------------------------------
 
@@ -152,7 +155,9 @@ CREATE TABLE `group_users` (
 --
 
 INSERT INTO `group_users` (`id`, `group_id`, `user_id`) VALUES
-(1, 61, 4);
+(1, 61, 4),
+(2, 2, 1),
+(3, 61, 1);
 
 -- --------------------------------------------------------
 
@@ -369,12 +374,12 @@ ALTER TABLE `user_file_likes`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `folders`
 --
@@ -384,7 +389,7 @@ ALTER TABLE `folders`
 -- AUTO_INCREMENT for table `folder_files`
 --
 ALTER TABLE `folder_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `folder_owners`
 --
@@ -399,7 +404,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `group_users`
 --
 ALTER TABLE `group_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
