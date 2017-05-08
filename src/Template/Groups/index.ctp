@@ -74,7 +74,6 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
         </a>
     </div>
     <div id="contents" class="content">
-        <div class="no-group-message">Aucun groupe</div>
     </div>
     <div class="groups">
         <a id="title-center" style="align-content: center; text-align: center;">Groups</a>
@@ -92,7 +91,6 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
         else: ?>
             <a style="display:block;text-align:center">You have no groups</a>
         <?php endif; ?>
-        <?= $query2 ?>
         <?php
         if(!empty($query2)): foreach($query2 as $group): ?>
             <a>

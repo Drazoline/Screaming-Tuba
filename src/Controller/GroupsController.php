@@ -36,11 +36,11 @@ class GroupsController extends AppController
             $this->redirect(['controller' => 'search','action' => 'search', $this->request->data('search')]);
         }
 
-        $query2 = $this->Groups->find();
-        $query2->innerJoinWith('GroupUsers', function ($q){
-        return $q->where(['GroupUsers.user_id' => 'Group.user_id']);
-    })
-            ->where(['GroupUsers.user_id' => $this->Auth->user('id')]);
+        $query2 = $this->Groups->find()
+            ->innerJoinWith('GroupUsers', function ($q) {
+                return $q->where(['GroupUsers.user_id' => $this->Auth->user('id')]);
+            });
+
         $this->set(compact('query2'));
     }
 
