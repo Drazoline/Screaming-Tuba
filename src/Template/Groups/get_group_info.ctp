@@ -21,6 +21,7 @@
                     <?php endif; ?>
                 </ul>
                 <?php
+                if($group->user_id == $userid){
                 echo $this->Form->create('groupUser', array('style' => 'padding-left: 10px;',
                     'url' => array('app' => true, 'controller' => 'groups', 'action' => 'add_user'), 'id' => 'upload-form-user'));
                 echo $this->Form->input('user_id', [
@@ -29,7 +30,6 @@
                     'label' => __("Utilisateurs"),
                     'style' => 'height: 35px;'
                 ]);
-                if($group->user_id == $userid){
                     echo $this->Form->input('group_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $groupid));
                     echo $this->Form->submit('Ajouter', array('class' => 'add-file', 'class' => 'form-control'));
                     echo $this->Form->end();
