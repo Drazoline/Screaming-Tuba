@@ -49,6 +49,13 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
 
 </head>
 <header class="header">
+    <?= $this->Html->link($this->Html->image('../webroot/img/logo.png', array('class' => 'smallimg')), ['controller' => 'groups', 'action' => 'index'], array('escape' => false)); ?>
+    <h3>
+        My Profile
+    </h3>
+    <h3>
+        Log Out
+    </h3>
     <div align="Right" class="search-bar">
         <?= $this->Form->create(); ?>
         <?= $this->Form->input('search', array('type' => 'search', 'label' => 'Search: ')) ?>
@@ -58,21 +65,6 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
 </header>
 <body>
 <div>
-    <div class="menus">
-        <a>
-            Welcome <br>
-            <?php echo $this->request->session()->read('Auth.User.username') ?><br><br>
-        </a>
-        <a>
-            My account<br>
-        </a>
-        <a>
-            Upload<br>
-        </a>
-        <a>
-            Following<br>
-        </a>
-    </div>
     <div id="contents" class="content">
     </div>
     <div class="groups">
