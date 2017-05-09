@@ -43,6 +43,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
     <?=$this->Html->css('header.css') ?>
     <script type="text/javascript">var groupAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'getGroupInfo']) ?>';</script>
     <script type="text/javascript">var fileAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'saveNewFile']) ?>';</script>
+    <script type="text/javascript">var addUserAjaxUrl = '<?= $this->Url->Build(['controller' => 'Groups', 'action' => 'addUser']) ?>';</script>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>

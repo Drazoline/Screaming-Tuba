@@ -34,6 +34,34 @@ $(document ).ready(function(event) {
                                 }
                             });
                     });
+
+                    $('#upload-form-user').off().on('submit', function(e){
+                        console.log("ajax");
+                        e.preventDefault();
+                        var formdatas = new FormData($('#upload-form-user')[0]);
+                        $.ajax({
+                            url: addUserAjaxUrl,
+                            method: 'post',
+                            data:  formdatas,
+                            contentType: false,
+                            processData: false
+                        })
+                            .done(function(response) {
+                                console.log(response);
+                                var $contentDiv = $('#user-list');
+                                var $labelInput = $(response);
+                                console.log($labelInput.attr('id'));
+                                console.log("#user-id option[value='" + $labelInput.attr('id') + "']");
+                                var $selectUser = $("#user-id option[value='" + $labelInput.attr('id') + "']").remove();
+                                $contentDiv.append(response);
+                            })
+                            .fail(function(jqXHR) {
+                                if (jqXHR.status == 403) {
+                                } else {
+                                    console.log(jqXHR.responseText);
+                                }
+                            });
+                    });
                 },
                 error : function() {
                     console.log("false");

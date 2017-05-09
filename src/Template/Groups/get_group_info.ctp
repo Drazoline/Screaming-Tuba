@@ -8,20 +8,29 @@
         <div id="members-wrap" class="categories">
             <h3><?= __('Members')?></h3>
             <div class="categories-content" >
-                <ul>
+                <ul id="user-list">
                     <?php
                     if(!empty($results)): foreach($results as $result): ?>
-                        <li>
-                            <?= $result->username ?>
-                        </li>
+                        <li id="<?= $result->id?>"><?= $result->username ?></li>
                         <?php
                     endforeach; ?>
-                    <a href="/Screaming-Tuba/GroupUsers/add" target="_self"><button type="button" class="btn-info btn_addMember" style="border-radius: 50%; margin-left: 85px; margin-top: 10px;"><?= __('+') ?></button></a>
-
                     <?php else: ?>
                         <a style="display:block;text-align:center">No users</a>
                     <?php endif; ?>
                 </ul>
+                <?php
+                echo $this->Form->create('groupUser', array('style' => 'padding-left: 10px;',
+                    'url' => array('app' => true, 'controller' => 'groups', 'action' => 'add_user'), 'id' => 'upload-form-user'));
+                echo $this->Form->input('user_id', [
+                    'type' => 'select',
+                    'options' => $userQuery,
+                    'label' => __("Utilisateurs"),
+                    'style' => 'height: 35px;'
+                ]);
+                echo $this->Form->input('group_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $groupid));
+                echo $this->Form->submit('Ajouter', array('class' => 'add-file', 'class' => 'form-control'));
+                echo $this->Form->end();
+                ?>
             </div>
         </div>
         <div id="members-wrap" class="categories">
@@ -75,7 +84,7 @@
                 echo $this->Form->file('fileExt');
                 echo $this->Form->input('user_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $userid));
                 echo $this->Form->input('group_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $groupid));
-                echo $this->Form->submit('Apply', array('class' => 'add-file', 'class' => 'form-control'));
+                echo $this->Form->submit('Ajouter', array('class' => 'add-file', 'class' => 'form-control'));
                 echo $this->Form->end();
                 ?>
         </div>

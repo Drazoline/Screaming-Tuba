@@ -10,8 +10,6 @@ use Cake\Datasource\ConnectionManager;
 
 class GroupsController extends AppController
 {
-
-    private $current_user_id = 1;
     public function initialize()
     {
         parent::initialize();
@@ -53,6 +51,7 @@ class GroupsController extends AppController
         //$this->loadModel('GroupUsers');
         $this->loadModel('Users');
         $this->loadModel('Files');
+        $this->loadModel('GroupUsers');
 
         $query = $this->Users->find();
         $query->innerJoinWith('GroupUsers', function ($q) use ($groupId) {
@@ -65,6 +64,24 @@ class GroupsController extends AppController
             ->contain(['Users'])
             ->where(['group_id =' => $groupId]);
 
+
+        $query4 = $this->GroupUsers->find()
+            ->select(['GroupUsers.user_id'])
+            ->where([
+            'GroupUsers.group_id ' => $groupId
+        ]);
+
+        $query3 = $this->Users->find('list')->where([
+            'Users.id !=' => $this->Auth->user('id')
+        ])->where([
+            'Users.id NOT IN' => $query4
+        ])->where([
+            'Users.id !=' => $group->user_id
+        ]);
+
+        $this->set('groupquery', $query4);
+
+        $this->set('userQuery', $query3);
         $this->set('userid', $this->Auth->user('id'));
         $this->set('groupid', $groupId);
         $this->set('results', $query);
@@ -145,6 +162,16 @@ class GroupsController extends AppController
             }
         }
         $this->set('status', $status);
+    }
+
+    public function addUser(){
+        $this->loadModel('GroupUsers');
+        $groupAdd = $this->GroupUsers->newEntity();
+        $groupAdd = $this->GroupUsers->patchEntity($groupAdd, $this->request->data);
+        $this->loadModel('Users');
+        $user =$this->Users->get($this->request->data['user_id']);
+        $this->set('user', $user);
+        $this->GroupUsers->save($groupAdd);
     }
 
 
