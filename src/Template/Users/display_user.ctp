@@ -16,12 +16,27 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
     <?= $this->Html->meta('icon') ?>
 
     <?=$this->Html->css('display_user.css') ?>
+    <?=$this->Html->css('header.css') ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+<header class="header">
+
+    <?= $this->Html->link($this->Html->image('../webroot/img/logo.png', array('class' => 'smallimg')), ['controller' => 'feed', 'action' => 'index'], array('escape' => false)); ?>
+    <h3 class="header-text">
+        <?= $this->Html->link('My Profile', ['controller'=>'users', 'action'=>'display_user', $currentUser], array( 'class' => 'button-header')); ?>
+        <?= $this->Html->link('Groups', ['controller'=>'groups', 'action'=>'index', $currentUser], array( 'class' => 'button-header')); ?>
+        <?= $this->Html->link('Logout', ['controller'=>'users', 'action'=>'logout'], array( 'class' => 'button-header')); ?>
+        <div class="search-bar">
+            <?= $this->Form->create(); ?>
+            <?= $this->Form->input('search', array('type' => 'search', 'label' => 'Search: ')) ?>
+            <?= $this->Form->end() ?>
+        </div>
+    </h3>
+</header>
 <body>
 <div class="User">
     <div id="Title" class="title-header">

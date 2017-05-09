@@ -49,19 +49,18 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
 
 </head>
 <header class="header">
-    <?= $this->Html->link($this->Html->image('../webroot/img/logo.png', array('class' => 'smallimg')), ['controller' => 'groups', 'action' => 'index'], array('escape' => false)); ?>
-    <h3>
-        My Profile
+
+    <?= $this->Html->link($this->Html->image('../webroot/img/logo.png', array('class' => 'smallimg')), ['controller' => 'feed', 'action' => 'index'], array('escape' => false)); ?>
+    <h3 class="header-text">
+        <?= $this->Html->link('My Profile', ['controller'=>'users', 'action'=>'display_user', $currentUser], array( 'class' => 'button-header')); ?>
+        <?= $this->Html->link('Groups', ['controller'=>'groups', 'action'=>'index', $currentUser], array( 'class' => 'button-header')); ?>
+        <?= $this->Html->link('Logout', ['controller'=>'users', 'action'=>'logout'], array( 'class' => 'button-header')); ?>
+        <div class="search-bar">
+            <?= $this->Form->create(); ?>
+            <?= $this->Form->input('search', array('type' => 'search', 'label' => 'Search: ')) ?>
+            <?= $this->Form->end() ?>
+        </div>
     </h3>
-    <h3>
-        Log Out
-    </h3>
-    <div align="Right" class="search-bar">
-        <?= $this->Form->create(); ?>
-        <?= $this->Form->input('search', array('type' => 'search', 'label' => 'Search: ')) ?>
-        <?= $this->Form->button(__('Search')) ?>
-        <?= $this->Form->end() ?>
-    </div>
 </header>
 <body>
 <div>
