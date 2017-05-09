@@ -125,7 +125,7 @@ body {
     /*
     le calc est très sensible
      */
-    width: calc(100% - 296px);
+    width: calc(100% - 96px);
     border: 1px solid black;
     height: 100vw;
 }

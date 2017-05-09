@@ -31,7 +31,7 @@ class GroupUsersController extends AppController
         $groupUser->modified = date("Y-m-d H:i:s");
         if ($this->GroupUsers->save($groupUser)) {
           $this->Flash->success(__('Your user has been saved.'));
-          return $this->redirect(['action' => 'index']);
+          return $this->redirect(['controller' => 'groups','action' => 'index']);
         }
         $this->Flash->error(__('Unable to add your user.'));
       }

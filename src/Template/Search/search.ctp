@@ -19,7 +19,7 @@
                             <div class="result-users">
                                 <?php
                                 if($rowData['user_image'] == "") :?>
-                                    <?= $this->Html->link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['controller' => 'users', 'action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
+                                    <?= $this->Html->link($this->Html->image('../webroot/img/profile/user_default.png', array('class' => 'smallimg')), ['controller' => 'users', 'action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
 
                                 <?php else:?>
                                     <?=$this->Html->link($this->Html->image('../webroot/img/profile/'.$rowData['user_image'], array('class' => 'smallimg')), ['controller' => 'users', 'action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
@@ -49,10 +49,10 @@
                         <div class="result-groups">
                             <?php
                             if($rowData['filename'] == "") :?>
-                                <?= $this->Html->link($this->Html->image('../webroot/img/profile/profile.jpg', array('class' => 'smallimg')), ['controller' => 'groups', 'action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
+                                <?= $this->Html->link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['controller' => 'groups', 'action' => 'index', $rowData['id']], array('escape' => false)); ?>
 
                             <?php else:?>
-                                <?=$this->Html->link($this->Html->image('../webroot/img/groups/'.$rowData['filename'], array('class' => 'smallimg')), ['controller' => 'users', 'action' => 'display_user', $rowData['id']], array('escape' => false)); ?>
+                                <?=$this->Html->link($this->Html->image('../webroot/img/groups/'.$rowData['filename'], array('class' => 'smallimg')), ['controller' => 'groups', 'action' => 'index', $rowData['id']], array('escape' => false)); ?>
 
                             <?php endif ?>
                             <h5>
@@ -86,9 +86,9 @@
                                 <?php echo $rowData['Username']." posted ".$rowData['Title']." in ".$rowData['GroupName']; ?>
                                 <?php
                                 if($rowData['GroupFilename'] == "") :?>
-                                    <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['controller' => 'users','action' => 'display_user', $rowData['FileGroupID']], array('escape' => false)); ?>
+                                    <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['controller' => 'groups','action' => 'index', $rowData['FileGroupID']], array('escape' => false)); ?>
                                 <?php else:?>
-                                    <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/'.$rowData['GroupFilename'], array('class' => 'smallimg')), ['controller' => 'users','action' => 'display_user', $rowData['FileGroupID']], array('escape' => false)); ?>
+                                    <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/'.$rowData['GroupFilename'], array('class' => 'smallimg')), ['controller' => 'groups','action' => 'index', $rowData['FileGroupID']], array('escape' => false)); ?>
                                 <?php endif ?>
                             </h3>
                         </div>
