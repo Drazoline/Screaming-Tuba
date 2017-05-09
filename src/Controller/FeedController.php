@@ -38,5 +38,8 @@ class FeedController extends AppController
             $sth = $db->query($sql);
             $this->set(compact('sth'));
         }
+        if($this->request->is('post')){
+            $this->redirect(['controller' => 'search','action' => 'search', $this->request->data('search')]);
+        }
     }
 }

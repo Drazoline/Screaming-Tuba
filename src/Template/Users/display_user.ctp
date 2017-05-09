@@ -24,7 +24,7 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
 </head>
 <body>
 <div class="User">
-    <div id="Title" class="header">
+    <div id="Title" class="title-header">
         <?php
         if($user['user_image'] == "") :?>
             <?php echo $this->Html->image('../webroot/img/profile/user_default.png', array('class' => 'bigimg')); ?>
