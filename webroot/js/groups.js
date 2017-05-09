@@ -24,6 +24,8 @@ $(document ).ready(function(event) {
                         })
                             .done(function(response) {
                                 console.log(response);
+                                var $contentDiv = $('#table-files');
+                                $contentDiv.append(response);
                             })
                             .fail(function(jqXHR) {
                                 if (jqXHR.status == 403) {
