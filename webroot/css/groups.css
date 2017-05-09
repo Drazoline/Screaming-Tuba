@@ -14,6 +14,17 @@
     height: 60px;
     vertical-align:middle;
 }
+.img-delete {
+    border-radius: 50%;
+    display: inline-block;
+    padding-right: 5px;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+}
+.img-delete:hover {
+    cursor: pointer;
+}
 .file-add {
     border-radius: 50%;
     display: block;

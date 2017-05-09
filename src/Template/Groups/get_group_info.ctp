@@ -11,7 +11,9 @@
                 <ul id="user-list">
                     <?php
                     if(!empty($results)): foreach($results as $result): ?>
-                        <li id="<?= $result->id?>"><?= $result->username ?></li>
+                        <li id="<?= $result->id?>"><?= $result->username ?>
+
+                            <!--<?=$this->Html->image('../webroot/img/delete.png', array('class' => 'img-delete'));?> -->
                         <?php
                     endforeach; ?>
                     <?php else: ?>
@@ -27,9 +29,11 @@
                     'label' => __("Utilisateurs"),
                     'style' => 'height: 35px;'
                 ]);
-                echo $this->Form->input('group_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $groupid));
-                echo $this->Form->submit('Ajouter', array('class' => 'add-file', 'class' => 'form-control'));
-                echo $this->Form->end();
+                if($group->user_id == $userid){
+                    echo $this->Form->input('group_id', array('class' => 'add-file', 'type' => 'hidden', 'label' => false,  'value' => $groupid));
+                    echo $this->Form->submit('Ajouter', array('class' => 'add-file', 'class' => 'form-control'));
+                    echo $this->Form->end();
+                }
                 ?>
             </div>
         </div>

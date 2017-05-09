@@ -78,7 +78,6 @@ class GroupsController extends AppController
         ])->where([
             'Users.id !=' => $group->user_id
         ]);
-
         $this->set('groupquery', $query4);
 
         $this->set('userQuery', $query3);
