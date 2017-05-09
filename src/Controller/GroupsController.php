@@ -97,7 +97,7 @@ class GroupsController extends AppController
             $group->modified = date("Y-m-d H:i:s");
             $group->filename= $imageFileName;
             //Valeur a remplacer par l'id de l'utilisateur courrant.
-            $group->user_id = $this->Auth->user('id');;
+            $group->user_id = $this->Auth->user('id');
             if ($this->Groups->save($group)) {
                 //$this->Flash->success(__('Your group has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -117,7 +117,7 @@ class GroupsController extends AppController
             $file = $this->request->data['fileExt']; //put the data into a var for easy use
             if($file['tmp_name'] !== '') {
                 $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
-                $arr_ext = array('jpg', 'jpeg', 'png', 'pdf'); //set allowed extensions
+                $arr_ext = array('jpg', 'jpeg', 'png', 'pdf', 'html', 'mp3', 'flac', 'wav'); //set allowed extensions
                 $setNewFileName = time() . "_" . rand(000000, 999999);
 
                 if (in_array($ext, $arr_ext)) {
@@ -136,6 +136,9 @@ class GroupsController extends AppController
                     $fileAdd->filename = $imageFileName;
                     $this->Files->save($fileAdd);
                     $status = 'success';
+                    $this->set('fileAdd', $fileAdd);
+                    $this->set('username', $this->Auth->user('username'));
+
                 } else {
                     $status = 'wrongfiletype';
                 }

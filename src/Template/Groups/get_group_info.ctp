@@ -37,7 +37,7 @@
         <h3><?= __('Files')?></h3>
 
         <div class="categories-content projects-content" style="display: inline-block; padding-top:10px;">
-            <table class="table-files">
+            <table class="table-files" id="table-files">
                 <tr style="border-bottom: 1px solid #000000;">
                     <th class="colonne-files">Nom</th>
                     <th>Fichier</th>
