@@ -28,7 +28,7 @@ $this->layout = false;
 <div class="contents">
     <div class="file_list">
         <?php
-        if(mysqli_num_rows($sth)!=0):
+        if(mysqli_num_rows($sth_groups)!=0):
             while ($rowData = mysqli_fetch_assoc($sth)):?>
                 <div class="feedfile">
                     <div class="file">
@@ -42,9 +42,9 @@ $this->layout = false;
                             <?php echo $rowData['username']." posted ".$rowData['title']." in ".$rowData['name']; ?>
                             <?php
                             if($rowData['GroupsImage'] == "") :?>
-                                <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['controller' => 'users','action' => 'display_user', $rowData['GroupID']], array('escape' => false)); ?>
+                                <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['controller' => 'groups','action' => 'index'], array('escape' => false)); ?>
                             <?php else:?>
-                                <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/'.$rowData['GroupsImage'], array('class' => 'smallimg')), ['controller' => 'users','action' => 'display_user', $rowData['GroupID']], array('escape' => false)); ?>
+                                <?php echo $this->Html->link($this->Html->image('../webroot/img/groups/'.$rowData['GroupsImage'], array('class' => 'smallimg')), ['controller' => 'groups','action' => 'index'], array('escape' => false)); ?>
                             <?php endif ?>
                         </h3>
                         <?php
@@ -52,11 +52,11 @@ $this->layout = false;
                         $sth_file_likes = $db->query($sql_file_likes);
                         if(mysqli_num_rows($sth_file_likes)!=0): ?>
                             <?=$this->Form->create(NULL, ['type'=>'post'])?>
-                            <?=$this->Form->button($this->Html->image('../webroot/img/unlit.png', ['class'=>'imgLit']),['type' => 'submit', 'name' => 'btnLit'.$rowData['FileID'], 'class' => 'btnLit', 'id' => 'btnLit'.$rowData['FileID']])?>
+                            <?=$this->Form->button($this->Html->image('../webroot/img/Lit.png', ['class'=>'imgLit']),['type' => 'submit', 'name' => 'btnLit'.$rowData['FileID'], 'class' => 'btnLit', 'id' => 'btnLit'.$rowData['FileID']])?>
                             <?=$this->Form->end()?>
                         <?php else:?>
                             <?=$this->Form->create(NULL, ['type'=>'post'])?>
-                            <?=$this->Form->button($this->Html->image('../webroot/img/lit.png', ['class'=>'imgLit']),['type' => 'submit', 'name' => 'btnLit'.$rowData['FileID'], 'class' => 'btnLit', 'id' => 'btnLit'.$rowData['FileID']])?>
+                            <?=$this->Form->button($this->Html->image('../webroot/img/Unlit.png', ['class'=>'imgLit']),['type' => 'submit', 'name' => 'btnLit'.$rowData['FileID'], 'class' => 'btnLit', 'id' => 'btnLit'.$rowData['FileID']])?>
                             <?=$this->Form->end()?>
                         <?php endif;
 

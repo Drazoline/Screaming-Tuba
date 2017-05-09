@@ -74,10 +74,10 @@ $db =  mysqli_connect("localhost","root","","screaming_db");
                     if(mysqli_num_rows($sth)!=0): while($rowData = mysqli_fetch_assoc($sth)): ?>
                         <?php
                         if($rowData['filename'] == "") :?>
-                            <?=$this->Html->Link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
+                            <?=$this->Html->Link($this->Html->image('../webroot/img/groups/group_default.png', array('class' => 'smallimg')), ['controller' => 'groups', 'action' => 'index', $rowData['id']], array('escape' => false)); ?>
 
                         <?php else:?>
-                            <?=$this->Html->Link($this->Html->image('../webroot/img/groups/'.$rowData['filename'], array('class' => 'smallimg')), ['action' => 'groups', $rowData['id']], array('escape' => false)); ?>
+                            <?=$this->Html->Link($this->Html->image('../webroot/img/groups/'.$rowData['filename'], array('class' => 'smallimg')), ['controller' => 'groups', 'action' => 'index', $rowData['id']], array('escape' => false)); ?>
 
                         <?php endif ?>
                     <?php endwhile; ?>

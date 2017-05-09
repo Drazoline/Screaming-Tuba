@@ -1,7 +1,7 @@
 .Username{
     font-size: 50px;
     font-family: Carbon;
-    color: #135a63;
+    color: #505050;
 }
 
 .smallimg{
@@ -32,7 +32,7 @@
     margin-right: -10px;
     margin-top: -10px;
     height: auto;
-    background: #808080;
+    background: #3A689A;
     -webkit-box-shadow: 0px 3px 5px rgba(85, 85, 85, 0.49);
     -moz-box-shadow:    0px 3px 5px rgba(85, 85, 85, 0.49);
     box-shadow:         0px 3px 5px rgba(85, 85, 85, 0.49);
