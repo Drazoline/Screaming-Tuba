@@ -35,7 +35,7 @@ $this->layout = false;
         <?= $this->Html->link('Logout', ['controller'=>'users', 'action'=>'logout'], array( 'class' => 'button-header')); ?>
         <div class="search-bar">
             <?= $this->Form->create(); ?>
-            <?= $this->Form->input('search', array('type' => 'search', 'label' => 'Search: ')) ?>
+            <?= $this->Form->input('search', array('type' => 'search', 'label' => 'Search: ', 'name' => 'search', 'id' => 'search')) ?>
             <?= $this->Form->end() ?>
         </div>
     </h3>
